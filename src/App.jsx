@@ -23,11 +23,11 @@ function App() {
       <Navbar></Navbar>
       <Bot />
       <Hero />
-      <Skills />
       <About />
+      <Achievements/>
+      <Skills />
       <Hireme />
       <Projects />
-      <Achievements/>
       <Certificates/>       
       <Contact />
       <Footer />

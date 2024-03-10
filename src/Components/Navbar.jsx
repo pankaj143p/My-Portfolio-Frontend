@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import { TfiMenuAlt } from "react-icons/tfi";
 const Navbar = () => {
   const [sticky, setSticky] = useState(false);
   const [open, setOpen] = useState(false);
@@ -47,7 +47,8 @@ const Navbar = () => {
             open ? "text-gray-900" : "text-gray-100"
           } text-3xl md:hidden m-5`}
         >
-          <ion-icon name="menu"></ion-icon>
+          {/* <ion-icon name="menu"></ion-icon> */}
+          <TfiMenuAlt />
         </div>
         <div
           className={`md:hidden text-gray-900 absolute w-2/3 h-screen
