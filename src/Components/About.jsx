@@ -20,14 +20,14 @@ const About = () => {
           <div className="p-2">
             <div className="text-gray-300 my-3">
               <p className="mt-16 pr-8 text-justify leading-8 text-2xl w-18/14 mx-auto">
-                I'm Pankaj Prajapati I'm in 3rd year student I'm 3rd
-                ⭐ ⭐ ⭐ Coder on codechef and s700+problems solved and Globel 🎖️
-                Rank 58 in december 2022 contest Max Rating (1624) ||
-                2nd ⭐ on Leetcode and 150+probelems solved on it ||
-                150+probelems solved on Geeks for Geeks || 300+probelems
-                solved onCode Studio || 5⭐ in java and 4⭐ in C++
-                and 200+probelems solved on HackerRank || 50+problem
-                solve on Hacker Earth
+               Hello, I'm Pankaj Prajapati a passionate MERN Stack Developer 
+               and a dedicated student pursuing a Bachelor's degree in 
+               Computer Science with a focus on Artificial Intelligence 
+               and Machine Learning. I have a strong foundation in multiple
+                programming languages and technologies, allowing me to create
+                robust,  efficient, and innovative solutions in the web development
+                domain. Below, I've highlighted some of my key skills, experiences, 
+                and projects that show my expertise.
               </p>
               <div className="flex mt-10 items-center gap-20">
                 {info.map((content) => (

@@ -1,204 +1,210 @@
 
 .skill-box{
    
-   display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-.skill-box .title{
     display: flex;
-    margin-left: 30%;
-    align-items: center;
-    /* display: block; */
-    font-size: 2.3rem;
-    font-weight: 600;
-    color: #FFFFFF;
-}
-
-.skill-box .skill-bar{
-    height: 22px;
-    width: 60%;
-    margin-right: 20%;
-    margin-left: 20%;
-    border-radius: 8px;
-    margin-top: 6px;
-    background:#FFFFFF;
-}
-
-.skill-box .skill-per{
-    position: relative;
-    display: block;
-    height: 100%;
-    width: 90%;
-    border-radius: 6px;
-    background: #266b88;
-    /* animation: progress 2.6s 
-    ease-in-out forwards; */
-    /* opacity: 0; */
-}
-
-.skill-per.cpp {
-    width: 80%;
-    /* animation-delay: 3s; */
-}
-
-.skill-per.paython{
-    width: 60%;
-    /* animation-delay: 3.4s; */
-}
-.skill-per.c{
-    width: 60%;
-    /* animation-delay: 3.8s; */
-}
-.skill-per.c{
-    width: 60%;
-    /* animation-delay: 4.2s; */
-}
-
-
-.skill-per .tooltip{
-    position: absolute;
-    right: 0px;
-    /* left: 0px; */
-    bottom: -4px;
-    top: -5px;
-    font-size: .4em;
-    font-weight: 500;
-    color: #fff;
-    /* margin-top: px; */
-    /* padding: 3px 4px; */
-    border-radius: 30%;
-    background: #266b88;
-    /* z-index: 1; */
-}
-#certificates{
-    /* width: 1300px; */
-    height: 1020px;
-    /* position: fixed; */
-}
-/* add responsive media queries */
-
-@media screen and (max-width : 760px) {
-    .skill-box .skill-bar{
-        display: flex;
-        align-items: center;
-        height: 12px;
-        width: 250px;
-        border-radius: 6px;
-        margin-top: 6px;
-        margin-left: -60px;
-        background:#FFFFFF;
-    }
-    .skill-box .title{
-        display: block;
-        font-size: 1.3rem;
-        font-weight: 600;
-        color: #FFFFFF;
-    }
-   
-    .skill-per .tooltip{
-        position: absolute;
-        right: 0px;
-        /* left: 0px; */
-        bottom: -8px;
-        top: -8px;
-        font-size: .4em;
-        font-weight: 500;
-        color: #fff;
-        /* margin-top: px; */
-        /* padding: 3px 4px; */
-        border-radius: 30%;
-        background: #266b88;
-        /* z-index: 1; */
-    }
-.myImg{
-   width: 200px;
-}
-.flex-1{
-    /* order:-1!important;
-     */
-     margin-top: 20px;
-}
-.about{
-    margin-top: 0px;
-}
-.hero{
-    margin-bottom: -150px;
-}
-#certificates{
-    /* width: 1300px; */
-    height: auto;
-}
-.icons{
-    margin-top: 0px;
-    font-size: 20px;
-   
-}
-.aboutMe{
-    margin-top: px;
-}
-
-.contact{
-    margin-top: 25px;
-    margin-left: 60px;
-}
-}
-
-/* anition section for certificat gallery */
-
-.certifications{
-    text-align: center;
-    text-shadow: 5px 5px 10px #0272da;
-    font-size: 70px;
-    margin-top: 200px;
-    color: #1f1f1f;
-}
-
- /* .cards{
-    width: 300px;
-    height: 300px;
-}  */
-
-.certificate-sec{
-    margin-left: 30px;
-    margin-top: 80px;
-    /* display: flex; */
-    /* flex-direction: row; */
-    align-items: baseline;
-    justify-content: space-between;
-}
-.card{
-    width:  67%;    
-    position:relative;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    overflow: hidden;
-    /* opacity: 0.5; */
-    filter: grayscale(100%);
-    box-shadow: 0 4px 20px rgba(44, 120, 183, 0.788);
-}
-
-.card img{
-    width: 100%;
-    height: 100%;
-    fill-opacity: 0;
-    filter: grayscale(100%);
-    box-shadow: 0 0 12px #951a1a;
+   flex-direction: column;
+   gap: 25px;
+ }
+ .skill-box .title{
+     display: flex;
+     margin-left: 30%;
+     align-items: center;
+     /* display: block; */
+     font-size: 2.3rem;
+     font-weight: 600;
+     color: #FFFFFF;
+ }
+ 
+ .skill-box .skill-bar{
+     height: 22px;
+     width: 60%;
+     margin-right: 20%;
+     margin-left: 20%;
+     border-radius: 8px;
+     margin-top: 6px;
+     background:#FFFFFF;
+ }
+ 
+ .skill-box .skill-per{
+     position: relative;
+     display: block;
+     height: 100%;
+     width: 90%;
+     border-radius: 6px;
+     background: #266b88;
+     /* animation: progress 2.6s 
+     ease-in-out forwards; */
+     /* opacity: 0; */
+ }
+ 
+ .skill-per.cpp {
+     width: 80%;
+     /* animation-delay: 3s; */
+ }
+ 
+ .skill-per.paython{
+     width: 60%;
+     /* animation-delay: 3.4s; */
+ }
+ .skill-per.c{
+     width: 60%;
+     /* animation-delay: 3.8s; */
+ }
+ .skill-per.c{
+     width: 60%;
+     /* animation-delay: 4.2s; */
+ }
+ 
+ 
+ .skill-per .tooltip{
+     position: absolute;
+     right: 0px;
+     /* left: 0px; */
+     bottom: -4px;
+     top: -5px;
+     font-size: .4em;
+     font-weight: 500;
+     color: #fff;
+     /* margin-top: px; */
+     /* padding: 3px 4px; */
+     border-radius: 30%;
+     background: #266b88;
+     /* z-index: 1; */
+ }
+ #certificates{
+     /* width: 1300px; */
+     height: 1020px;
+     /* position: fixed; */
+ }
+ /* add responsive media queries */
+ 
+ @media screen and (max-width : 760px) {
+     .skill-box .skill-bar{
+         display: flex;
+         align-items: center;
+         height: 12px;
+         width: 250px;
+         border-radius: 6px;
+         margin-top: 6px;
+         margin-left: -60px;
+         background:#FFFFFF;
+     }
+     .skill-box .title{
+         display: block;
+         font-size: 1.3rem;
+         font-weight: 600;
+         color: #FFFFFF;
+     }
     
-}
-
-.card:hover{
-    transform: scale(1.1,1.1);
-    filter: drop-shadow(0 0 70px #333);
-    transition: 0.42s;
-    width: 84%;
-    align-self: center;
-
-}
-
-.card:hover img{
-    filter: grayscale(0%);
-    width: 400px;
-    /* opecity: 1px; */
-}
-
+     .skill-per .tooltip{
+         position: absolute;
+         right: 0px;
+         /* left: 0px; */
+         bottom: -8px;
+         top: -8px;
+         font-size: .4em;
+         font-weight: 500;
+         color: #fff;
+         /* margin-top: px; */
+         /* padding: 3px 4px; */
+         border-radius: 30%;
+         background: #266b88;
+         /* z-index: 1; */
+     }
+ .myImg{
+    width: 200px;
+ }
+ .flex-1{
+     /* order:-1!important;
+      */
+      margin-top: 20px;
+ }
+ .about{
+     margin-top: 0px;
+ }
+ .hero{
+     margin-bottom: -150px;
+ }
+ #certificates{
+     /* width: 1300px; */
+     height: auto;
+ }
+ .icons{
+     margin-top: 0px;
+     font-size: 20px;
+    
+ }
+ .aboutMe{
+     margin-top: px;
+ }
+ 
+ .contact{
+     margin-top: 25px;
+     margin-left: 60px;
+ }
+ .achievements{
+   font-size: .5em;
+   width: 330px;
+   margin-left: -50px;
+ }
+  
+ }
+ 
+ /* anition section for certificat gallery */
+ 
+ .certifications{
+     text-align: center;
+     text-shadow: 5px 5px 10px #0272da;
+     font-size: 70px;
+     margin-top: 200px;
+     color: #1f1f1f;
+ }
+ 
+  /* .cards{
+     width: 300px;
+     height: 300px;
+ }  */
+ 
+ .certificate-sec{
+     margin-left: 30px;
+     margin-top: 80px;
+     /* display: flex; */
+     /* flex-direction: row; */
+     align-items: baseline;
+     justify-content: space-between;
+ }
+ .card{
+     width:  67%;    
+     position:relative;
+     margin-bottom: 20px;
+     border-radius: 8px;
+     overflow: hidden;
+     /* opacity: 0.5; */
+     filter: grayscale(100%);
+     box-shadow: 0 4px 20px rgba(44, 120, 183, 0.788);
+ }
+ 
+ .card img{
+     width: 100%;
+     height: 100%;
+     fill-opacity: 0;
+     filter: grayscale(100%);
+     box-shadow: 0 0 12px #951a1a;
+     
+ }
+ 
+ .card:hover{
+     transform: scale(1.1,1.1);
+     filter: drop-shadow(0 0 70px #333);
+     transition: 0.42s;
+     width: 84%;
+     align-self: center;
+ 
+ }
+ 
+ .card:hover img{
+     filter: grayscale(0%);
+     width: 400px;
+     /* opecity: 1px; */
+ }
+ 

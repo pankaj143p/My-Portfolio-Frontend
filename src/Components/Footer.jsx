@@ -1,6 +1,8 @@
 import React from "react";
 import './style.css'
 import { FaGithub, FaInstagram, FaLinkedin,FaFacebook,FaTwitter} from "react-icons/fa6";
+import { IoMdMailUnread } from "react-icons/io";
+import { IoLogoWhatsapp } from "react-icons/io";
   const social_media = [
     {name :<FaLinkedin />,link : "https://www.linkedin.com/in/pankaj-prajapati-7619bb226/"},
     {name :<FaGithub/>,link : "https://github.com/pankaj143p"},
@@ -14,8 +16,8 @@ const Footer = () => {
     //     { logo: "logo-whatsapp", text: "+91 9179213653" },
     //   ];
       const contact_info = [
-        { logo: "mail", text: "pankaj114477pankaj@gmail.com" },
-        { logo: "logo-whatsapp", text: "+91 9179213653" },
+        { logo: <IoMdMailUnread />, text: "pankaj114477pankaj@gmail.com" },
+        { logo: <IoLogoWhatsapp />, text: "+91 9179213653" },
       ];
   return (
     <footer>
@@ -52,7 +54,7 @@ const Footer = () => {
                   text-left gap-4 flex-wrap items-center"
               >
                 <div className="min-w-[2.5rem]  text-3xl min-h-[2.5rem] flex items-center justify-center text-white bg-cyan-600 rounded-full">
-                  <ion-icon name={contact.logo}></ion-icon>
+                  {contact.logo}
                 </div>
                 <p className="md:text-base text-sm  break-words">
                   {contact.text}

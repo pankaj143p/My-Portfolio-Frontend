@@ -5,6 +5,7 @@ import geeksfogeeks from './CodingProfiles/gfg-logo.svg';
 import codingninjas from './CodingProfiles/cn-logo.svg';
 import hackerearth from './CodingProfiles/he-logo.png'
 import hackerrank from './CodingProfiles/hr-logo.png'
+import  './style.css';
 export default function Achievements() {
     const myAchievements = [
         {
@@ -67,7 +68,7 @@ export default function Achievements() {
         {/* <div className="bg-gray-700 py-8 relative px-8 rounded-2xl  mx-auto min-h-[24rem] mt-24 flex gap-6 lg:flex-row flex-col items-center"> */}
         <div className='Achievements mx-20' >
             {myAchievements.map((Achievements,idx)=>(
-              <div className='text-2xl border-4 border-cyan-700 rounded-2xl mt-12 px-6 py-4' key={idx}>{Achievements.des}
+              <div className='achievements self-center text-2xl border-4 border-cyan-700 rounded-2xl mt-12 px-6 py-4' key={idx}>{Achievements.des}
                     {/* <p className='description'>{Achievements.dis}</p> */}
               
            </div>

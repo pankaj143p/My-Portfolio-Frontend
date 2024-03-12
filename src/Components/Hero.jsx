@@ -43,7 +43,7 @@ const Hero = () => {
             MernStack Developer
           </h4>
           <button className="btn-primary mt-8">Contact Me</button>
-          <div className="mt-8 text-3xl flex items-center md:justify-start justify-center gap-5">
+          <div className="my-14 text-3xl flex items-center md:justify-start justify-center gap-5">
             {social_media?.map((icon) => (
               <a
                 key={icon.name}
