@@ -19,7 +19,7 @@ import Achievements from './Components/Achievements';
 function App() {
   return (
    
-    <div>
+    <>
       <Navbar></Navbar>
       <Bot />
       <Hero />
@@ -31,7 +31,7 @@ function App() {
       <Certificates/>       
       <Contact />
       <Footer />
-    </div>
+    </>
    
   );
 }

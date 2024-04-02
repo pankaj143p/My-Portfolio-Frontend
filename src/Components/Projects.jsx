@@ -1,10 +1,10 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import project1 from "./Projects/p23.avif";
-import project2 from "./Projects/21.avif";
-import project3 from "./Projects/p3.png";
-import project4 from "./Projects/p4.png";
-import project5 from "./Projects/p22.jpg";
+import project1 from "./Projects/marketmart.png";
+import project2 from "./Projects/quiz.avif";
+import project3 from "./Projects/education.png";
+import project4 from "./Projects/weather.png";
+import project5 from "./Projects/chat.jpg";
 // import project_person from './Images/Him.png';
 import "swiper/css";
 import "swiper/css/pagination";
@@ -16,33 +16,33 @@ const Project = () => {
   const projects = [
     {
       img: project1,
-      name: "Calculator",
-      github_link: "",
-      live_link: "",
+      name: "Market Mart",
+      github_link: "https://github.com/pankaj143p/Market-Mart",
+      live_link: "https://github.com/pankaj143p/Market-Mart",
+    },
+    {
+      img: project3,
+      name: "Smart TnP Education",
+      github_link: "https://smart-tnp-education-app-web.vercel.app/",
+      live_link: "https://github.com/pankaj143p/Smart-TNP-education-app",
     },
     {
       img: project2,
       name: "Quiz App",
-      github_link: "",
-      live_link: "",
-    },
-    {
-      img: project3,
-      name: "Portfolio Sites",
-      github_link: "",
-      live_link: "",
+      github_link: "https://github.com/pankaj143p/QuizApp",
+      live_link: "https://github.com/pankaj143p/QuizApp",
     },
     {
       img: project4,
       name: "Weather App",
-      github_link: "",
-      live_link: "",
+      github_link: "https://github.com/pankaj143p/Weather-App",
+      live_link: "https://github.com/pankaj143p/Weather-App",
     },
     {
       img: project5,
-      name: "Music Player",
-      github_link: "",
-      live_link: "",
+      name: "Snappy Chat",
+      github_link: "https://github.com/pankaj143p/Snappy-chat-web",
+      live_link: "https://github.com/pankaj143p/Snappy-chat-web",
     },
   ];
   return (
@@ -73,10 +73,14 @@ const Project = () => {
             }}
             modules={[Pagination, Autoplay]}
           >
-            {projects.map((project_info, i) => (
+            {projects.map((project_info,i) => (
               <SwiperSlide key={i}>
                 <div className="h-fit w-full p-4 bg-slate-700 rounded-xl">
-                  <img src={project_info.img} alt="" className="rounded-lg" />
+                  <img src={project_info.img} alt="" 
+                //  className={`rounded-xl ${project_info.name === "Market Mart " ? "h-48 w-full" : ""}`}
+                className="rounded-xl w-full h-48" 
+                 />
+
                   <h3 className="text-xl my-4">{project_info.name}</h3>
                   <div className="flex gap-3">
                     <a
