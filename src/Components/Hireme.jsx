@@ -1,5 +1,5 @@
 import React from "react";
-import imageUrl from './Images/IMG_20220718_080114-removebg-preview.png';
+import imageUrl from './MyImages/IMG-20240402-WA0008.jpg';
 import './frame.css'
 const Hireme = ({ altText }) => {
   return (

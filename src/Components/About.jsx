@@ -1,6 +1,6 @@
 import React from "react";
 import './style.css'
-import aboutImg from "./Images/1658571266826-removebg-preview.png";
+import aboutImg from "./MyImages/IMG-20240402-WA0012-removebg-preview.png";
 import MyResume from './Projects/Pankaj_Prajapati.pdf'
 const About = () => {
   const info = [
@@ -48,11 +48,11 @@ const About = () => {
             </div>
           </div>
           <div className="flex-1 md:mt-0 mt-6 flex justify-center items-center">
-            <div className="lg:w-96 h-full relative sm:w-10/12 w-11/12 max-w-sm aboutImg ">
+            <div className="lg:w-64 h-full relative sm:w-10/12 w-11/12 max-w-sm aboutImg ">
               <img
                 src={aboutImg}
                 alt=""
-                className="w-full object-cover bg-cyan-600 rounded-xl"
+                className="w-full  h-96 object-cover bg-cyan-800 rounded-xl"
               />
             </div>
           </div>

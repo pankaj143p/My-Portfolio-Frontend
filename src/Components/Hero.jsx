@@ -1,5 +1,5 @@
 import React from "react";
-import hero from "./Images/1658571266826-removebg-preview.png";
+import hero from "./MyImages/IMG-20240402-WA0008.jpg";
 import { FaGithub, FaInstagram, FaLinkedin,FaFacebook,FaTwitter} from "react-icons/fa6";
 
 
@@ -26,7 +26,7 @@ const Hero = () => {
               <img
                 src={hero}
                 alt=""
-                className="w-full object-cover bg-cyan-600 rounded-xl"
+                className="w-full h-96 object-cover bg-cyan-600 rounded-xl"
               />
             </div>
           </div>
