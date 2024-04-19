@@ -1,7 +1,5 @@
 
 import React, { useEffect, useState } from 'react';
-// import im1 from './certificates/kisspng-java-runtime-environment-computer-icons-java-platf-java-5ade3063f31610.0948145615245108199957.png'
-// import {Line} from "rc-progress";
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import './style.css'
@@ -117,92 +115,34 @@ const Skills = () => {
                 <p className="text-xl mt-3">{skill.level}</p>
               </div>
             ))}
-
-
-
-            {/* <p className="text-gray-400 mt-0 text-4xl">Coding languages</p> */}
-
-
-
           </div>
         </div>
         {/* <div className="flex items-center"> */}
-        <p className="text-gray-400  text-center mt-20 text-4xl self-center">Programming languages</p>
-        {/* <div className="mx-32 mt-12  text-4xl flex gap-10 flex-col">
-          <div className="skill-box">
-            <div className='skill-chid flex flex-row gap-0'>
-
-              <span className="title">Java</span>
-            </div>
-            <div className="skill-bar">
-              <span className="skill-per java">
-                <span className="tooltip">90%</span>
-              </span>
-            </div>
-          </div>
-          <div className="skill-box">
-            <span className="title">C++</span>
-            <div className="skill-bar">
-              <span className="skill-per cpp">
-                <span className="tooltip">80%</span>
-              </span>
-            </div>
-          </div>
-          <div className="skill-box">
-            <span className="title">Paython</span>
-            <div className="skill-bar">
-              <span className="skill-per paython">
-                <span className="tooltip">60%</span>
-              </span>
-            </div>
-          </div>
-          <div className="skill-box">
-            <span className="title">C</span>
-            <div className="skill-bar">
-              <span className="skill-per c">
-                <span className="tooltip">60%
-                </span>
-              </span>
-            </div>
-
-        <div className='flex flex-row absolute'>
-            <h1 className='ml-20'>Time Management</h1>
-            <div style={{ width: 150, marginLeft: 550 }} className='mr-20 '>
-              <CircularProgressbar value="90" text="90 %" />
-            </div>
-        </div>     
-        <div className='flex flex-row'>
-            
-            <div style={{ width: 150, marginLeft: 550 }}>
-              <CircularProgressbar value="90" text="90 %" />
-            </div>
-        </div>
-    </div>
-        </div> */}
-        <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme mt-28 pr-20 skill-slider">
+        <p className="text-gray-400 p-2 text-center mt-20 text-4xl self-center">Programming languages</p>
+        <Carousel responsive={responsive} infinite={true} className=" owl-carousel owl-theme mt-28 lg:mr-12 skill-slider">
                 <div className="item">
-                  <div style={{ width: 150, marginLeft: 550 }}>
+                  <div style={{ width: 150, marginLeft: 520 }}>
                   
                     <CircularProgressbar value="90" text="90 %" />
                     <h2 className='ml-4 mt-4 text-5xl'>Java</h2>
                   </div>
                 </div>
                 <div className="item">
-                <div style={{ width: 150, marginLeft: 550 }}>
+                <div style={{ width: 150, marginLeft: 520 }}>
                   
                     <CircularProgressbar value="80" text="80 %" />
                     <h2 className='ml-4 mt-4 text-5xl'>C++</h2>
                   </div>
                 </div>
                 <div className="item">
-                <div style={{ width: 150, marginLeft: 550 }}>
+                <div style={{ width: 150, marginLeft: 520 }}>
                   
                     <CircularProgressbar value="70" text="70 %" />
                     <h2 className='mt-4 text-5xl'>Python</h2>
                   </div>
                </div>
                 <div className="item">
-                <div className='flex flex-col center' style={{width: 150, marginLeft: 550 }}>
+                <div className='flex flex-col center ml-20' style={{width: 150, marginLeft:520 }} >
                     <CircularProgressbar value="65" text="65 %" />
                   <h2 className='ml-12 mt-4 text-5xl'>C</h2>
                   </div>
