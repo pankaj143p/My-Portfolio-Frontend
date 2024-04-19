@@ -75,10 +75,10 @@ const Project = () => {
           >
             {projects.map((project_info,i) => (
               <SwiperSlide key={i}>
-                <div className="h-fit w-full p-4 bg-slate-700 rounded-xl">
+                <div className="lg:h-fit w-full p-4 bg-slate-700 rounded-xl">
                   <img src={project_info.img} alt="" 
                 //  className={`rounded-xl ${project_info.name === "Market Mart " ? "h-48 w-full" : ""}`}
-                className="rounded-xl w-full h-48" 
+                className="rounded-xl w-full lg:h-48" 
                  />
 
                   <h3 className="text-xl my-4">{project_info.name}</h3>

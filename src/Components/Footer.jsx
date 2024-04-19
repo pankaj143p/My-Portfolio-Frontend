@@ -4,11 +4,11 @@ import { FaGithub, FaInstagram, FaLinkedin,FaFacebook,FaTwitter} from "react-ico
 import { IoMdMailUnread } from "react-icons/io";
 import { IoLogoWhatsapp } from "react-icons/io";
   const social_media = [
-    {name :<FaLinkedin />,link : "https://www.linkedin.com/in/pankaj-prajapati-7619bb226/"},
-    {name :<FaGithub/>,link : "https://github.com/pankaj143p"},
-    {name :<FaInstagram/>,link : "https://www.instagram.com/pankaj07._/"},
-    {name :<FaFacebook/> ,link : "https://www.facebook.com/profile.php?id=100070913362312"}, 
-    {name :<FaTwitter/>,link : "https://twitter.com/Pankaj07__"},
+    {name :<FaLinkedin size={32}/>,link : "https://www.linkedin.com/in/pankaj-prajapati-7619bb226/"},
+    {name :<FaGithub size={32}/>,link : "https://github.com/pankaj143p"},
+    {name :<FaInstagram size={32}/>,link : "https://www.instagram.com/pankaj07._/"},
+    {name :<FaFacebook size={32}/> ,link : "https://www.facebook.com/profile.php?id=100070913362312"}, 
+    {name :<FaTwitter size={32}/>,link : "https://twitter.com/Pankaj07__"},
   ];
 const Footer = () => {
     // const contact_info = [
@@ -16,8 +16,8 @@ const Footer = () => {
     //     { logo: "logo-whatsapp", text: "+91 9179213653" },
     //   ];
       const contact_info = [
-        { logo: <IoMdMailUnread />, text: "pankaj114477pankaj@gmail.com" },
-        { logo: <IoLogoWhatsapp />, text: "+91 9179213653" },
+        { logo: <IoMdMailUnread size={28}/>, text: "pankaj114477pankaj@gmail.com" },
+        { logo: <IoLogoWhatsapp size={28}/>, text: "+91 91xxxxxx53" },
       ];
   return (
     <footer>
@@ -45,7 +45,7 @@ const Footer = () => {
         <div className="copyright bg-dark py-4 my-0 mx-0 text-white text-center">
         <div  className="container text-[#8d9294]">
         {/* <div  className="container text-[#374151]"> */}
-        <p className="text-4xl mt-8">Pankaj Prajapati</p>
+        <p className="text-4xl py-6">Pankaj Prajapati</p>
         <div className="contact flex flex-col ml-8 my-0 gap-2 ">
             {contact_info.map((contact, i) => (
               <div
@@ -56,13 +56,13 @@ const Footer = () => {
                 <div className="min-w-[2.5rem]  text-3xl min-h-[2.5rem] flex items-center justify-center text-white bg-cyan-600 rounded-full">
                   {contact.logo}
                 </div>
-                <p className="md:text-base text-sm  break-words">
+                <p className="center pb-3 md:text-base text-lg lg:text-2xl  break-words">
                   {contact.text}
                 </p>
               </div>
             ))}
           </div>
-          <div className="contact text-4xl flex items-center md:justify-end justify-center gap-4">
+          <div className="contact text-4xl flex items-center md:justify-end justify-center gap-4 py-6">
             {social_media?.map((icon) => (
               <a
                 key={icon.name}
