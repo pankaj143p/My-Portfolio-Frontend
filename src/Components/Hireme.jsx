@@ -1,6 +1,8 @@
 import React from "react";
 import imageUrl from './MyImages/IMG-20240402-WA0008.jpg';
 import './frame.css'
+
+// hire me section
 const Hireme = ({ altText }) => {
   return (
     <section id="hireme" className="py-10 px-3 text-white">
