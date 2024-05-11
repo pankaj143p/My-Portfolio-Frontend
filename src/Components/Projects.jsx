@@ -23,8 +23,8 @@ const Project = () => {
     {
       img: project3,
       name: "Smart TnP Education",
-      github_link: "https://smart-tnp-education-app-web.vercel.app/",
-      live_link: "https://github.com/pankaj143p/Smart-TNP-education-app",
+      github_link: "https://github.com/pankaj143p/Smart-TNP-education-app",
+      live_link: "https://smart-tnp-education-app-web.vercel.app/",
     },
     {
       img: project2,

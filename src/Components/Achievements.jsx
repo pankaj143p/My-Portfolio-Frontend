@@ -9,7 +9,7 @@ import './style.css';
 export default function Achievements() {
   const myAchievements = [
     {
-      "des": "I got global rank 16th on CodeChef in Starters 124 and my highest rating is 1861 on Cocdechef",
+      "des": "I got global rank 16th on CodeChef in Starters 124 and my highest rating is 1861 on Codechef",
     },
     {
       "des": "I got AIR 16th on Coding Ninjas World cup event and also I solved 2000+ problems on Coding Ninjas.",
