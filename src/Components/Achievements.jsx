@@ -74,6 +74,7 @@ export default function Achievements() {
           </div>
 
         ))}
+        {/* coding profiles */}
         <div className="mt-12 text-center coding-profiles">
           <h3 className="text-4xl font-semibold">
             Coding <span className="text-cyan-600">Profiles</span>
