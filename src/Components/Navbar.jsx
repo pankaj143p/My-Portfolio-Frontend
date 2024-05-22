@@ -47,7 +47,7 @@ const Navbar = () => {
             open ? "text-gray-900" : "text-gray-100"
           } text-3xl md:hidden m-5`}
         >
-          {/* <ion-icon name="menu"></ion-icon> */}
+          
           <TfiMenuAlt />
         </div>
         <div
