@@ -10,7 +10,7 @@ import Hireme from './Components/Hireme';
 import Footer from './Components/Footer';
 import Certificates from './Components/Certificates';
 import Achievements from './Components/Achievements';
-
+import QuestionsLiveStatus from './Components/QuestionsLiveStatus'
 
 
 
@@ -26,6 +26,7 @@ function App() {
       <About />
       <Achievements/>
       <Skills />
+      <QuestionsLiveStatus/>
       <Hireme />
       <Projects />
       <Certificates/>       

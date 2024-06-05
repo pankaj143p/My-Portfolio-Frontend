@@ -5,6 +5,7 @@ import geeksfogeeks from './CodingProfiles/gfg-logo.svg';
 import codingninjas from './CodingProfiles/cn-logo.svg';
 import hackerearth from './CodingProfiles/he-logo.png'
 import hackerrank from './CodingProfiles/hr-logo.png'
+import axios from 'axios';
 import './style.css';
 export default function Achievements() {
   const myAchievements = [
