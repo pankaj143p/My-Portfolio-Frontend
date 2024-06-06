@@ -57,7 +57,7 @@ export default function Achievements() {
   ]
 
   return (
-    <section id="hireme" className=" py-10  text-white">
+    <section id="hireme" className="ml-[-12px] lg:ml-0 py-10 text-white">
       <div className="text-center">
         <h3 className="text-4xl font-semibold">
           My <span className="text-cyan-600">Achievements</span>
@@ -67,7 +67,7 @@ export default function Achievements() {
       </div>
 
       {/* <div className="bg-gray-700 py-8 relative px-8 rounded-2xl  mx-auto min-h-[24rem] mt-24 flex gap-6 lg:flex-row flex-col items-center"> */}
-      <div className='Achievements lg:px-36 px-20 center'>
+      <div className='Achievements lg:px-36  px-20 center'>
         {myAchievements.map((Achievements, idx) => (
           <div className='achievements self-center text-2xl border-4 border-cyan-700 rounded-2xl mt-12 p-6' key={idx}>{Achievements.des}
             {/* <p className='description'>{Achievements.dis}</p> */}
@@ -76,7 +76,7 @@ export default function Achievements() {
 
         ))}
         {/* coding profiles */}
-        <div className="mt-12 text-center coding-profiles">
+        <div className="mt-12 text-center coding-profiles ml-[-8px] lg:ml-0">
           <h3 className="text-4xl font-semibold">
             Coding <span className="text-cyan-600">Profiles</span>
           </h3>

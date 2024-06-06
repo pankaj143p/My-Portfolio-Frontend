@@ -120,28 +120,28 @@ const Skills = () => {
         {/* <div className="flex items-center"> */}
         <p className="text-gray-400 p-2 text-center mt-20 text-4xl self-center">Programming languages</p>
         <Carousel responsive={responsive} infinite={true} className=" owl-carousel owl-theme mt-28 lg:mr-12 skill-slider">
-                <div className="item">
+                <div className="item ml-[-56px] lg:ml-0">
                   <div style={{ width: 150, marginLeft: 520 }}>
                   
                     <CircularProgressbar value="90" text="90 %" />
                     <h2 className='ml-4 mt-4 text-5xl'>Java</h2>
                   </div>
                 </div>
-                <div className="item">
+                <div className="item ml-[-56px] lg:ml-0">
                 <div style={{ width: 150, marginLeft: 520 }}>
                   
                     <CircularProgressbar value="80" text="80 %" />
                     <h2 className='ml-4 mt-4 text-5xl'>C++</h2>
                   </div>
                 </div>
-                <div className="item">
+                <div className="item ml-[-56px] lg:ml-0">
                 <div style={{ width: 150, marginLeft: 520 }}>
                   
                     <CircularProgressbar value="70" text="70 %" />
                     <h2 className='mt-4 text-5xl'>Python</h2>
                   </div>
                </div>
-                <div className="item">
+                <div className="item ml-[-56px] lg:ml-0">
                 <div className='flex flex-col center ml-20' style={{width: 150, marginLeft:520 }} >
                     <CircularProgressbar value="65" text="65 %" />
                   <h2 className='ml-12 mt-4 text-5xl'>C</h2>

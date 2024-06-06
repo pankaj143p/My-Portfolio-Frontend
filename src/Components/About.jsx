@@ -1,7 +1,7 @@
 import React from "react";
 import './style.css'
 import aboutImg from "./MyImages/IMG-20240402-WA0012-removebg-preview.png";
-import MyResume from './Projects/Pankaj_Prajapati.pdf'
+// import MyResume from './Projects/Pankaj_Prajapati.pdf'
 const About = () => {
   const info = [
     // { text: "", count: "04" },
@@ -42,12 +42,10 @@ const About = () => {
               </div>
               <br />
               <br />
-              <a href={MyResume} download>
-                <button className="btn-primary">See My Resume</button>
-              </a>
+             
             </div>
           </div>
-          <div className="flex-1 md:mt-0 mt-2 flex justify-center items-center lg:mb-32">
+          <div className="flex-1 md:mt-0 mt-2 w-full ml-4 flex justify-center items-center lg:mb-32">
             <div className="lg:w-64 h-full relative sm:w-10/12 w-11/12 max-w-sm aboutImg mt-12 lg:mb-4">
               <img
                 src={aboutImg}
