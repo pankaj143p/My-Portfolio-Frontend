@@ -5,7 +5,6 @@ import geeksfogeeks from './CodingProfiles/gfg-logo.svg';
 import codingninjas from './CodingProfiles/cn-logo.svg';
 import hackerearth from './CodingProfiles/he-logo.png'
 import hackerrank from './CodingProfiles/hr-logo.png'
-import axios from 'axios';
 import './style.css';
 export default function Achievements() {
   const myAchievements = [
@@ -19,7 +18,7 @@ export default function Achievements() {
       "des": "I'm knight coder with highest rating 1927 on Leetcode and also solved 700+ question on Leetcode.",
     },
     {
-      "des": "My all timk rank is 87 in weekly contest and college rank is 8 on Geeksfogeeks also I solved 700+ questions on Geeksforgeeks.",
+      "des": "I'm 4ht star coder with rating 1856 and college rank is 8 on Geeksfogeeks also I solved 700+ questions on Geeksforgeeks.",
     },
 
   ];
