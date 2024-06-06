@@ -26,12 +26,12 @@ const Hero = () => {
               <img
                 src={hero}
                 alt=""
-                className="w-full h-96 object-cover bg-cyan-600 rounded-xl"
+                className="w-full h-64 lg:h-96 object-cover bg-cyan-600 rounded-xl"
               />
             </div>
           </div>
       <div className="flex-1 mt-40px">
-        <div className="md:text-left mt-32px text-center">
+        <div className="md:text-left mt-4  text-center">
           <h1 className="md:text-5xl text-2xl md:leading-normal leading-10 text-white font-bold">
             <span className="text-cyan-600 md:text-6xl text-5xl">
               Hello!
