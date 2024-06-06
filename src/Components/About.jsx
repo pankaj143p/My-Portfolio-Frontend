@@ -10,16 +10,16 @@ const About = () => {
     { text: "Certifications",count: "20"}
   ];
   return (
-    <section id="about" className="about py- text-white">
+    <section id="about" className="about text-white">
       <div className="text-center mt-4">
-        <h3 className="mb-8 text-center text-4xl font-semibold">
+        <h3 className="my-3 text-center text-4xl font-semibold">
           About <span className="text-cyan-600">Me</span>
         </h3>
         {/* <p className="text-gray-400 my-3 text-lg">My introduction</p> */}
         <div className="flex md:flex-row flex-col-reverse items-center md:gap-6 gap-12 px-10 max-w-6xl mx-h-auto mx-auto">
-          <div className="p-2">
-            <div className="text-gray-300 my-3">
-              <p className="mt-16 pr-8 text-justify leading-8 text-2xl w-18/14 mx-auto">
+          <div className="px-4">
+            <div className="text-gray-300 ">
+              <p className=" px-4 text-justify leading-8 text-2xl w-18/14 mx-auto">
                Hello, I'm Pankaj Prajapati a passionate MERN Stack Developer 
                and a dedicated student pursuing a Bachelor's degree in 
                Computer Science with a focus on Artificial Intelligence 
@@ -47,12 +47,12 @@ const About = () => {
               </a>
             </div>
           </div>
-          <div className="flex-1 md:mt-0 mt-6 flex justify-center items-center">
-            <div className="lg:w-64 h-full relative sm:w-10/12 w-11/12 max-w-sm aboutImg ">
+          <div className="flex-1 md:mt-0 mt-2 flex justify-center items-center lg:mb-32">
+            <div className="lg:w-64 h-full relative sm:w-10/12 w-11/12 max-w-sm aboutImg mt-12 lg:mb-4">
               <img
                 src={aboutImg}
                 alt=""
-                className="w-full  h-96 object-cover bg-cyan-800 rounded-xl"
+                className="w-full h-96 object-cover bg-cyan-800 rounded-xl"
               />
             </div>
           </div>
