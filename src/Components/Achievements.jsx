@@ -61,15 +61,10 @@ export default function Achievements() {
         <h3 className="text-4xl font-semibold">
           My <span className="text-cyan-600">Achievements</span>
         </h3>
-
-        {/* <p className="text-gray-400 mt-3 text-lg">Do you have any work?</p> */}
       </div>
-
-      {/* <div className="bg-gray-700 py-8 relative px-8 rounded-2xl  mx-auto min-h-[24rem] mt-24 flex gap-6 lg:flex-row flex-col items-center"> */}
       <div className='Achievements lg:px-36  px-20 center'>
         {myAchievements.map((Achievements, idx) => (
           <div className='achievements self-center text-2xl border-4 border-cyan-700 rounded-2xl mt-12 p-6' key={idx}>{Achievements.des}
-            {/* <p className='description'>{Achievements.dis}</p> */}
 
           </div>
 
