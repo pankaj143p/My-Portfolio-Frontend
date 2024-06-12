@@ -4,7 +4,7 @@ import { FaGithub, FaInstagram, FaLinkedin,FaFacebook,FaTwitter} from "react-ico
 
 
 const Hero = () => {
-  
+  // social media links 
   const social_media = [
     {name :<FaLinkedin />,link : "https://www.linkedin.com/in/pankaj-prajapati-7619bb226/"},
     {name :<FaGithub/>,link : "https://github.com/pankaj143p"},
