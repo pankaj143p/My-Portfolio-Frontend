@@ -1,27 +1,27 @@
 import React from "react";
 import './style.css'
-import { FaGithub, FaInstagram, FaLinkedin,FaFacebook,FaTwitter} from "react-icons/fa6";
+import { FaGithub, FaInstagram, FaLinkedin, FaFacebook, FaTwitter } from "react-icons/fa6";
 import { IoMdMailUnread } from "react-icons/io";
 import { IoLogoWhatsapp } from "react-icons/io";
-  const social_media = [
-    {name :<FaLinkedin size={32}/>,link : "https://www.linkedin.com/in/pankaj-prajapati-7619bb226/"},
-    {name :<FaGithub size={32}/>,link : "https://github.com/pankaj143p"},
-    {name :<FaInstagram size={32}/>,link : "https://www.instagram.com/pankaj07._/"},
-    {name :<FaFacebook size={32}/> ,link : "https://www.facebook.com/profile.php?id=100070913362312"}, 
-    {name :<FaTwitter size={32}/>,link : "https://twitter.com/Pankaj07__"},
-  ];
+const social_media = [
+  { name: <FaLinkedin size={32} />, link: "https://www.linkedin.com/in/pankaj-prajapati-7619bb226/" },
+  { name: <FaGithub size={32} />, link: "https://github.com/pankaj143p" },
+  { name: <FaInstagram size={32} />, link: "https://www.instagram.com/pankaj07._/" },
+  { name: <FaFacebook size={32} />, link: "https://www.facebook.com/profile.php?id=100070913362312" },
+  { name: <FaTwitter size={32} />, link: "https://twitter.com/Pankaj07__" },
+];
 const Footer = () => {
-    // const contact_info = [
-    //     { logo: "mail", text: "pankaj114477pankaj@gmail.com" },
-    //     { logo: "logo-whatsapp", text: "+91 9179213653" },
-    //   ];
-      const contact_info = [
-        { logo: <IoMdMailUnread size={28}/>, text: "pankaj114477pankaj@gmail.com" },
-        { logo: <IoLogoWhatsapp size={28}/>, text: "+91 91xxxxxx53" },
-      ];
+  // const contact_info = [
+  //     { logo: "mail", text: "pankaj114477pankaj@gmail.com" },
+  //     { logo: "logo-whatsapp", text: "+91 9179213653" },
+  //   ];
+  const contact_info = [
+    { logo: <IoMdMailUnread size={28} />, text: "pankaj114477pankaj@gmail.com" },
+    { logo: <IoLogoWhatsapp size={28} />, text: "+91 91xxxxxx53" },
+  ];
   return (
     <footer>
-       {/* <div className="container">
+      {/* <div className="container">
         <div className="row">
         <div className="col-md-4 col-sm-0 mx-auto my-5">
        
@@ -38,15 +38,18 @@ const Footer = () => {
         </div>
         </div> */}
         
-        <h2 className="text-center text-4xl font-weight-bold">Contact Us</h2>
-        <div className="mt-8">
+        {/* contact us page */}
+
+      <h2 className="text-center text-4xl font-weight-bold">Contact Us</h2>
+      <div className="mt-8">
         <hr />
-        </div>
-        <div className="copyright bg-dark py-4 my-0 mx-0 text-white text-center">
-        <div  className="container text-[#8d9294]">
-        {/* <div  className="container text-[#374151]"> */}
-        <p className="text-4xl py-6">Pankaj Prajapati</p>
-        <div className="contact flex flex-col ml-8 my-0 gap-2 ">
+      </div>
+
+      <div className="copyright bg-dark py-4 my-0 mx-0 text-white text-center">
+        <div className="container text-[#8d9294]">
+          {/* <div  className="container text-[#374151]"> */}
+          <p className="text-4xl py-6">Pankaj Prajapati</p>
+          <div className="contact flex flex-col ml-8 my-0 gap-2 ">
             {contact_info.map((contact, i) => (
               <div
                 key={i}
@@ -75,15 +78,15 @@ const Footer = () => {
               </a>
             ))}
           </div>
-                <div>
-                    <p>&copy; 2024  Pankaj Prajapati. All rights reserved.</p>
-                </div>
+          <div>
+            <p>&copy; 2024  Pankaj Prajapati. All rights reserved.</p>
+          </div>
         </div>
-       
-                    </div>
+
+      </div>
     </footer>
-);
+  );
 };
 
-     
+
 export default Footer;
