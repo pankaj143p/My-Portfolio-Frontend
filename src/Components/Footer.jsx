@@ -10,6 +10,7 @@ const social_media = [
   { name: <FaFacebook size={32} />, link: "https://www.facebook.com/profile.php?id=100070913362312" },
   { name: <FaTwitter size={32} />, link: "https://twitter.com/Pankaj07__" },
 ];
+// footer 
 const Footer = () => {
   // const contact_info = [
   //     { logo: "mail", text: "pankaj114477pankaj@gmail.com" },
