@@ -10,6 +10,7 @@ import Hireme from './Components/Hireme';
 import Footer from './Components/Footer';
 import Certificates from './Components/Certificates';
 import Achievements from './Components/Achievements';
+import Temp from './Components/temp';
 
 
 
@@ -31,6 +32,7 @@ function App() {
       <Certificates/>       
       <Contact />
       <Footer />
+      <Temp></Temp>
     </>
    
   );
