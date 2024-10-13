@@ -9,18 +9,17 @@ import './style.css';
 export default function Achievements() {
   const myAchievements = [
     {
-      "des": "I got global rank 16th on CodeChef in Starters 124 and my highest rating is 1911 on Codechef",
+      "des": "I got global rank 19th on CodeChef in Starters 130 Division 4 (Rated) and my highest rating is 1911 on Codechef",
     },
     {
       "des": "I got AIR 16th on Coding Ninjas World cup event and also I solved 2000+ problems on Coding Ninjas.",
     },
     {
-      "des": "I'm knight coder with highest rating 1927 on Leetcode and also solved 700+ question on Leetcode.",
+      "des": "I'm knight coder with highest rating 1927 on Leetcode and also solved 900+ questions on Leetcode.",
     },
     {
-      "des": "I'm 4ht star coder with rating 1856 and college rank is 8 on Geeksfogeeks also I solved 700+ questions on Geeksforgeeks.",
+      "des": "I'm 4th Star coder with rating 1856 and college rank is 5 on Geeksfogeeks also I solved 700+ questions on Geeksforgeeks.",
     },
-
   ];
   //  coding profile list
   const codingProfiles = [
