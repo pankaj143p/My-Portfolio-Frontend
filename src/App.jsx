@@ -16,7 +16,7 @@ function App() {
   return (
    
     <>
-      <Navbar></Navbar>
+      <Navbar />
       <Bot />
       <Hero />
       <About />

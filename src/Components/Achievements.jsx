@@ -9,7 +9,7 @@ import './style.css';
 export default function Achievements() {
   const myAchievements = [
     {
-      "des": "I got global rank 16th on CodeChef in Starters 124 and my highest rating is 1861 on Codechef",
+      "des": "I got global rank 16th on CodeChef in Starters 124 and my highest rating is 1911 on Codechef",
     },
     {
       "des": "I got AIR 16th on Coding Ninjas World cup event and also I solved 2000+ problems on Coding Ninjas.",
@@ -22,6 +22,7 @@ export default function Achievements() {
     },
 
   ];
+  //  coding profile list
   const codingProfiles = [
     {
       img: codechef,
@@ -66,7 +67,7 @@ export default function Achievements() {
       </div>
 
       {/* <div className="bg-gray-700 py-8 relative px-8 rounded-2xl  mx-auto min-h-[24rem] mt-24 flex gap-6 lg:flex-row flex-col items-center"> */}
-      <div className='Achievements lg:px-36  px-20 center'>
+      <div className='Achievements lg:px-36  px-48 center'>
         {myAchievements.map((Achievements, idx) => (
           <div className='achievements self-center text-2xl border-4 border-cyan-700 rounded-2xl mt-12 p-6' key={idx}>{Achievements.des}
             {/* <p className='description'>{Achievements.dis}</p> */}
