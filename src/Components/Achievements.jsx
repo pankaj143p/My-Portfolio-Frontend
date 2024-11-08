@@ -56,9 +56,9 @@ export default function Achievements() {
   ]
 
   return (
-    <section id="hireme" className="ml-[-12px] lg:ml-0 py-10 text-white">
+    <section id="hireme" className="flex flex-col lg:ml-0 py-10 text-white">
       <div className="text-center">
-        <h3 className="text-4xl font-semibold">
+        <h3 className="text-4xl font-semibold ml-16 lg:ml-0">
           My <span className="text-cyan-600">Achievements</span>
         </h3>
 
@@ -66,7 +66,7 @@ export default function Achievements() {
       </div>
 
       {/* <div className="bg-gray-700 py-8 relative px-8 rounded-2xl  mx-auto min-h-[24rem] mt-24 flex gap-6 lg:flex-row flex-col items-center"> */}
-      <div className='Achievements lg:px-36  px-48 center'>
+      <div className='Achievements lg:px-36  px-24 center'>
         {myAchievements.map((Achievements, idx) => (
           <div className='achievements self-center text-2xl border-4 border-cyan-700 rounded-2xl mt-12 p-6' key={idx}>{Achievements.des}
             {/* <p className='description'>{Achievements.dis}</p> */}
@@ -75,11 +75,11 @@ export default function Achievements() {
 
         ))}
         {/* coding profiles */}
-        <div className="mt-12 text-center coding-profiles ml-[-8px] lg:ml-0">
-          <h3 className="text-4xl font-semibold">
+        <div className="mt-12 text-center coding-profiles ml-[-16px] lg:ml-0">
+          <h3 className="text-4xl font-semibold lg:ml-0 ml-16 pt-4">
             Coding <span className="text-cyan-600">Profiles</span>
           </h3>
-          <div className='mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>{codingProfiles.map((cp, idx) => (
+          <div className='mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>{codingProfiles.map((cp, idx) => (
             <div className='items-center border-2 mt-14 rounded-3xl w-64 bg-[#1F2937] py-6 px-6 text-center text-cyan-600' key={idx}>
               <div className='flex justify-center items-center mb-2'>
                 <img className='self-center h-16' src={cp.img} alt="" />
