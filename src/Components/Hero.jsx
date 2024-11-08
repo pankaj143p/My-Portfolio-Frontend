@@ -15,13 +15,13 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="hero lg:pl-0 pl-24 flex py-24 md:flex-row flex-col items-center"
+       className="hero lg:pl-0 pl-24 flex py-24 md:flex-row flex-col items-center"
     >
       {/* <div className="flex-1 flex items-center justify-center">
         <img src={hero} alt="" className="md:w-64 h-64 h-full object-cover " />
       </div> */}
     
-      <div className="flex-1 md:mt-12 mt-16 flex justify-center items-center">
+      <div className="flex-1 md:mt-12 mt-16 flex justify-center items-center mr-8 lg:mr-0 mb-4 lg:mb-0">
             <div className="myImg lg:w-80 h-full relative sm:w-10/12 w-11/12 max-w-sm aboutImg ">
               <img
                 src={hero}
@@ -30,7 +30,7 @@ const Hero = () => {
               />
             </div>
           </div>
-      <div className="flex-1 mt-40px">
+      <div className="flex-1 mt-40px mr-12 lg:mr-0">
         <div className="md:text-left mt-4  text-center">
           <h1 className="md:text-5xl text-2xl md:leading-normal leading-10 text-white font-bold">
             <span className="text-cyan-600 md:text-6xl text-5xl">

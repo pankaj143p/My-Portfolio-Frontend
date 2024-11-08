@@ -88,7 +88,7 @@ const Skills = () => {
     }
   ];
   return (
-      <section id="skills" className="py-10 bg-gray-800 relative">
+      <section id="skills" className="py-10 bg-gray-800 relative lg:ml-0 mx-7 w-full">
         <div className="mt-4 text-gray-100 text-center">
           <h1 className="text-6xl font-semibold">
             My <span className="text-cyan-600">Skills</span>
@@ -119,7 +119,7 @@ const Skills = () => {
         </div>
         {/* <div className="flex items-center"> */}
         <p className="text-gray-400 p-2 text-center mt-20 text-4xl self-center">Programming languages</p>
-        <Carousel responsive={responsive} infinite={true} className=" owl-carousel owl-theme mt-28 lg:mr-12 skill-slider">
+        <Carousel responsive={responsive} infinite={true} className=" owl-carousel owl-theme mt-28 lg:mb-4 skill-slider">
                 <div className="item ml-[-56px] lg:ml-0">
                   <div style={{ width: 150, marginLeft: 520 }}>
                   

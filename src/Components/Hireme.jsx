@@ -5,7 +5,7 @@ import './frame.css'
 // hire me section
 const Hireme = ({ altText }) => {
   return (
-    <section id="hireme" className="py-10 px-3 text-white">
+    <section id="hireme" className="py-10 lg:px-3 lg:ml-0 ml-12 text-white">
       <div className="text-center">
         <h3 className="text-4xl font-semibold">
           Hire <span className="text-cyan-600">Me</span>

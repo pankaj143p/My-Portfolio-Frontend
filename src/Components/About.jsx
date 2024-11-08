@@ -10,14 +10,14 @@ const About = () => {
     { text: "Certifications",count: "20"}
   ];
   return (
-    <section id="about" className="about text-white lg:pr-12 lg:ml-0 ml-24 ">
+    <section id="about"   className="about text-white lg:pr-12 lg:ml-0 ml-24">
       <div className="text-center mt-4">
         <h3 className="mt-12 lg:mt-0  lg:text-center text-4xl font-semibold">
           About <span className="text-cyan-600">Me</span>
         </h3>
         {/* <p className="text-gray-400 my-3 text-lg">My introduction</p> */}
-        <div className="flex md:flex-row flex-col-reverse items-center md:gap-6 gap-12 lg:px-10 max-w-6xl mx-h-auto mx-auto">
-          <div className="px-4">
+        <div className="flex md:flex-row flex-col-reverse items-center md:gap-6 gap-12 lg:px-10 max-w-6xl mx-h-auto mx-auto mr-">
+          <div className="px-4 pr-12 lg:pr-0">
             <div className="text-gray-300 ">
               <p className=" lg:px-4 text-justify leading-8 text-2xl lg:w-18/14 w-full mx-auto">
                Hello, I'm Pankaj Prajapati a passionate MERN Stack Developer 
