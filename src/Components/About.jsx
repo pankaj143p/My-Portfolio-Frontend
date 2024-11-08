@@ -10,16 +10,16 @@ const About = () => {
     { text: "Certifications",count: "20"}
   ];
   return (
-    <section id="about" className="about text-white">
+    <section id="about" className="about text-white lg:pr-12 lg:ml-0 ml-24 ">
       <div className="text-center mt-4">
-        <h3 className="my-3 text-center text-4xl font-semibold">
+        <h3 className="mt-12 lg:mt-0  lg:text-center text-4xl font-semibold">
           About <span className="text-cyan-600">Me</span>
         </h3>
         {/* <p className="text-gray-400 my-3 text-lg">My introduction</p> */}
-        <div className="flex md:flex-row flex-col-reverse items-center md:gap-6 gap-12 px-10 max-w-6xl mx-h-auto mx-auto">
+        <div className="flex md:flex-row flex-col-reverse items-center md:gap-6 gap-12 lg:px-10 max-w-6xl mx-h-auto mx-auto">
           <div className="px-4">
             <div className="text-gray-300 ">
-              <p className=" px-4 text-justify leading-8 text-2xl w-18/14 mx-auto">
+              <p className=" lg:px-4 text-justify leading-8 text-2xl lg:w-18/14 w-full mx-auto">
                Hello, I'm Pankaj Prajapati a passionate MERN Stack Developer 
                and a dedicated student pursuing a Bachelor's degree in 
                Computer Science with a focus on Artificial Intelligence 
@@ -45,7 +45,7 @@ const About = () => {
              
             </div>
           </div>
-          <div className="flex-1 md:mt-0 mt-2 w-full ml-4 flex justify-center items-center lg:mb-32">
+          <div className="flex-1 md:mt-0 mt-2 w-full  lg:ml-4 flex justify-center items-center lg:mb-32 ">
             <div className="lg:w-64 h-full relative sm:w-10/12 w-11/12 max-w-sm aboutImg mt-12 lg:mb-4">
               <img
                 src={aboutImg}

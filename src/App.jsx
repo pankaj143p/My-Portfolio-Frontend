@@ -16,6 +16,7 @@ function App() {
   return (
    
     <>
+
       <Navbar />
       <Bot />
       <Hero />
@@ -27,7 +28,7 @@ function App() {
       <Certificates/>       
       <Contact />
       <Footer />
-      
+
     </>
    
   );
