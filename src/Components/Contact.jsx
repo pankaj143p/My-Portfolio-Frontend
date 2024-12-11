@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios"
-import { IoIosMail } from "react-icons/io";
+import {useEffect} from "react";
 
 const Contact = () => {
 
@@ -13,13 +13,6 @@ const Contact = () => {
     e.preventDefault();
     console.log(name,email,message);
     axios.post('http://localhost:3001/data',{name,email,message})
-
-    // .then(()=>alert("Your message has been sent!"))
-    // .catch((err)=>console.log(err));
-
-
-    // .then(res=>console.log(res))
-    // .catch(err=>console.log(err))
   }
   
 
