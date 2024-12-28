@@ -78,7 +78,7 @@ const myCertificates = [
 //   );
 
 return (
-    <div>
+    <div className='lg:mx-0 mx-[-100px]'>
       <section id="certificates" className="py-10 bg-gray-800 relative">
         <div className="mt-8 text-gray-100 text-center">
           <h1 className="text-4xl font-semibold">
