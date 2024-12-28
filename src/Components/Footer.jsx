@@ -21,7 +21,7 @@ const Footer = () => {
     { logo: <IoLogoWhatsapp size={28} />, text: "+91 91xxxxxx53" },
   ];
   return (
-    <footer>
+    <footer className=" mr-[-100px] lg:mr-0">
       {/* <div className="container">
         <div className="row">
         <div className="col-md-4 col-sm-0 mx-auto my-5">
