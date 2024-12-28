@@ -78,8 +78,8 @@ const myCertificates = [
 //   );
 
 return (
-    <div className='lg:mx-0 mx-[-100px]'>
-      <section id="certificates" className="py-10 bg-gray-800 relative">
+    <div className='lg:mx-0 mx-[-90px]'>
+      <section id="certificates" className="py-10 bg-gray-800 relative ml-12 lg:ml-0">
         <div className="mt-8 text-gray-100 text-center">
           <h1 className="text-4xl font-semibold">
             My <span className="text-cyan-600 my-10">Certifications</span>
