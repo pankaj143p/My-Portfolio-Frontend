@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from "lucide-react";
 import { FaGithub, FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa6";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -18,6 +19,12 @@ const Contact = () => {
     triggerOnce: true,
   });
 
+  // EmailJS configuration - Using environment variables for security
+  const EMAIL_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const EMAIL_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const EMAIL_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+  const CONTACT_EMAIL = import.meta.env.VITE_CONTACT_EMAIL || 'pankaj114477pankaj@gmail.com';
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -29,18 +36,58 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setFormStatus('sending');
-    
-    // Simulate form submission
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
-      setFormStatus('sent');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+
+    try {
+      // Using EmailJS to send email directly from frontend
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: CONTACT_EMAIL, // Your email where you want to receive messages
+      };
+
+      const result = await emailjs.send(
+        EMAIL_SERVICE_ID,
+        EMAIL_TEMPLATE_ID,
+        templateParams,
+        EMAIL_PUBLIC_KEY
+      );
+
+      if (result.status === 200) {
+        setFormStatus('sent');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        
+        // Reset status after 5 seconds
+        setTimeout(() => {
+          setFormStatus('idle');
+        }, 5000);
+      } else {
+        throw new Error('Failed to send email');
+      }
+    } catch (error) {
+      console.error('Email sending failed:', error);
+      setFormStatus('error');
       
-      // Reset status after 3 seconds
+      // Reset error status after 5 seconds
       setTimeout(() => {
         setFormStatus('idle');
-      }, 3000);
-    }, 1000);
+      }, 5000);
+    }
+  };
+
+  // Alternative method using mailto (simpler but less seamless)
+  const handleMailtoSubmit = (e) => {
+    e.preventDefault();
+    const mailtoLink = `mailto:pankaj114477pankaj@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    )}`;
+    window.location.href = mailtoLink;
+    
+    setFormStatus('sent');
+    setTimeout(() => {
+      setFormStatus('idle');
+    }, 3000);
   };
 
   const contactInfo = [
@@ -165,7 +212,7 @@ const Contact = () => {
                 Send me a message
               </h3>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleMailtoSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <motion.div variants={itemVariants}>
                     <label className="block text-gray-300 mb-2 font-medium">Your Name</label>
@@ -219,36 +266,84 @@ const Contact = () => {
                   ></textarea>
                 </motion.div>
 
-                <motion.button
-                  variants={itemVariants}
-                  type="submit"
-                  disabled={formStatus === 'sending'}
-                  className="btn-primary w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {formStatus === 'sending' ? (
-                    <>
-                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                      Sending...
-                    </>
-                  ) : formStatus === 'sent' ? (
-                    <>
-                      <CheckCircle className="w-5 h-5" />
-                      Message Sent!
-                    </>
-                  ) : (
-                    <>
-                      <Send className="w-5 h-5" />
-                      Send Message
-                    </>
-                  )}
-                </motion.button>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <motion.button
+                    variants={itemVariants}
+                    type="submit"
+                    disabled={formStatus === 'sending'}
+                    className="btn-primary flex-1 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {formStatus === 'sending' ? (
+                      <>
+                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                        Opening Email...
+                      </>
+                    ) : formStatus === 'sent' ? (
+                      <>
+                        <CheckCircle className="w-5 h-5" />
+                        Email Opened!
+                      </>
+                    ) : (
+                      <>
+                        <Mail className="w-5 h-5" />
+                        Send via Email
+                      </>
+                    )}
+                  </motion.button>
+
+                  {/* Alternative direct contact button */}
+                  <motion.a
+                    variants={itemVariants}
+                    href="mailto:pankaj114477pankaj@gmail.com?subject=Portfolio Contact&body=Hi Pankaj,%0D%0A%0D%0AI'm interested in discussing a project with you.%0D%0A%0D%0ABest regards,"
+                    className="px-6 py-3 bg-white/5 hover:bg-white/10 text-white rounded-xl font-semibold text-center flex items-center justify-center gap-2 transition-all duration-300 border border-white/10 hover:border-cyan-400/50"
+                  >
+                    <Send className="w-5 h-5" />
+                    Quick Email
+                  </motion.a>
+                </div>
 
                 {formStatus === 'error' && (
-                  <div className="flex items-center gap-2 text-red-400">
+                  <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="flex items-center gap-2 text-red-400 p-3 bg-red-500/10 rounded-xl border border-red-500/20"
+                  >
                     <AlertCircle className="w-5 h-5" />
-                    <span>Failed to send message. Please try again.</span>
-                  </div>
+                    <span>Failed to send message. Please try the "Quick Email" option or contact me directly.</span>
+                  </motion.div>
                 )}
+
+                {formStatus === 'sent' && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="flex items-center gap-2 text-green-400 p-3 bg-green-500/10 rounded-xl border border-green-500/20"
+                  >
+                    <CheckCircle className="w-5 h-5" />
+                    <span>Your email app should open with the message pre-filled. Thanks for reaching out!</span>
+                  </motion.div>
+                )}
+
+                <div className="text-center pt-4 border-t border-white/10">
+                  <p className="text-gray-400 text-sm mb-3">
+                    Or contact me directly:
+                  </p>
+                  <div className="flex flex-wrap justify-center gap-4">
+                    <a
+                      href="mailto:pankaj114477pankaj@gmail.com"
+                      className="text-cyan-400 hover:text-cyan-300 transition-colors"
+                    >
+                      pankaj114477pankaj@gmail.com
+                    </a>
+                    <span className="text-gray-600">•</span>
+                    <a
+                      href="tel:+919179213653"
+                      className="text-cyan-400 hover:text-cyan-300 transition-colors"
+                    >
+                      +91 9179213653
+                    </a>
+                  </div>
+                </div>
               </form>
             </motion.div>
           </motion.div>
