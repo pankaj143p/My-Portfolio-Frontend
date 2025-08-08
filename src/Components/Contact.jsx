@@ -37,6 +37,23 @@ const Contact = () => {
     e.preventDefault();
     setFormStatus('sending');
 
+    // Debug: Log environment variables (remove in production)
+    console.log('EmailJS Config:', {
+      serviceId: EMAIL_SERVICE_ID,
+      templateId: EMAIL_TEMPLATE_ID,
+      publicKey: EMAIL_PUBLIC_KEY ? '***hidden***' : 'MISSING'
+    });
+
+    // Check if all required EmailJS variables are present
+    if (!EMAIL_SERVICE_ID || !EMAIL_TEMPLATE_ID || !EMAIL_PUBLIC_KEY) {
+      console.error('Missing EmailJS configuration');
+      setFormStatus('error');
+      setTimeout(() => {
+        setFormStatus('idle');
+      }, 5000);
+      return;
+    }
+
     try {
       // Using EmailJS to send email directly from frontend
       const templateParams = {
@@ -61,12 +78,16 @@ const Contact = () => {
         portfolio_url: window.location.origin,
       };
 
+      console.log('Sending email with params:', templateParams);
+
       const result = await emailjs.send(
         EMAIL_SERVICE_ID,
         EMAIL_TEMPLATE_ID,
         templateParams,
         EMAIL_PUBLIC_KEY
       );
+
+      console.log('EmailJS Result:', result);
 
       if (result.status === 200) {
         setFormStatus('sent');
