@@ -269,7 +269,7 @@ export default function Certificates() {
             { label: "Total Certificates", value: myCertificates.length },
             { label: "Categories", value: categories.length },
             { label: "Years Active", value: "3+" },
-            { label: "Skills Covered", value: "50+" },
+            { label: "Skills Covered", value: "20+" },
           ].map((stat, index) => (
             <motion.div
               key={index}
