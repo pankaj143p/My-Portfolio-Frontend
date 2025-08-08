@@ -101,8 +101,8 @@ const Contact = () => {
     {
       icon: Phone,
       label: "Phone",
-      value: "+91 9179213653",
-      link: "tel:+919179213653",
+      value: "+91 9179*****3",
+      link: "tel:+919179*****3",
       color: "text-green-400"
     },
     {
@@ -337,10 +337,10 @@ const Contact = () => {
                     </a>
                     <span className="text-gray-600">•</span>
                     <a
-                      href="tel:+919179213653"
+                      href="tel:+919179*****3"
                       className="text-cyan-400 hover:text-cyan-300 transition-colors"
                     >
-                      +91 9179213653
+                      +91 9179*****3
                     </a>
                   </div>
                 </div>

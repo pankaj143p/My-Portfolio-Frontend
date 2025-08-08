@@ -14,7 +14,7 @@ const Footer = () => {
 
   const contact_info = [
     { icon: <Mail size={20} />, text: "pankaj114477pankaj@gmail.com", link: "mailto:pankaj114477pankaj@gmail.com" },
-    { icon: <Phone size={20} />, text: "+91 91xxxxxx53", link: "tel:+919179213653" },
+    { icon: <Phone size={20} />, text: "+91 91xxxxxx53", link: "tel:+919179*****3" },
     { icon: <MapPin size={20} />, text: "India", link: "#" },
   ];
 
