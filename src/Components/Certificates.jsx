@@ -292,46 +292,88 @@ export default function Certificates() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-start sm:items-center justify-center sm:p-4 pt-4 sm:pt-4 overflow-y-auto"
             onClick={() => setSelectedCertificate(null)}
           >
             <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              className="glass-card p-6 max-w-2xl w-full max-h-[90vh] overflow-auto"
+              initial={{ scale: 0.8, opacity: 0, y: 50 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.8, opacity: 0, y: 50 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="glass-card p-4 sm:p-6 w-full max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl my-4 sm:my-8 max-h-[calc(100vh-2rem)] sm:max-h-[calc(100vh-4rem)] overflow-y-auto rounded-2xl"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="flex justify-between items-start mb-6">
-                <h3 className="text-2xl font-bold text-white">{selectedCertificate.title}</h3>
+              {/* Header */}
+              <div className="flex justify-between items-start mb-4 mt-8 sm:mb-6">
+                <div className="flex-1 pr-4">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white leading-tight">
+                    {selectedCertificate.title}
+                  </h3>
+                  <div className="mt-2 px-3 py-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs font-semibold rounded-full inline-block">
+                    {selectedCertificate.category}
+                  </div>
+                </div>
                 <button
                   onClick={() => setSelectedCertificate(null)}
-                  className="p-2 rounded-xl hover:bg-white/10 transition-colors"
+                  className="p-2 rounded-xl hover:bg-white/10 transition-colors flex-shrink-0"
                 >
-                  <X className="w-6 h-6 text-gray-400" />
+                  <X className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400" />
                 </button>
               </div>
               
-              <img
-                src={selectedCertificate.img}
-                alt={selectedCertificate.title}
-                className="w-full rounded-xl mb-6"
-              />
+              {/* Certificate Image */}
+              <div className="relative mb-4 sm:mb-6">
+                <img
+                  src={selectedCertificate.img}
+                  alt={selectedCertificate.title}
+                  className="w-full rounded-xl shadow-2xl"
+                />
+                <div className="absolute top-4 right-4 p-2 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full">
+                  <Award className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                </div>
+              </div>
               
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 text-gray-300">
-                  <Building2 className="w-5 h-5" />
-                  <span>{selectedCertificate.issuer}</span>
+              {/* Certificate Details */}
+              <div className="space-y-3 sm:space-y-4">
+                <div className="flex items-start gap-3 text-gray-300">
+                  <Building2 className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <div className="text-xs sm:text-sm text-gray-400 mb-1">Issued by</div>
+                    <div className="text-sm sm:text-base font-medium">{selectedCertificate.issuer}</div>
+                  </div>
                 </div>
                 
-                <div className="flex items-center gap-3 text-gray-300">
-                  <Calendar className="w-5 h-5" />
-                  <span>{selectedCertificate.date}</span>
+                <div className="flex items-start gap-3 text-gray-300">
+                  <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <div className="text-xs sm:text-sm text-gray-400 mb-1">Completed in</div>
+                    <div className="text-sm sm:text-base font-medium">{selectedCertificate.date}</div>
+                  </div>
                 </div>
                 
-                <p className="text-gray-300 leading-relaxed">
-                  {selectedCertificate.description}
-                </p>
+                <div className="pt-2 border-t border-white/10">
+                  <div className="text-xs sm:text-sm text-gray-400 mb-2">Description</div>
+                  <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
+                    {selectedCertificate.description}
+                  </p>
+                </div>
+              </div>
+
+              {/* Action Buttons - Mobile Friendly */}
+              <div className="mt-6 pt-4 border-t border-white/10 flex flex-col sm:flex-row gap-3">
+                <button
+                  onClick={() => setSelectedCertificate(null)}
+                  className="flex-1 px-4 py-3 bg-white/5 hover:bg-white/10 text-white rounded-xl transition-colors text-sm font-medium"
+                >
+                  Close
+                </button>
+                <button 
+                  onClick={() => window.open(selectedCertificate.img, '_blank')}
+                  className="flex-1 px-4 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white rounded-xl transition-all duration-300 flex items-center justify-center gap-2 text-sm font-medium"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  View Full Size
+                </button>
               </div>
             </motion.div>
           </motion.div>
