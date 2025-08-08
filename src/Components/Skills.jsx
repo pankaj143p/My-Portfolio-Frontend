@@ -8,7 +8,6 @@ import {
   SiNodedotjs, 
   SiMongodb, 
   SiPython, 
-  SiJava,
   SiCplusplus,
   SiHtml5,
   SiCss3,
@@ -19,6 +18,7 @@ import {
   SiAmazonaws,
   SiMysql
 } from 'react-icons/si';
+import { FaJava } from 'react-icons/fa';
 import { Database, Code2, Palette, Cloud, Settings } from 'lucide-react';
 
 const Skills = () => {
@@ -48,7 +48,7 @@ const Skills = () => {
         { name: "Node.js", icon: SiNodedotjs, level: 80, color: "#339933" },
         { name: "Express.js", icon: SiExpress, level: 78, color: "#000000" },
         { name: "Python", icon: SiPython, level: 75, color: "#3776AB" },
-        { name: "Java", icon: SiJava, level: 70, color: "#007396" },
+        { name: "Java", icon: FaJava, level: 70, color: "#007396" },
         { name: "C++", icon: SiCplusplus, level: 65, color: "#00599C" },
       ]
     },

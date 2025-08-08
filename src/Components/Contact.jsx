@@ -1,66 +1,324 @@
 import React, { useState } from "react";
-import axios from "axios"
-import {useEffect} from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from "lucide-react";
+import { FaGithub, FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa6";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [formStatus, setFormStatus] = useState('idle'); // idle, sending, sent, error
 
-  const [name,setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
 
-  async function submit(e){
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(name,email,message);
-    axios.post('http://localhost:3001/data',{name,email,message})
-  }
-  
+    setFormStatus('sending');
+    
+    // Simulate form submission
+    setTimeout(() => {
+      console.log('Form submitted:', formData);
+      setFormStatus('sent');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      
+      // Reset status after 3 seconds
+      setTimeout(() => {
+        setFormStatus('idle');
+      }, 3000);
+    }, 1000);
+  };
 
-        // await axios.post("http://localhost:8000/",{
-        //     name,email,message
-        // })
+  const contactInfo = [
+    {
+      icon: Mail,
+      label: "Email",
+      value: "pankaj114477pankaj@gmail.com",
+      link: "mailto:pankaj114477pankaj@gmail.com",
+      color: "text-blue-400"
+    },
+    {
+      icon: Phone,
+      label: "Phone",
+      value: "+91 9179213653",
+      link: "tel:+919179213653",
+      color: "text-green-400"
+    },
+    {
+      icon: MapPin,
+      label: "Location",
+      value: "India",
+      link: "#",
+      color: "text-red-400"
+    },
+  ];
 
-  
+  const socialLinks = [
+    {
+      name: "GitHub",
+      icon: FaGithub,
+      link: "https://github.com/pankaj143p",
+      color: "hover:text-gray-300"
+    },
+    {
+      name: "LinkedIn",
+      icon: FaLinkedin,
+      link: "https://www.linkedin.com/in/pankaj-prajapati-7619bb226/",
+      color: "hover:text-blue-500"
+    },
+    {
+      name: "Instagram",
+      icon: FaInstagram,
+      link: "https://www.instagram.com/pankaj07._/",
+      color: "hover:text-pink-500"
+    },
+    {
+      name: "Twitter",
+      icon: FaTwitter,
+      link: "https://twitter.com/Pankaj07__",
+      color: "hover:text-sky-400"
+    },
+  ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
+      },
+    },
+  };
 
-  // const contact_info = [
-  //   { logo: "mail", text: "pankaj114477pankaj@gmail.com" },
-  //   { logo: "logo-whatsapp", text: "+91 9179213653" },
-  // ];
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
-    <section id="contact" className="py-10 px-3 text-white ml-16 lg:ml-0">
-      <div className="text-center mt-8">
-        <h3 className="text-4xl font-semibold">
-          Contact <span className="text-cyan-600">Me</span>
-        </h3>
-        <p className="text-gray-400 mt-3 text-lg">Get in touch</p>
+    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-purple-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-cyan-500/5 rounded-full blur-3xl"></div>
+      </div>
 
-        <div
-          className="mt-16 flex md:flex-row flex-col
-         gap-6 max-w-5xl bg-gray-800 md:p-6 p-2 rounded-lg mx-auto"
+      <div className="max-w-7xl mx-auto relative z-10">
+        <motion.div
+          ref={ref}
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          className="text-center mb-16"
         >
-          <form className="flex flex-col flex-1 gap-5">
-            <input type="text" onChange={(e)=> {setName(e.target.value)}} placeholder="Your Name" />
-            <input type="email" onChange={(e) => { setEmail(e.target.value) }} placeholder="Your Email Address" />
-            <textarea placeholder="Your Message" onChange={(e)=> {setMessage(e.target.value)}} rows={10}></textarea>
-            <button className="btn-primary w-fit" onClick={submit}>Send Message</button>
-          </form>
-          <div className="flex flex-col  gap-7 ">
-            {/* {contact_info.map((contact, i) => (
-              <div
-                key={i}
-                className="flex flex-row  
-                  text-left gap-4 flex-wrap items-center"
-              >
-                <div className="min-w-[3.5rem]  text-3xl min-h-[3.5rem] flex items-center justify-center text-white bg-cyan-600 rounded-full">
-                  <ion-icon name={contact.logo}></ion-icon>
+          <motion.h2
+            variants={itemVariants}
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4"
+          >
+            Get In <span className="gradient-text">Touch</span>
+          </motion.h2>
+          <motion.div
+            variants={itemVariants}
+            className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 mx-auto rounded-full mb-6"
+          ></motion.div>
+          <motion.p
+            variants={itemVariants}
+            className="text-gray-400 text-lg max-w-2xl mx-auto"
+          >
+            Have a project in mind? Let's discuss how we can work together to bring your ideas to life.
+          </motion.p>
+        </motion.div>
+
+        <div className="grid lg:grid-cols-5 gap-12 items-start">
+          {/* Contact Form */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            className="lg:col-span-3"
+          >
+            <motion.div variants={itemVariants} className="glass-card p-8">
+              <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                <Send className="w-6 h-6 text-cyan-400" />
+                Send me a message
+              </h3>
+              
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <motion.div variants={itemVariants}>
+                    <label className="block text-gray-300 mb-2 font-medium">Your Name</label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      placeholder="John Doe"
+                      required
+                      className="w-full"
+                    />
+                  </motion.div>
+                  <motion.div variants={itemVariants}>
+                    <label className="block text-gray-300 mb-2 font-medium">Your Email</label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder="john@example.com"
+                      required
+                      className="w-full"
+                    />
+                  </motion.div>
                 </div>
-                <p className="md:text-base text-sm  break-words">
-                  {contact.text}
-                </p>
+                
+                <motion.div variants={itemVariants}>
+                  <label className="block text-gray-300 mb-2 font-medium">Subject</label>
+                  <input
+                    type="text"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleInputChange}
+                    placeholder="Project Discussion"
+                    required
+                    className="w-full"
+                  />
+                </motion.div>
+                
+                <motion.div variants={itemVariants}>
+                  <label className="block text-gray-300 mb-2 font-medium">Message</label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    placeholder="Tell me about your project..."
+                    rows={6}
+                    required
+                    className="w-full resize-none"
+                  ></textarea>
+                </motion.div>
+
+                <motion.button
+                  variants={itemVariants}
+                  type="submit"
+                  disabled={formStatus === 'sending'}
+                  className="btn-primary w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {formStatus === 'sending' ? (
+                    <>
+                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                      Sending...
+                    </>
+                  ) : formStatus === 'sent' ? (
+                    <>
+                      <CheckCircle className="w-5 h-5" />
+                      Message Sent!
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-5 h-5" />
+                      Send Message
+                    </>
+                  )}
+                </motion.button>
+
+                {formStatus === 'error' && (
+                  <div className="flex items-center gap-2 text-red-400">
+                    <AlertCircle className="w-5 h-5" />
+                    <span>Failed to send message. Please try again.</span>
+                  </div>
+                )}
+              </form>
+            </motion.div>
+          </motion.div>
+
+          {/* Contact Info */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            className="lg:col-span-2 space-y-8"
+          >
+            {/* Contact Information */}
+            <motion.div variants={itemVariants} className="glass-card p-6">
+              <h3 className="text-xl font-bold text-white mb-6">Contact Information</h3>
+              <div className="space-y-4">
+                {contactInfo.map((info, index) => {
+                  const IconComponent = info.icon;
+                  return (
+                    <motion.a
+                      key={index}
+                      href={info.link}
+                      variants={itemVariants}
+                      whileHover={{ scale: 1.02, x: 10 }}
+                      className="flex items-center gap-4 p-3 rounded-xl hover:bg-white/5 transition-all duration-300 group"
+                    >
+                      <div className={`p-3 rounded-xl bg-gradient-to-r from-slate-700 to-slate-600 ${info.color} group-hover:scale-110 transition-transform`}>
+                        <IconComponent className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <p className="text-gray-400 text-sm">{info.label}</p>
+                        <p className="text-white font-medium">{info.value}</p>
+                      </div>
+                    </motion.a>
+                  );
+                })}
               </div>
-            ))} */}
-          </div>
+            </motion.div>
+
+            {/* Social Links */}
+            <motion.div variants={itemVariants} className="glass-card p-6">
+              <h3 className="text-xl font-bold text-white mb-6">Follow Me</h3>
+              <div className="grid grid-cols-2 gap-4">
+                {socialLinks.map((social, index) => {
+                  const IconComponent = social.icon;
+                  return (
+                    <motion.a
+                      key={index}
+                      href={social.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.05, y: -5 }}
+                      whileTap={{ scale: 0.95 }}
+                      className={`flex items-center gap-3 p-3 rounded-xl bg-slate-700/30 text-gray-400 ${social.color} transition-all duration-300 hover:bg-slate-600/30`}
+                    >
+                      <IconComponent className="w-5 h-5" />
+                      <span className="font-medium">{social.name}</span>
+                    </motion.a>
+                  );
+                })}
+              </div>
+            </motion.div>
+
+            {/* Call to Action */}
+            <motion.div variants={itemVariants} className="glass-card p-6 text-center">
+              <h3 className="text-lg font-bold text-white mb-3">Let's Build Something Amazing Together!</h3>
+              <p className="text-gray-400 text-sm">
+                I'm always excited to work on new projects and collaborate with fellow developers and designers.
+              </p>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>
