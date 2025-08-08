@@ -1,0 +1,28 @@
+🚀 NEW PORTFOLIO CONTACT
+========================
+
+You have received a new message from your portfolio contact form!
+
+👤 SENDER INFORMATION
+━━━━━━━━━━━━━━━━━━━━━
+Name: {{from_name}}
+Email: {{from_email}}
+Subject: {{subject}}
+
+📅 MESSAGE DETAILS
+━━━━━━━━━━━━━━━━━━━
+Received: {{current_date}} at {{current_time}}
+Source: Portfolio Contact Form
+
+💬 MESSAGE CONTENT
+━━━━━━━━━━━━━━━━━━━━
+{{message}}
+
+🔗 QUICK ACTIONS
+━━━━━━━━━━━━━━━━━
+Reply directly to: {{from_email}}
+Portfolio URL: {{portfolio_url}}
+
+---
+This message was sent from your portfolio contact form.
+© 2025 Pankaj Prajapati - Full Stack Developer

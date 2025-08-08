@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Portfolio Contact</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #f8fafc;
+        }
+        .email-container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: 20px;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .header p {
+            margin: 8px 0 0 0;
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        .content {
+            padding: 30px 20px;
+        }
+        .message-header {
+            background-color: #f1f5f9;
+            border-left: 4px solid #3b82f6;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+        }
+        .sender-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-right: 15px;
+        }
+        .sender-details h3 {
+            margin: 0 0 5px 0;
+            color: #1e293b;
+            font-size: 18px;
+        }
+        .sender-details p {
+            margin: 0;
+            color: #64748b;
+            font-size: 14px;
+        }
+        .email-link {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        .email-link:hover {
+            text-decoration: underline;
+        }
+        .subject-line {
+            background-color: #dbeafe;
+            border: 1px solid #93c5fd;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .subject-line strong {
+            color: #1e40af;
+        }
+        .message-content {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            white-space: pre-wrap;
+            line-height: 1.6;
+        }
+        .metadata {
+            background-color: #f8fafc;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .metadata table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .metadata td {
+            padding: 5px 0;
+            font-size: 14px;
+        }
+        .metadata .label {
+            font-weight: 600;
+            color: #475569;
+            width: 100px;
+        }
+        .metadata .value {
+            color: #1e293b;
+        }
+        .footer {
+            background-color: #1e293b;
+            color: #94a3b8;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+        }
+        .footer a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+        .urgent-badge {
+            background-color: #dc2626;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .priority-high {
+            border-left-color: #dc2626 !important;
+        }
+        @media (max-width: 600px) {
+            .email-container {
+                margin: 10px;
+                border-radius: 8px;
+            }
+            .header {
+                padding: 20px 15px;
+            }
+            .content {
+                padding: 20px 15px;
+            }
+            .sender-info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .avatar {
+                margin-bottom: 10px;
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🚀 New Portfolio Contact</h1>
+            <p>Someone wants to connect with you!</p>
+        </div>
+        
+        <!-- Content -->
+        <div class="content">
+            <!-- Message Header -->
+            <div class="message-header">
+                <div class="sender-info">
+                    <div class="avatar">
+                        👤
+                    </div>
+                    <div class="sender-details">
+                        <h3>{{from_name}}</h3>
+                        <p><a href="mailto:{{from_email}}" class="email-link">{{from_email}}</a></p>
+                    </div>
+                </div>
+                
+                <!-- Subject -->
+                <div class="subject-line">
+                    <strong>Subject:</strong> {{subject}}
+                </div>
+            </div>
+            
+            <!-- Message Content -->
+            <div class="message-content">{{message}}</div>
+            
+            <!-- Metadata -->
+            <div class="metadata">
+                <table>
+                    <tr>
+                        <td class="label">Received:</td>
+                        <td class="value">{{current_date}} at {{current_time}}</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Source:</td>
+                        <td class="value">Portfolio Contact Form</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Reply To:</td>
+                        <td class="value"><a href="mailto:{{reply_to}}" class="email-link">{{from_email}}</a></td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!-- Quick Action -->
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="mailto:{{from_email}}?subject=Re: {{subject}}&body=Hi {{from_name}},%0D%0A%0D%0AThank you for reaching out through my portfolio. I'd be happy to discuss your project further.%0D%0A%0D%0ABest regards,%0D%0APankaj" 
+                   style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                          color: white; 
+                          padding: 12px 24px; 
+                          border-radius: 8px; 
+                          text-decoration: none; 
+                          font-weight: 600; 
+                          display: inline-block;">
+                    📧 Reply to {{from_name}}
+                </a>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>This message was sent from your portfolio contact form at <a href="{{portfolio_url}}">{{portfolio_url}}</a></p>
+            <p>© 2025 Pankaj Prajapati - Full Stack Developer</p>
+        </div>
+    </div>
+</body>
+</html>
