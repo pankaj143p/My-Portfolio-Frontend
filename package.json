@@ -15,10 +15,14 @@
   "dependencies": {
     "@ionic/react": "^7.7.2",
     "axios": "^1.7.2",
+    "framer-motion": "^12.23.12",
+    "lucide-react": "^0.539.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
+    "react-intersection-observer": "^9.16.0",
     "react-multi-carousel": "^2.8.4",
+    "react-type-animation": "^3.2.0",
     "styled-components": "^6.1.8",
     "swiper": "^11.0.4"
   },
