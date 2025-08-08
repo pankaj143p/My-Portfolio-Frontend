@@ -13,6 +13,7 @@
     "sync": "npm run build && ionic cap sync --no-build"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@ionic/react": "^7.7.2",
     "axios": "^1.7.2",
     "framer-motion": "^12.23.12",
