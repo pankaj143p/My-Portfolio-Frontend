@@ -158,53 +158,62 @@ export default function Achievements() {
     );
   };
 
-  const ProfileCard = ({ profile, index }) => (
-    <motion.div
-      variants={itemVariants}
-      whileHover={{ y: -10, scale: 1.02 }}
-      className="glass-card p-6 text-center group relative overflow-hidden"
-    >
-      {/* Background Effect */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${profile.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
-      
-      {/* Platform Logo */}
-      <div className="relative mb-4">
-        <div className="w-20 h-20 mx-auto rounded-2xl bg-white/5 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-          <img
-            src={profile.img}
-            alt={profile.platform}
-            className="w-12 h-12 object-contain"
-          />
-        </div>
-      </div>
+  const ProfileCard = ({ profile, index }) => {
+    const handleProfileClick = (e) => {
+      e.preventDefault();
+      window.open(profile.link, '_blank', 'noopener,noreferrer');
+    };
 
-      {/* Platform Info */}
-      <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
-        {profile.platform}
-      </h3>
-      
-      <div className="text-sm text-gray-400 mb-3">
-        @{profile.username}
-      </div>
-
-      <div className={`px-3 py-1 bg-gradient-to-r ${profile.color} text-white text-sm rounded-full mb-4 inline-block`}>
-        {profile.stats}
-      </div>
-
-      {/* Visit Link */}
-      <motion.a
-        href={profile.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 rounded-xl text-gray-300 hover:text-white transition-all duration-300 group-hover:text-cyan-400"
+    return (
+      <motion.div
+        variants={itemVariants}
+        whileHover={{ y: -10, scale: 1.02 }}
+        className="glass-card p-6 text-center group relative overflow-hidden cursor-pointer"
+        onClick={handleProfileClick}
       >
-        <ExternalLink className="w-4 h-4" />
-        Visit Profile
-      </motion.a>
-    </motion.div>
-  );
+        {/* Background Effect */}
+        <div className={`absolute inset-0 bg-gradient-to-br ${profile.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
+        
+        {/* Platform Logo */}
+        <div className="relative mb-4">
+          <div className="w-20 h-20 mx-auto rounded-2xl bg-white/5 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <img
+              src={profile.img}
+              alt={profile.platform}
+              className="w-12 h-12 object-contain"
+            />
+          </div>
+        </div>
+
+        {/* Platform Info */}
+        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+          {profile.platform}
+        </h3>
+        
+        <div className="text-sm text-gray-400 mb-3">
+          @{profile.username}
+        </div>
+
+        <div className={`px-3 py-1 bg-gradient-to-r ${profile.color} text-white text-sm rounded-full mb-4 inline-block`}>
+          {profile.stats}
+        </div>
+
+        {/* Visit Link */}
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 rounded-xl text-gray-300 hover:text-white transition-all duration-300 group-hover:text-cyan-400"
+          onClick={(e) => {
+            e.stopPropagation();
+            handleProfileClick(e);
+          }}
+        >
+          <ExternalLink className="w-4 h-4" />
+          Visit Profile
+        </motion.div>
+      </motion.div>
+    );
+  };
 
   return (
     <section id="achievements" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
