@@ -110,9 +110,7 @@ const Hero = () => {
                     2000,
                     'Full Stack Developer',
                     2000,
-                    'React.js Developer',
-                    2000,
-                    'Node.js Developer',
+                    'Java Developer',
                     2000,
                   ]}
                   wrapper="span"
