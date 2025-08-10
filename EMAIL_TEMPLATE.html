@@ -3,165 +3,460 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Portfolio Contact</title>
+    <title>Portfolio Contact - Pankaj Prajapati</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333333;
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #f8fafc;
-        }
-        .email-container {
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            margin: 20px;
-        }
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px 20px;
-            text-align: center;
-        }
-        .header h1 {
+        * {
             margin: 0;
-            font-size: 24px;
-            font-weight: 600;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .header p {
-            margin: 8px 0 0 0;
-            opacity: 0.9;
-            font-size: 14px;
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-        .content {
-            padding: 30px 20px;
+        
+        .email-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 16px;
+            box-shadow: 
+                0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+                0 10px 10px -5px rgba(0, 0, 0, 0.04),
+                0 0 0 1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            position: relative;
         }
-        .message-header {
-            background-color: #f1f5f9;
-            border-left: 4px solid #3b82f6;
-            padding: 20px;
-            margin-bottom: 25px;
-            border-radius: 0 8px 8px 0;
+        
+        .email-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
         }
-        .sender-info {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
-        .avatar {
-            width: 50px;
-            height: 50px;
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: rotate(45deg);
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .company-logo {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 50%;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
-            margin-right: 15px;
+            font-size: 28px;
+            margin-bottom: 15px;
+            box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
         }
-        .sender-details h3 {
-            margin: 0 0 5px 0;
-            color: #1e293b;
-            font-size: 18px;
+        
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
         }
-        .sender-details p {
-            margin: 0;
-            color: #64748b;
-            font-size: 14px;
+        
+        .header .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            font-weight: 300;
+            letter-spacing: 0.5px;
         }
-        .email-link {
-            color: #3b82f6;
+        
+        .content {
+            padding: 40px 30px;
+            background: #ffffff;
+        }
+        
+        .priority-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 8px rgba(255, 107, 107, 0.3);
+        }
+        
+        .message-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            position: relative;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        
+        .message-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+        
+        .sender-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .avatar {
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-right: 20px;
+            box-shadow: 0 8px 16px rgba(102, 126, 234, 0.2);
+            position: relative;
+        }
+        
+        .avatar::after {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            border-radius: 13px;
+            padding: 2px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+        }
+        
+        .sender-details {
+            flex: 1;
+        }
+        
+        .sender-name {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 5px;
+            letter-spacing: -0.3px;
+        }
+        
+        .sender-email {
+            font-size: 15px;
+            color: #667eea;
             text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
         }
-        .email-link:hover {
+        
+        .sender-email:hover {
+            color: #764ba2;
             text-decoration: underline;
         }
-        .subject-line {
-            background-color: #dbeafe;
-            border: 1px solid #93c5fd;
-            padding: 12px 16px;
-            border-radius: 8px;
-            margin-bottom: 20px;
+        
+        .contact-time {
+            font-size: 13px;
+            color: #64748b;
+            background: #f1f5f9;
+            padding: 4px 10px;
+            border-radius: 12px;
+            margin-top: 5px;
+            display: inline-block;
         }
-        .subject-line strong {
-            color: #1e40af;
-        }
-        .message-content {
-            background-color: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 20px;
+        
+        .subject-section {
+            background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+            border: 1px solid #c7d2fe;
+            padding: 18px 20px;
+            border-radius: 12px;
             margin-bottom: 25px;
+        }
+        
+        .subject-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: #3730a3;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        
+        .subject-text {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e1b4b;
+            line-height: 1.4;
+        }
+        
+        .message-content {
+            background: #ffffff;
+            border: 2px solid #f1f5f9;
+            border-radius: 12px;
+            padding: 25px;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #374151;
             white-space: pre-wrap;
-            line-height: 1.6;
+            margin-bottom: 30px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
         }
-        .metadata {
-            background-color: #f8fafc;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 20px;
+        
+        .metadata-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
         }
-        .metadata table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .metadata td {
-            padding: 5px 0;
+        
+        .metadata-title {
             font-size: 14px;
-        }
-        .metadata .label {
-            font-weight: 600;
-            color: #475569;
-            width: 100px;
-        }
-        .metadata .value {
-            color: #1e293b;
-        }
-        .footer {
-            background-color: #1e293b;
-            color: #94a3b8;
-            padding: 20px;
-            text-align: center;
-            font-size: 12px;
-        }
-        .footer a {
-            color: #60a5fa;
-            text-decoration: none;
-        }
-        .urgent-badge {
-            background-color: #dc2626;
-            color: white;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 600;
+            font-weight: 700;
+            color: #374151;
+            margin-bottom: 15px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        .priority-high {
-            border-left-color: #dc2626 !important;
+        
+        .metadata-grid {
+            display: grid;
+            gap: 12px;
         }
+        
+        .metadata-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .metadata-item:last-child {
+            border-bottom: none;
+        }
+        
+        .metadata-label {
+            font-weight: 600;
+            color: #64748b;
+            font-size: 14px;
+        }
+        
+        .metadata-value {
+            color: #1e293b;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        
+        .action-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .reply-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .reply-button::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .reply-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(102, 126, 234, 0.4);
+            text-decoration: none;
+            color: white;
+        }
+        
+        .reply-button:hover::before {
+            opacity: 1;
+        }
+        
+        .secondary-actions {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .secondary-link {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            margin: 0 15px;
+            transition: color 0.2s ease;
+        }
+        
+        .secondary-link:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: #a0aec0;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .footer-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .footer-brand {
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+        
+        .footer-text {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .footer-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        
+        .footer-link:hover {
+            color: #9f7aea;
+            text-decoration: underline;
+        }
+        
+        .footer-divider {
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            margin: 20px auto;
+            border-radius: 1px;
+        }
+        
+        /* Responsive Design */
         @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            
             .email-container {
-                margin: 10px;
-                border-radius: 8px;
+                border-radius: 12px;
+                margin: 0 10px;
             }
-            .header {
-                padding: 20px 15px;
+            
+            .header,
+            .content,
+            .footer {
+                padding: 25px 20px;
             }
-            .content {
-                padding: 20px 15px;
+            
+            .header h1 {
+                font-size: 24px;
             }
-            .sender-info {
+            
+            .message-card {
+                padding: 20px;
+            }
+            
+            .sender-section {
                 flex-direction: column;
                 align-items: flex-start;
+                text-align: center;
             }
+            
             .avatar {
-                margin-bottom: 10px;
                 margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .reply-button {
+                padding: 14px 24px;
+                font-size: 15px;
+            }
+            
+            .metadata-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .email-container {
+                box-shadow: none;
+                border: 1px solid #e2e8f0;
+            }
+            
+            .reply-button {
+                background: #667eea;
+                color: white;
             }
         }
     </style>
@@ -170,70 +465,100 @@
     <div class="email-container">
         <!-- Header -->
         <div class="header">
-            <h1>🚀 New Portfolio Contact</h1>
-            <p>Someone wants to connect with you!</p>
+            <div class="header-content">
+                <div class="company-logo">
+                    �
+                </div>
+                <h1>New Portfolio Contact</h1>
+                <div class="subtitle">Professional Inquiry Received</div>
+            </div>
         </div>
         
         <!-- Content -->
         <div class="content">
-            <!-- Message Header -->
-            <div class="message-header">
-                <div class="sender-info">
+            <!-- Priority Badge -->
+            <div class="priority-badge">
+                ⚡ New Message
+            </div>
+            
+            <!-- Message Card -->
+            <div class="message-card">
+                <!-- Sender Section -->
+                <div class="sender-section">
                     <div class="avatar">
                         👤
                     </div>
                     <div class="sender-details">
-                        <h3>{{from_name}}</h3>
-                        <p><a href="mailto:{{from_email}}" class="email-link">{{from_email}}</a></p>
+                        <div class="sender-name">{{from_name}}</div>
+                        <a href="mailto:{{from_email}}" class="sender-email">{{from_email}}</a>
+                        <div class="contact-time">📅 {{current_date}} at {{current_time}}</div>
                     </div>
                 </div>
                 
-                <!-- Subject -->
-                <div class="subject-line">
-                    <strong>Subject:</strong> {{subject}}
+                <!-- Subject Section -->
+                <div class="subject-section">
+                    <div class="subject-label">Subject</div>
+                    <div class="subject-text">{{subject}}</div>
+                </div>
+                
+                <!-- Message Content -->
+                <div class="message-content">{{message}}</div>
+                
+                <!-- Metadata Section -->
+                <div class="metadata-section">
+                    <div class="metadata-title">📋 Contact Details</div>
+                    <div class="metadata-grid">
+                        <div class="metadata-item">
+                            <span class="metadata-label">🕐 Received</span>
+                            <span class="metadata-value">{{current_date}} at {{current_time}}</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">📍 Source</span>
+                            <span class="metadata-value">Portfolio Contact Form</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">↩️ Reply To</span>
+                            <span class="metadata-value"><a href="mailto:{{reply_to}}" class="footer-link">{{from_email}}</a></span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">🌐 Website</span>
+                            <span class="metadata-value"><a href="{{portfolio_url}}" class="footer-link">Portfolio Site</a></span>
+                        </div>
+                    </div>
                 </div>
             </div>
             
-            <!-- Message Content -->
-            <div class="message-content">{{message}}</div>
-            
-            <!-- Metadata -->
-            <div class="metadata">
-                <table>
-                    <tr>
-                        <td class="label">Received:</td>
-                        <td class="value">{{current_date}} at {{current_time}}</td>
-                    </tr>
-                    <tr>
-                        <td class="label">Source:</td>
-                        <td class="value">Portfolio Contact Form</td>
-                    </tr>
-                    <tr>
-                        <td class="label">Reply To:</td>
-                        <td class="value"><a href="mailto:{{reply_to}}" class="email-link">{{from_email}}</a></td>
-                    </tr>
-                </table>
-            </div>
-            
-            <!-- Quick Action -->
-            <div style="text-align: center; margin: 30px 0;">
-                <a href="mailto:{{from_email}}?subject=Re: {{subject}}&body=Hi {{from_name}},%0D%0A%0D%0AThank you for reaching out through my portfolio. I'd be happy to discuss your project further.%0D%0A%0D%0ABest regards,%0D%0APankaj" 
-                   style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
-                          color: white; 
-                          padding: 12px 24px; 
-                          border-radius: 8px; 
-                          text-decoration: none; 
-                          font-weight: 600; 
-                          display: inline-block;">
+            <!-- Action Section -->
+            <div class="action-section">
+                <a href="mailto:{{from_email}}?subject=Re: {{subject}}&body=Hi {{from_name}},%0D%0A%0D%0AThank you for reaching out through my portfolio. I appreciate your interest and would be delighted to discuss your project further.%0D%0A%0D%0APlease let me know a convenient time for a call, or feel free to share more details about your requirements.%0D%0A%0D%0ABest regards,%0D%0APankaj Prajapati%0D%0AFull Stack Developer%0D%0A%0D%0A----%0D%0AOriginal Message:%0D%0A{{message}}" 
+                   class="reply-button">
                     📧 Reply to {{from_name}}
                 </a>
+                
+                <div class="secondary-actions">
+                    <a href="tel:+919179*****3" class="secondary-link">📞 Call Back</a>
+                    <a href="{{portfolio_url}}" class="secondary-link">🌐 View Portfolio</a>
+                </div>
             </div>
         </div>
         
         <!-- Footer -->
         <div class="footer">
-            <p>This message was sent from your portfolio contact form at <a href="{{portfolio_url}}">{{portfolio_url}}</a></p>
-            <p>© 2025 Pankaj Prajapati - Full Stack Developer</p>
+            <div class="footer-content">
+                <div class="footer-brand">Pankaj Prajapati</div>
+                <div class="footer-text">Full Stack Developer | React, Node.js, Python</div>
+                
+                <div class="footer-divider"></div>
+                
+                <div class="footer-text">
+                    This message was automatically forwarded from your portfolio contact form at 
+                    <a href="{{portfolio_url}}" class="footer-link">{{portfolio_url}}</a>
+                </div>
+                
+                <div class="footer-text" style="margin-top: 15px; font-size: 12px; opacity: 0.8;">
+                    © 2025 Pankaj Prajapati. All rights reserved. | Professional Portfolio System
+                </div>
+            </div>
         </div>
     </div>
 </body>
