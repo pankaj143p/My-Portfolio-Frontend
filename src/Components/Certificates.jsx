@@ -22,35 +22,35 @@ export default function Certificates() {
   const myCertificates = [
     {
       img: Certificate1,
-      title: "Full Stack Web Development",
-      issuer: "Tech Institute",
+      title: "Core Java",
+      issuer: "Coding Ninjas",
       date: "2024",
-      description: "Comprehensive course covering React, Node.js, and modern web development practices.",
-      category: "Web Development"
+      description: "Introduction to Java programming, covering syntax, OOP concepts, and basic data structures.",
+      category: "Programming"
     },
     {
       img: Certificate2,
-      title: "JavaScript Advanced Concepts",
-      issuer: "Code Academy",
+      title: "Basic Java",
+      issuer: "Coursera",
       date: "2024",
-      description: "Advanced JavaScript programming including ES6+, async programming, and design patterns.",
+      description: "Introduction to Java programming, covering syntax, OOP concepts, and basic data structures.",
       category: "Programming"
     },
     {
       img: Certificate3,
-      title: "React.js Certification",
-      issuer: "Meta",
+      title: "Basics Of Java",
+      issuer: "Hackerearth",
       date: "2023",
-      description: "Professional certification in React.js development and modern frontend practices.",
-      category: "Frontend"
+      description: "Professional certification in Java programming and modern software development practices.",
+      category: "Fundamentals"
     },
     {
       img: Certificate4,
-      title: "Node.js Backend Development",
-      issuer: "Node Foundation",
+      title: "Data Structures & Algorithms",
+      issuer: "Great Learning",
       date: "2023",
-      description: "Backend development with Node.js, Express, and database integration.",
-      category: "Backend"
+      description: "Advanced data structures, algorithms, and problem-solving techniques for software development.",
+      category: "Fundamentals"
     },
     {
       img: Certificate5,

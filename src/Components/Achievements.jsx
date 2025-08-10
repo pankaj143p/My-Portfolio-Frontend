@@ -32,17 +32,17 @@ export default function Achievements() {
     },
     {
       title: "LeetCode Knight Coder",
-      description: "Achieved Knight Coder status with highest rating of 1927 and solved 900+ questions",
+      description: "Achieved Knight Coder status with highest rating of 1927 and solved 1100+ questions",
       icon: Medal,
       color: "from-green-400 to-emerald-500",
-      stats: { title: "Knight", rating: "1927", problems: "900+", platform: "LeetCode" }
+      stats: { title: "Knight", rating: "1927", problems: "1100+", platform: "LeetCode" }
     },
     {
       title: "GeeksforGeeks 4-Star Coder",
-      description: "Earned 4-Star coder status with rating 1856, college rank 5, and solved 700+ questions",
+      description: "Earned 4-Star coder status with rating 1856, college rank 2, and solved 1200+ questions",
       icon: Star,
       color: "from-purple-400 to-pink-500",
-      stats: { stars: "4-Star", rating: "1856", rank: "5th", problems: "700+", platform: "GeeksforGeeks" }
+      stats: { stars: "4-Star", rating: "1856", rank: "2nd", problems: "1200+", platform: "GeeksforGeeks" }
     },
   ];
 
