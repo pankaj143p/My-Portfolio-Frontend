@@ -4,11 +4,8 @@ import { useInView } from 'react-intersection-observer';
 import { Award, ExternalLink, X, Calendar, Building2 } from 'lucide-react';
 import Certificate1 from './certificates/c1.jpg';
 import Certificate2 from './certificates/c2.jpg';
-import Certificate3 from './certificates/c3.jpg';
+import Certificate3 from './certificates/c3.jpeg';
 import Certificate4 from './certificates/c4.png';
-import Certificate5 from './certificates/c5.jpg';
-import Certificate6 from './certificates/c6.jpg';
-import Certificate7 from './certificates/c7.jpg';
 import Certificate8 from './certificates/c8.jpg';
 import Certificate9 from './certificates/c9.jpg';
 
@@ -38,11 +35,11 @@ export default function Certificates() {
     },
     {
       img: Certificate3,
-      title: "Basics Of Java",
-      issuer: "Hackerearth",
-      date: "2023",
-      description: "Professional certification in Java programming and modern software development practices.",
-      category: "Fundamentals"
+      title: "Cloud Practitioner",
+      issuer: "AWS",
+      date: "2024",
+      description: "Professional certification in cloud computing concepts and AWS services.",
+      category: "Cloud"
     },
     {
       img: Certificate4,
@@ -53,44 +50,20 @@ export default function Certificates() {
       category: "Fundamentals"
     },
     {
-      img: Certificate5,
-      title: "MongoDB Database Design",
-      issuer: "MongoDB University",
-      date: "2023",
-      description: "NoSQL database design, optimization, and advanced MongoDB operations.",
-      category: "Database"
-    },
-    {
-      img: Certificate6,
-      title: "Cloud Computing Fundamentals",
-      issuer: "AWS",
-      date: "2023",
-      description: "Cloud architecture, deployment strategies, and AWS services fundamentals.",
-      category: "Cloud"
-    },
-    {
-      img: Certificate7,
-      title: "Python Programming",
-      issuer: "Python Institute",
-      date: "2022",
-      description: "Professional Python programming certification covering OOP and advanced concepts.",
-      category: "Programming"
-    },
-    {
       img: Certificate8,
-      title: "Data Structures & Algorithms",
-      issuer: "Algorithm Academy",
+      title: "Problem Solving",
+      issuer: "HackerRank",
       date: "2022",
-      description: "Comprehensive course on DSA, problem-solving, and competitive programming.",
+      description: "Comprehensive on problem-solving and competitive programming.",
       category: "Computer Science"
     },
     {
       img: Certificate9,
-      title: "Machine Learning Basics",
-      issuer: "ML Institute",
+      title: "Web Technologies",
+      issuer: "Coursera",
       date: "2022",
-      description: "Introduction to machine learning, neural networks, and AI fundamentals.",
-      category: "AI/ML"
+      description: "Introduction to web development, covering HTML, CSS, JavaScript, and modern frameworks.",
+      category: "Web"
     },
   ];
 
