@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { FaGithub, FaLinkedin, FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa6";
 import { Download, MessageCircle, ArrowDown } from "lucide-react";
-import hero from "../../public/heroimage.jpeg";
+import hero from "../../public/heroimage.jpg";
 
 
 const Hero = () => {

@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Mail, MessageCircle, Phone, ArrowRight, Sparkles, Code, Laptop } from 'lucide-react';
-import imageUrl from '../../public/heroimage.jpeg'; // Adjust the path as necessary
+import imageUrl from '../../public/heroimage.jpg'; // Adjust the path as necessary
 
 // hire me section
 const Hireme = ({ altText }) => {
