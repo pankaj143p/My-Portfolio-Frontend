@@ -3,7 +3,8 @@ import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { FaGithub, FaLinkedin, FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa6";
 import { Download, MessageCircle, ArrowDown } from "lucide-react";
-import hero from "./MyImages/IMG-20240402-WA0008.jpg";
+import hero from "../../public/heroimage.jpeg";
+
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
