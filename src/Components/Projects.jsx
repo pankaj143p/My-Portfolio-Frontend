@@ -7,7 +7,7 @@ import project1 from "./Projects/marketmart.png";
 import project2 from "./Projects/quiz.avif";
 import project3 from "./Projects/education.png";
 import project4 from "./Projects/weather.png";
-import project5 from "./Projects/chat.jpg";
+import project5 from "./Projects/chat.png";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
@@ -26,7 +26,7 @@ const Projects = () => {
       description: "Full-stack e-commerce platform with modern UI/UX, shopping cart functionality, and secure payment integration.",
       technologies: ["React", "Node.js", "MongoDB", "Express"],
       github_link: "https://github.com/pankaj143p/Market-Mart",
-      live_link: "https://github.com/pankaj143p/Market-Mart",
+      live_link: "https://market-mart-snkt.vercel.app/",
       category: "Full Stack"
     },
     {
@@ -58,11 +58,11 @@ const Projects = () => {
     },
     {
       img: project5,
-      name: "Snappy Chat",
+      name: "Chat With Me",
       description: "Real-time chat application with message encryption, file sharing, and modern chat interface design.",
       technologies: ["React", "Socket.io", "Node.js", "MongoDB"],
-      github_link: "https://github.com/pankaj143p/Snappy-chat-web",
-      live_link: "https://github.com/pankaj143p/Snappy-chat-web",
+      github_link: "https://github.com/pankaj143p/Chat-with-me",
+      live_link: "https://chat-with-me-murex.vercel.app/",
       category: "Real-time App"
     },
   ];
