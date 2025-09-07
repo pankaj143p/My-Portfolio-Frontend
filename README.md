@@ -10,8 +10,6 @@
 
 A modern, high-performance portfolio website showcasing full-stack development skills, competitive programming achievements, and innovative web solutions. Built with React, optimized for SEO, and designed for maximum user engagement.
 
-![Portfolio Preview](./public/heroimage.jpg)
-
 ## 🌟 Key Achievements
 
 - 🥇 **CodeChef Global Rank 19th** - Starters 130 Division 4 (Rated)
