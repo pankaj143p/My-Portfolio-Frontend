@@ -14,6 +14,8 @@ const Footer = lazy(() => import('./Components/Footer'));
 const Certificates = lazy(() => import('./Components/Certificates'));
 const Achievements = lazy(() => import('./Components/Achievements'));
 const PerformanceMonitor = lazy(() => import('./Components/PerformanceMonitor'));
+const NameSearchOptimizer = lazy(() => import('./Components/NameSearchOptimizer'));
+const HiddenSEOContent = lazy(() => import('./Components/HiddenSEOContent'));
 
 // Loading component
 const LoadingSpinner = () => (
@@ -26,6 +28,8 @@ function App() {
   return (
     <Suspense fallback={<LoadingSpinner />}>
       <PerformanceMonitor />
+      <NameSearchOptimizer />
+      <HiddenSEOContent />
       <Navbar />
       <Bot />
       <Hero />
