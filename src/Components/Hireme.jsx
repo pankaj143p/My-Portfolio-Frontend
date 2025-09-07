@@ -1,16 +1,18 @@
-import React from "react";
+import React, { memo, useMemo, useCallback } from "react";
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Mail, MessageCircle, Phone, ArrowRight, Sparkles, Code, Laptop } from 'lucide-react';
-import imageUrl from '../../public/heroimage.jpg'; 
+import imageUrl from '../../public/heroimage.jpg';
+
 // hire me section
-const Hireme = ({ altText }) => {
+const Hireme = memo(({ altText }) => {
   const [ref, inView] = useInView({
     threshold: 0.1,
     triggerOnce: true,
   });
 
-  const containerVariants = {
+  // Memoize animation variants to prevent re-creation on every render
+  const containerVariants = useMemo(() => ({
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -19,9 +21,9 @@ const Hireme = ({ altText }) => {
         delayChildren: 0.2,
       },
     },
-  };
+  }), []);
 
-  const itemVariants = {
+  const itemVariants = useMemo(() => ({
     hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
@@ -31,9 +33,9 @@ const Hireme = ({ altText }) => {
         ease: "easeOut",
       },
     },
-  };
+  }), []);
 
-  const imageVariants = {
+  const imageVariants = useMemo(() => ({
     hidden: { opacity: 0, scale: 0.8 },
     visible: {
       opacity: 1,
@@ -43,11 +45,46 @@ const Hireme = ({ altText }) => {
         ease: "easeOut",
       },
     },
-  };
+  }), []);
 
-  const handleContact = () => {
+  // Memoize skills data to prevent re-creation
+  const skillsData = useMemo(() => [
+    { icon: Code, label: 'Full Stack Dev', color: 'from-green-400 to-emerald-500' },
+    { icon: Laptop, label: 'AI/ML Projects', color: 'from-purple-400 to-pink-500' },
+    { icon: MessageCircle, label: 'Problem Solver', color: 'from-cyan-400 to-blue-500' },
+    { icon: Sparkles, label: 'Creative Solutions', color: 'from-yellow-400 to-orange-500' },
+  ], []);
+
+  // Memoize stats data
+  const statsData = useMemo(() => [
+    { label: 'Projects Completed', value: '25+', color: 'text-green-400' },
+    { label: 'Technologies', value: '20+', color: 'text-cyan-400' },
+    { label: 'Client Satisfaction', value: '100%', color: 'text-purple-400' },
+    { label: 'Response Time', value: '< 24h', color: 'text-yellow-400' },
+  ], []);
+
+  // Memoize contact handler
+  const handleContact = useCallback(() => {
     window.location.href = 'mailto:pankaj.prajapati@example.com';
-  };
+  }, []);
+
+  // Memoize decorative dots
+  const decorativeDots = useMemo(() =>
+    Array.from({ length: 16 }).map((_, i) => (
+      <motion.div
+        key={i}
+        className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.3, 0.8, 0.3],
+        }}
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+          delay: i * 0.1,
+        }}
+      />
+    )), []);
 
   return (
     <section id="hireme" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -103,33 +140,28 @@ const Hireme = ({ altText }) => {
             {/* Content Side */}
             <motion.div variants={itemVariants} className="space-y-6">
               <div className="space-y-4">
-                <motion.h3 
+                <motion.h3
                   variants={itemVariants}
                   className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight"
                 >
                   Ready to work on your{' '}
                   <span className="gradient-text">next project?</span>
                 </motion.h3>
-                
-                <motion.p 
+
+                <motion.p
                   variants={itemVariants}
                   className="text-gray-300 text-base sm:text-lg leading-relaxed"
                 >
-                  Hi there! I'm <span className="text-cyan-400 font-semibold">Pankaj Prajapati</span>, 
-                  a passionate Computer Science Engineering student specializing in AI/ML from 
-                  Technocrats Institute of Technology, Bhopal. I'm excited to apply my academic 
+                  Hi there! I'm <span className="text-cyan-400 font-semibold">Pankaj Prajapati</span>,
+                  a passionate Computer Science Engineering student specializing in AI/ML from
+                  Technocrats Institute of Technology, Bhopal. I'm excited to apply my academic
                   knowledge and programming skills to real-world projects.
                 </motion.p>
               </div>
 
               {/* Skills Highlights */}
               <motion.div variants={itemVariants} className="grid grid-cols-2 gap-4">
-                {[
-                  { icon: Code, label: 'Full Stack Dev', color: 'from-green-400 to-emerald-500' },
-                  { icon: Laptop, label: 'AI/ML Projects', color: 'from-purple-400 to-pink-500' },
-                  { icon: MessageCircle, label: 'Problem Solver', color: 'from-cyan-400 to-blue-500' },
-                  { icon: Sparkles, label: 'Creative Solutions', color: 'from-yellow-400 to-orange-500' },
-                ].map((skill, index) => {
+                {skillsData.map((skill, index) => {
                   const IconComponent = skill.icon;
                   return (
                     <div key={index} className="flex items-center gap-3 p-3 bg-white/5 rounded-xl hover:bg-white/10 transition-colors">
@@ -154,7 +186,7 @@ const Hireme = ({ altText }) => {
                   Let's Talk
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </motion.button>
-                
+
                 <motion.button
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}
@@ -174,7 +206,7 @@ const Hireme = ({ altText }) => {
               <div className="relative group">
                 {/* Animated Background */}
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-3xl blur-2xl opacity-20 group-hover:opacity-30 transition-opacity duration-500 scale-110"></div>
-                
+
                 {/* Image Container */}
                 <div className="relative w-64 h-80 sm:w-72 sm:h-96 lg:w-80 lg:h-[28rem] rounded-3xl overflow-hidden border-2 border-white/10 backdrop-blur-sm group-hover:border-cyan-400/30 transition-all duration-500">
                   <motion.img
@@ -182,13 +214,14 @@ const Hireme = ({ altText }) => {
                     alt={altText || "Pankaj Prajapati"}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     whileHover={{ scale: 1.05 }}
+                    loading="lazy"
                   />
-                  
+
                   {/* Overlay Effect */}
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  
+
                   {/* Floating Elements */}
-                  <motion.div 
+                  <motion.div
                     className="absolute top-4 right-4 p-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     animate={{
                       y: [0, -10, 0],
@@ -205,21 +238,7 @@ const Hireme = ({ altText }) => {
 
                 {/* Decorative Dots */}
                 <div className="absolute -bottom-4 -right-4 w-20 h-20 grid grid-cols-4 gap-2 opacity-30">
-                  {Array.from({ length: 16 }).map((_, i) => (
-                    <motion.div
-                      key={i}
-                      className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"
-                      animate={{
-                        scale: [1, 1.2, 1],
-                        opacity: [0.3, 0.8, 0.3],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        delay: i * 0.1,
-                      }}
-                    />
-                  ))}
+                  {decorativeDots}
                 </div>
               </div>
             </motion.div>
@@ -230,12 +249,7 @@ const Hireme = ({ altText }) => {
             variants={containerVariants}
             className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-8 border-t border-white/10"
           >
-            {[
-              { label: 'Projects Completed', value: '25+', color: 'text-green-400' },
-              { label: 'Technologies', value: '20+', color: 'text-cyan-400' },
-              { label: 'Client Satisfaction', value: '100%', color: 'text-purple-400' },
-              { label: 'Response Time', value: '< 24h', color: 'text-yellow-400' },
-            ].map((stat, index) => (
+            {statsData.map((stat, index) => (
               <motion.div
                 key={index}
                 variants={itemVariants}
@@ -252,6 +266,8 @@ const Hireme = ({ altText }) => {
       </div>
     </section>
   );
-};
+});
+
+Hireme.displayName = 'Hireme';
 
 export default Hireme;

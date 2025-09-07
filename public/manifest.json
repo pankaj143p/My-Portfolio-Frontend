@@ -1,0 +1,28 @@
+{
+  "name": "Pankaj Prajapati - Portfolio",
+  "short_name": "Portfolio",
+  "description": "Full-stack developer specializing in React, Node.js, and modern web technologies",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#06b6d4",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/heroimage.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/heroimage.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "developer", "web-development"],
+  "lang": "en-US",
+  "dir": "ltr"
+}
