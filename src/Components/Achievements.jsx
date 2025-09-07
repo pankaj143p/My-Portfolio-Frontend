@@ -8,12 +8,17 @@ import geeksfogeeks from './CodingProfiles/gfg-logo.svg';
 import codingninjas from './CodingProfiles/cn-logo.svg';
 import hackerearth from './CodingProfiles/he-logo.png';
 import hackerrank from './CodingProfiles/hr-logo.png';
+import { useSEO, SEO_CONFIGS } from '../hooks/useSEO';
+import StructuredDataInjector from './StructuredDataInjector';
 
 export default function Achievements() {
   const [ref, inView] = useInView({
     threshold: 0.1,
     triggerOnce: true,
   });
+
+  // SEO optimization for achievements section
+  useSEO(SEO_CONFIGS.achievements);
 
   const myAchievements = [
     {
@@ -320,6 +325,12 @@ export default function Achievements() {
             );
           })}
         </motion.div>
+
+        {/* Structured Data for SEO */}
+        <StructuredDataInjector type="achievements" data={myAchievements} />
+        <StructuredDataInjector type="profiles" data={codingProfiles} />
+        <StructuredDataInjector type="faq" />
+
       </div>
     </section>
   );

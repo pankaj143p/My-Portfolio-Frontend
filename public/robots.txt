@@ -1,0 +1,31 @@
+User-agent: *
+Allow: /
+
+# Allow all major search engines to crawl the site
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Disallow crawling of development files
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /.git/
+Disallow: /dist/
+Disallow: /build/
+
+# Allow crawling of important assets
+Allow: /assets/
+Allow: /images/
+Allow: /*.css$
+Allow: /*.js$
+
+# Sitemap location
+Sitemap: https://www.pankaj07.me/sitemap.xml
