@@ -121,7 +121,7 @@ export const SEO_CONFIGS = {
     image: '/heroimage.jpg'
   },
   achievements: {
-    title: 'Pankaj Prajapati Achievements - CodeChef Rank 19th, LeetCode Knight',
+    title: 'Pankaj Prajapati Fullstack Developer',
     description: 'Discover Pankaj Prajapati\'s competitive programming achievements: CodeChef Global Rank 19th, LeetCode Knight Coder, GeeksforGeeks 4-Star.',
     keywords: 'Pankaj Prajapati achievements, CodeChef rank 19, LeetCode Knight, GeeksforGeeks 4-star, competitive programming awards',
     url: 'https://www.pankaj07.me/#achievements',
