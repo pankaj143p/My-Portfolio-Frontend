@@ -1,0 +1,3 @@
+import hero from '../../../../public/heroimage.jpg';
+
+// ...existing Hero.jsx code...
