@@ -9,7 +9,7 @@ import codingninjas from "./CodingProfiles/cn-logo.svg";
 import hackerearth from "./CodingProfiles/he-logo.png";
 import hackerrank from "./CodingProfiles/hr-logo.png";
 import { useSEO, SEO_CONFIGS } from "../hooks/useSEO";
-import StructuredDataInjector from "./StructuredDataInjector";
+import StructuredDataInjector from "./subcomponents/StructuredDataInjector";
 
 export default function Achievements() {
   const [ref, inView] = useInView({
