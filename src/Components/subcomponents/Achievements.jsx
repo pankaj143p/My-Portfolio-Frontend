@@ -2,13 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Trophy, Target, Code, Star, ExternalLink, Medal, Crown, Zap } from 'lucide-react';
-import codechef from "./CodingProfiles/cc-logo.svg";
-import leetcode from "./CodingProfiles/lc-logo.webp";
-import geeksfogeeks from "./CodingProfiles/gfg-logo.svg";
-import codingninjas from "./CodingProfiles/cn-logo.svg";
-import hackerearth from "./CodingProfiles/he-logo.png";
-import hackerrank from "./CodingProfiles/hr-logo.png";
-import { useSEO, SEO_CONFIGS } from "../hooks/useSEO";
+import codechef from "../CodingProfiles/cc-logo.svg";
+import leetcode from "../CodingProfiles/lc-logo.webp";
+import geeksfogeeks from "../CodingProfiles/gfg-logo.svg";
+import codingninjas from "../CodingProfiles/cn-logo.svg";
+import hackerearth from "../CodingProfiles/he-logo.png";
+import hackerrank from "../CodingProfiles/hr-logo.png";
+import { useSEO, SEO_CONFIGS } from "../../hooks/useSEO";
 import StructuredDataInjector from "./StructuredDataInjector";
 
 export default function Achievements() {
