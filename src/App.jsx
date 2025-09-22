@@ -2,20 +2,20 @@ import React, { Suspense, lazy } from 'react';
 import './App.css';
 
 // Lazy load components for better performance
-const Navbar = lazy(() => import('./Components/Navbar'));
-const Bot = lazy(() => import('./Components/Bot'));
-const Hero = lazy(() => import('./Components/Hero'));
-const About = lazy(() => import('./Components/About'));
-const Projects = lazy(() => import('./Components/Projects'));
-const Contact = lazy(() => import('./Components/Contact'));
-const Skills = lazy(() => import('./Components/Skills'));
-const Hireme = lazy(() => import('./Components/Hireme'));
-const Footer = lazy(() => import('./Components/Footer'));
-const Certificates = lazy(() => import('./Components/Certificates'));
-const Achievements = lazy(() => import('./Components/Achievements'));
-const PerformanceMonitor = lazy(() => import('./Components/PerformanceMonitor'));
-const NameSearchOptimizer = lazy(() => import('./Components/NameSearchOptimizer'));
-const HiddenSEOContent = lazy(() => import('./Components/HiddenSEOContent'));
+const Navbar = lazy(() => import('./Components/subcomponents/Navbar'));
+const Bot = lazy(() => import('./Components/subcomponents/Bot'));
+const Hero = lazy(() => import('./Components/subcomponents/Hero'));
+const About = lazy(() => import('./Components/subcomponents/About'));
+const Projects = lazy(() => import('./Components/subcomponents/Projects'));
+const Contact = lazy(() => import('./Components/subcomponents/Contact'));
+const Skills = lazy(() => import('./Components/subcomponents/Skills'));
+const Hireme = lazy(() => import('./Components/subcomponents/Hireme'));
+const Footer = lazy(() => import('./Components/subcomponents/Footer'));
+const Certificates = lazy(() => import('./Components/subcomponents/Certificates'));
+const Achievements = lazy(() => import('./Components/subcomponents/Achievements'));
+const PerformanceMonitor = lazy(() => import('./Components/subcomponents/PerformanceMonitor'));
+const NameSearchOptimizer = lazy(() => import('./Components/subcomponents/NameSearchOptimizer'));
+const HiddenSEOContent = lazy(() => import('./Components/subcomponents/HiddenSEOContent'));
 
 // Loading component
 const LoadingSpinner = () => (

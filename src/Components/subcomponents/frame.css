@@ -1,1 +1,40 @@
-/* ...existing code from frame.css... */
+/* ImageFrame.css */
+
+.image-frame {
+    width: 260px;
+    height: 300px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin-left: 10px;
+    overflow: hidden;
+    position: relative;
+    transform-origin: center center; /* Set the transform origin to the center for a better animation */
+    transition: transform 0.3s ease-in-out; /* Add a smooth transition to the transform property */
+  }
+  
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  /* Add a more attractive animation using keyframes */
+  @keyframes scaleUp {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .image-frame :hover{
+    animation: scaleUp 1s ease 2; /* Apply the animation on hover */
+  }
+  
