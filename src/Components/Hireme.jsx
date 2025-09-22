@@ -2,7 +2,7 @@ import React, { memo, useMemo, useCallback } from "react";
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Mail, MessageCircle, Phone, ArrowRight, Sparkles, Code, Laptop } from 'lucide-react';
-import imageUrl from '../../assets/MyImages/IMG-20240402-WA0008.jpg';
+import imageUrl from '../../public/heroimage.jpg';
 
 // hire me section
 const Hireme = memo(({ altText }) => {
