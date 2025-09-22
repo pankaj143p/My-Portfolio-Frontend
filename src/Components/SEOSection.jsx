@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import { useSEO, SEO_CONFIGS } from '../hooks/useSEO';
-import { updatePageTitle, trackPageView } from '../utils/seoUtils';
+import { useSEO, SEO_CONFIGS } from '../../hooks/useSEO';
+import { updatePageTitle, trackPageView } from '../../utils/seoUtils';
 
 /**
  * SEO Section Wrapper Component

@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Award, ExternalLink, X, Calendar, Building2 } from 'lucide-react';
-import Certificate1 from './certificates/c1.jpg';
-import Certificate2 from './certificates/c2.jpg';
-import Certificate3 from './certificates/c3.jpeg';
-import Certificate4 from './certificates/c4.png';
-import Certificate8 from './certificates/c8.jpg';
-import Certificate9 from './certificates/c9.jpg';
+import Certificate1 from '../../assets/certificates/c1.jpg';
+import Certificate2 from '../../assets/certificates/c2.jpg';
+import Certificate3 from '../../assets/certificates/c3.jpeg';
+import Certificate4 from '../../assets/certificates/c4.png';
+import Certificate8 from '../../assets/certificates/c8.jpg';
+import Certificate9 from '../../assets/certificates/c9.jpg';
 
 export default function Certificates() {
   const [selectedCertificate, setSelectedCertificate] = useState(null);

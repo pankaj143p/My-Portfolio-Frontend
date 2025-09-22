@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { usePerformanceMonitor } from '../hooks/usePerformance';
+import { usePerformanceMonitor } from '../../hooks/usePerformance';
 
 const PerformanceMonitor = () => {
   usePerformanceMonitor();
