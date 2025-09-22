@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { generateAchievementStructuredData, generateProfileStructuredData, generateFAQStructuredData } from '../../utils/seoUtils';
+import { generateAchievementStructuredData, generateProfileStructuredData, generateFAQStructuredData } from '../utils/seoUtils';
 
 /**
  * Component for dynamically injecting structured data (JSON-LD) into the page
