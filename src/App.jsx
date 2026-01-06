@@ -1,4 +1,5 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useState, useEffect } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import './App.css';
 
 // Lazy load components for better performance
@@ -17,7 +18,17 @@ const PerformanceMonitor = lazy(() => import('./Components/subcomponents/Perform
 const NameSearchOptimizer = lazy(() => import('./Components/subcomponents/NameSearchOptimizer'));
 const HiddenSEOContent = lazy(() => import('./Components/subcomponents/HiddenSEOContent'));
 
-// Loading component
+// New enhanced components
+const CustomCursor = lazy(() => import('./Components/effects/CustomCursor'));
+const ParticleBackground = lazy(() => import('./Components/effects/ParticleBackground'));
+const ScrollProgress = lazy(() => import('./Components/effects/ScrollProgress'));
+const ScrollToTop = lazy(() => import('./Components/effects/ScrollToTop'));
+const LoadingScreen = lazy(() => import('./Components/effects/LoadingScreen'));
+const Experience = lazy(() => import('./Components/sections/Experience'));
+const AnimatedStats = lazy(() => import('./Components/sections/AnimatedStats'));
+const Testimonials = lazy(() => import('./Components/sections/Testimonials'));
+
+// Loading component (kept as fallback)
 const LoadingSpinner = () => (
   <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
     <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-cyan-500"></div>
@@ -25,23 +36,56 @@ const LoadingSpinner = () => (
 );
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time for smooth intro
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <Suspense fallback={<LoadingSpinner />}>
-      <PerformanceMonitor />
-      <NameSearchOptimizer />
-      <HiddenSEOContent />
-      <Navbar />
-      <Bot />
-      <Hero />
-      <About />
-      <Achievements />
-      <Skills />
-      <Hireme />
-      <Projects />
-      <Certificates />
-      <Contact />
-      <Footer />
-    </Suspense>
+    <>
+      <AnimatePresence mode="wait">
+        {isLoading && (
+          <Suspense fallback={null}>
+            <LoadingScreen isLoading={isLoading} />
+          </Suspense>
+        )}
+      </AnimatePresence>
+
+      <Suspense fallback={<LoadingSpinner />}>
+        {/* Effects Layer */}
+        <CustomCursor />
+        <ParticleBackground />
+        <ScrollProgress />
+        <ScrollToTop />
+        
+        {/* SEO Components */}
+        <PerformanceMonitor />
+        <NameSearchOptimizer />
+        <HiddenSEOContent />
+        
+        {/* Main Content */}
+        <Navbar />
+        <Bot />
+        <Hero />
+        <AnimatedStats />
+        <About />
+        <Experience />
+        <Achievements />
+        <Skills />
+        <Hireme />
+        <Projects />
+        <Testimonials />
+        <Certificates />
+        <Contact />
+        <Footer />
+      </Suspense>
+    </>
   );
 }
 
