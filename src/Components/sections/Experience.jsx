@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Briefcase, GraduationCap, Calendar, MapPin, ExternalLink } from 'lucide-react';
+import { Briefcase, GraduationCap, Calendar, MapPin, Building2 } from 'lucide-react';
 
 const Experience = () => {
   const [ref, inView] = useInView({
@@ -12,45 +12,60 @@ const Experience = () => {
   const experiences = [
     {
       type: 'work',
-      title: 'Full Stack Developer Intern',
-      company: 'Tech Startup',
-      location: 'Remote',
-      period: 'Jan 2024 - Present',
-      description: 'Developing scalable web applications using MERN stack. Implemented RESTful APIs and optimized database queries resulting in 40% performance improvement.',
-      skills: ['React.js', 'Node.js', 'MongoDB', 'Express.js', 'REST APIs'],
+      title: 'Software Engineer',
+      company: 'Capgemini',
+      companyLogo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Capgemini_201x_logo.svg/1200px-Capgemini_201x_logo.svg.png',
+      location: 'Pune, Maharashtra, India',
+      workType: 'Hybrid',
+      employmentType: 'Full-time',
+      period: 'Aug 2025 - Present',
+      duration: '6 mos',
+      description: 'Working as a Software Engineer developing enterprise-level applications using Java and Spring Boot ecosystem. Building scalable microservices and implementing cloud solutions on AWS.',
+      skills: ['Java', 'React.js', 'Spring Boot', 'AWS', 'Spring Security', 'Spring Cloud'],
       achievements: [
-        'Built 5+ production features',
-        'Reduced load time by 40%',
-        'Mentored 2 junior developers',
+        'Developing enterprise applications',
+        'Building microservices architecture',
+        'Implementing cloud solutions on AWS',
       ],
+      color: 'from-blue-500 to-cyan-500',
     },
     {
       type: 'work',
-      title: 'Web Development Intern',
-      company: 'Digital Agency',
-      location: 'Bhopal, India',
-      period: 'Jun 2023 - Dec 2023',
-      description: 'Created responsive websites and landing pages. Collaborated with design team to implement pixel-perfect UI components.',
-      skills: ['HTML/CSS', 'JavaScript', 'React', 'Tailwind CSS', 'Figma'],
+      title: 'Intern',
+      company: 'Capgemini',
+      companyLogo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Capgemini_201x_logo.svg/1200px-Capgemini_201x_logo.svg.png',
+      location: 'Navi Mumbai, Maharashtra, India',
+      workType: 'On-site',
+      employmentType: 'Internship',
+      period: 'May 2025 - Jul 2025',
+      duration: '3 mos',
+      description: 'Completed intensive training and hands-on projects in Java and Spring Boot. Gained practical experience in enterprise software development practices and agile methodologies.',
+      skills: ['Java', 'Spring Boot', 'REST APIs', 'SQL', 'Git', 'Agile'],
       achievements: [
-        'Delivered 10+ client projects',
-        'Achieved 95% client satisfaction',
-        'Implemented CI/CD pipelines',
+        'Completed enterprise training program',
+        'Built REST APIs with Spring Boot',
+        'Collaborated in agile environment',
       ],
+      color: 'from-blue-500 to-cyan-500',
     },
     {
-      type: 'education',
-      title: 'B.Tech in Computer Science',
-      company: 'Specialization in AI/ML',
-      location: 'Bhopal, India',
-      period: '2021 - 2025',
-      description: 'Pursuing Bachelor\'s degree with focus on Artificial Intelligence and Machine Learning. Active member of coding club and technical societies.',
-      skills: ['Data Structures', 'Algorithms', 'Machine Learning', 'Python', 'Java'],
+      type: 'freelance',
+      title: 'Member',
+      company: 'Superteam India',
+      companyLogo: 'https://pbs.twimg.com/profile_images/1730595728092white49/qNaIiwUm_400x400.jpg',
+      location: 'Remote',
+      workType: 'Remote',
+      employmentType: 'Part-time / Freelance',
+      period: 'May 2025 - Present',
+      duration: '9 mos',
+      description: 'Contributing to blockchain and Web3 projects as a freelance developer. Building decentralized applications and smart contracts using modern tech stack.',
+      skills: ['Next.js', 'Rust', 'Node.js', 'Radix CSS', 'Blockchain', 'Web3', 'Solana'],
       achievements: [
-        'CGPA: 8.5+',
-        'College Rank: 2nd on GeeksforGeeks',
-        'Led technical workshops',
+        'Building Web3 applications',
+        'Working on blockchain projects',
+        'Contributing to decentralized solutions',
       ],
+      color: 'from-purple-500 to-pink-500',
     },
   ];
 
@@ -78,14 +93,13 @@ const Experience = () => {
 
   const TimelineCard = ({ experience, index }) => {
     const isWork = experience.type === 'work';
-    const Icon = isWork ? Briefcase : GraduationCap;
+    const isFreelance = experience.type === 'freelance';
+    const Icon = isFreelance ? Building2 : Briefcase;
 
     return (
       <motion.div
         variants={itemVariants}
-        className={`relative flex items-start gap-8 ${
-          index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
-        } md:flex-row`}
+        className="relative flex items-start gap-8 md:flex-row"
       >
         {/* Timeline connector */}
         <div className="hidden md:flex flex-col items-center">
@@ -93,11 +107,22 @@ const Experience = () => {
             initial={{ scale: 0 }}
             animate={inView ? { scale: 1 } : { scale: 0 }}
             transition={{ delay: index * 0.2 }}
-            className={`w-14 h-14 rounded-full bg-gradient-to-r ${
-              isWork ? 'from-cyan-500 to-blue-600' : 'from-purple-500 to-pink-600'
-            } flex items-center justify-center z-10 shadow-lg`}
+            className={`w-16 h-16 rounded-full bg-gradient-to-r ${experience.color} p-1 flex items-center justify-center z-10 shadow-lg`}
           >
-            <Icon className="w-6 h-6 text-white" />
+            <div className="w-full h-full rounded-full bg-slate-900 flex items-center justify-center overflow-hidden">
+              {experience.companyLogo ? (
+                <img 
+                  src={experience.companyLogo} 
+                  alt={experience.company}
+                  className="w-10 h-10 object-contain"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'flex';
+                  }}
+                />
+              ) : null}
+              <Icon className="w-6 h-6 text-white" style={{ display: experience.companyLogo ? 'none' : 'block' }} />
+            </div>
           </motion.div>
           {index < experiences.length - 1 && (
             <motion.div
@@ -116,42 +141,56 @@ const Experience = () => {
         >
           {/* Background glow */}
           <div
-            className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${
-              isWork ? 'from-cyan-500/10' : 'from-purple-500/10'
-            } to-transparent rounded-full blur-2xl -translate-y-8 translate-x-8 group-hover:scale-150 transition-transform duration-500`}
+            className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${experience.color} opacity-10 rounded-full blur-2xl -translate-y-8 translate-x-8 group-hover:scale-150 transition-transform duration-500`}
           />
 
           {/* Mobile icon */}
           <div className="md:hidden flex items-center gap-3 mb-4">
             <div
-              className={`w-10 h-10 rounded-full bg-gradient-to-r ${
-                isWork ? 'from-cyan-500 to-blue-600' : 'from-purple-500 to-pink-600'
-              } flex items-center justify-center`}
+              className={`w-12 h-12 rounded-full bg-gradient-to-r ${experience.color} p-0.5 flex items-center justify-center`}
             >
-              <Icon className="w-5 h-5 text-white" />
+              <div className="w-full h-full rounded-full bg-slate-900 flex items-center justify-center overflow-hidden">
+                {experience.companyLogo ? (
+                  <img 
+                    src={experience.companyLogo} 
+                    alt={experience.company}
+                    className="w-8 h-8 object-contain"
+                  />
+                ) : (
+                  <Icon className="w-5 h-5 text-white" />
+                )}
+              </div>
             </div>
-            <span className={`text-sm font-medium ${isWork ? 'text-cyan-400' : 'text-purple-400'}`}>
-              {isWork ? 'Work Experience' : 'Education'}
-            </span>
+            <div>
+              <span className={`text-sm font-medium bg-gradient-to-r ${experience.color} bg-clip-text text-transparent`}>
+                {experience.company}
+              </span>
+              <p className="text-xs text-gray-500">{experience.employmentType}</p>
+            </div>
           </div>
 
           {/* Header */}
           <div className="mb-4">
-            <h3 className="text-xl lg:text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-blue-500 group-hover:bg-clip-text transition-all duration-300">
-              {experience.title}
-            </h3>
-            <p className="text-lg text-gray-300 font-medium">{experience.company}</p>
+            <div className="flex flex-wrap items-center gap-2 mb-2">
+              <h3 className="text-xl lg:text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-blue-500 group-hover:bg-clip-text transition-all duration-300">
+                {experience.title}
+              </h3>
+              <span className={`px-3 py-1 text-xs rounded-full bg-gradient-to-r ${experience.color} text-white font-medium`}>
+                {experience.employmentType}
+              </span>
+            </div>
+            <p className="text-lg text-cyan-400 font-semibold">{experience.company}</p>
           </div>
 
           {/* Meta info */}
           <div className="flex flex-wrap gap-4 mb-4 text-sm text-gray-400">
             <span className="flex items-center gap-1">
               <Calendar className="w-4 h-4" />
-              {experience.period}
+              {experience.period} · {experience.duration}
             </span>
             <span className="flex items-center gap-1">
               <MapPin className="w-4 h-4" />
-              {experience.location}
+              {experience.location} · {experience.workType}
             </span>
           </div>
 
@@ -160,7 +199,7 @@ const Experience = () => {
 
           {/* Achievements */}
           <div className="mb-6">
-            <h4 className="text-sm font-semibold text-white mb-3">Key Achievements:</h4>
+            <h4 className="text-sm font-semibold text-white mb-3">Key Highlights:</h4>
             <ul className="space-y-2">
               {experience.achievements.map((achievement, i) => (
                 <motion.li
@@ -170,7 +209,7 @@ const Experience = () => {
                   transition={{ delay: index * 0.2 + i * 0.1 }}
                   className="flex items-center gap-2 text-sm text-gray-300"
                 >
-                  <span className={`w-1.5 h-1.5 rounded-full ${isWork ? 'bg-cyan-400' : 'bg-purple-400'}`} />
+                  <span className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${experience.color}`} />
                   {achievement}
                 </motion.li>
               ))}
@@ -182,11 +221,7 @@ const Experience = () => {
             {experience.skills.map((skill, i) => (
               <span
                 key={i}
-                className={`px-3 py-1 text-xs rounded-full border ${
-                  isWork
-                    ? 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20'
-                    : 'bg-purple-500/10 text-purple-400 border-purple-500/20'
-                }`}
+                className={`px-3 py-1 text-xs rounded-full border bg-white/5 text-gray-300 border-white/10 hover:border-cyan-500/50 hover:text-cyan-400 transition-colors`}
               >
                 {skill}
               </span>
@@ -196,6 +231,10 @@ const Experience = () => {
       </motion.div>
     );
   };
+
+  // Calculate total experience
+  const totalMonths = 9; // Capgemini total
+  const experienceSummary = `${Math.floor(totalMonths / 12)} year${totalMonths >= 12 ? 's' : ''} ${totalMonths % 12} months`;
 
   return (
     <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -214,14 +253,14 @@ const Experience = () => {
           className="text-center mb-16"
         >
           <motion.h2 variants={itemVariants} className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
-            My <span className="gradient-text">Journey</span>
+            Work <span className="gradient-text">Experience</span>
           </motion.h2>
           <motion.div
             variants={itemVariants}
             className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 mx-auto rounded-full mb-6"
           />
           <motion.p variants={itemVariants} className="text-gray-400 text-lg max-w-2xl mx-auto">
-            My professional journey and educational background that shaped me as a developer
+            My professional journey in software development
           </motion.p>
         </motion.div>
 
