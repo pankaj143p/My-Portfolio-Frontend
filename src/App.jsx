@@ -1,4 +1,5 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useState, useEffect } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import './App.css';
 
 // Lazy load components for better performance
@@ -16,6 +17,7 @@ const Achievements = lazy(() => import('./Components/subcomponents/Achievements'
 const PerformanceMonitor = lazy(() => import('./Components/subcomponents/PerformanceMonitor'));
 const NameSearchOptimizer = lazy(() => import('./Components/subcomponents/NameSearchOptimizer'));
 const HiddenSEOContent = lazy(() => import('./Components/subcomponents/HiddenSEOContent'));
+const LoadingScreen = lazy(() => import('./Components/effects/LoadingScreen'));
 
 // Loading component
 const LoadingSpinner = () => (
@@ -25,23 +27,44 @@ const LoadingSpinner = () => (
 );
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Show loading screen for 2.5 seconds
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <Suspense fallback={<LoadingSpinner />}>
-      <PerformanceMonitor />
-      <NameSearchOptimizer />
-      <HiddenSEOContent />
-      <Navbar />
-      <Bot />
-      <Hero />
-      <About />
-      <Achievements />
-      <Skills />
-      <Hireme />
-      <Projects />
-      <Certificates />
-      <Contact />
-      <Footer />
-    </Suspense>
+    <>
+      <AnimatePresence mode="wait">
+        {isLoading && (
+          <Suspense fallback={null}>
+            <LoadingScreen isLoading={isLoading} />
+          </Suspense>
+        )}
+      </AnimatePresence>
+
+      <Suspense fallback={<LoadingSpinner />}>
+        <PerformanceMonitor />
+        <NameSearchOptimizer />
+        <HiddenSEOContent />
+        <Navbar />
+        <Bot />
+        <Hero />
+        <About />
+        <Achievements />
+        <Skills />
+        <Hireme />
+        <Projects />
+        <Certificates />
+        <Contact />
+        <Footer />
+      </Suspense>
+    </>
   );
 }
 

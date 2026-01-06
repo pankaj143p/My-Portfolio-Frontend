@@ -107,8 +107,6 @@ const Hero = () => {
               >
                 <TypeAnimation
                   sequence={[
-                    'MERN Stack Developer',
-                    2000,
                     'Full Stack Developer',
                     2000,
                     'Java Developer',
