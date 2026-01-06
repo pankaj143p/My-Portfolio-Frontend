@@ -3,9 +3,7 @@ import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { FaGithub, FaLinkedin, FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa6";
 import { Download, MessageCircle, ArrowDown } from "lucide-react";
-
-// Use direct path for public assets
-const hero = "/heroimage.jpg";
+import hero from "../../../public/heroimage.jpg";
 
 
 const Hero = () => {
@@ -144,16 +142,14 @@ const Hero = () => {
                   <MessageCircle className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                   Get In Touch
                 </button>
-                <motion.a
-                  href="/resume.pdf"
-                  download="Pankaj_Prajapati_Resume.pdf"
+                <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 rounded-xl border-2 border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 transition-all duration-300 flex items-center justify-center gap-3 font-semibold backdrop-blur-sm shine-effect"
+                  className="px-8 py-4 rounded-xl border-2 border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 transition-all duration-300 flex items-center justify-center gap-3 font-semibold backdrop-blur-sm"
                 >
                   <Download className="w-5 h-5" />
                   Download CV
-                </motion.a>
+                </motion.button>
               </motion.div>
 
               {/* Social Media */}

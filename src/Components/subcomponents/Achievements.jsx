@@ -88,7 +88,7 @@ export default function Achievements() {
       img: hackerearth,
       platform: "HackerEarth",
       username: "pankaj07",
-      link: "https://www.hackerearth.com/@pankaj07/",
+      link: "hhttps://www.hackerearth.com/@pankaj07/",
       stats: "Active Coder",
       color: "from-purple-400 to-pink-500"
     },

@@ -1,15 +1,5 @@
 # 🚀 Pankaj Prajapati - Full Stack Developer Portfolio
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-pankaj07.me-00C7B7?style=for-the-badge)](https://www.pankaj07.me/)
-[![React](https://img.shields.io/badge/React-18.2-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://reactjs.org/)
-[![Vite](https://img.shields.io/badge/Vite-5.1-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
-
-<p align="center">
-  <img src="public/heroimage.jpg" alt="Portfolio Preview" width="600" style="border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-</p>
-
 A modern, high-performance portfolio website showcasing full-stack development skills, competitive programming achievements, and innovative web solutions. Built with React, optimized for SEO, and designed for maximum user engagement.
 
 ## 🌟 Key Achievements
