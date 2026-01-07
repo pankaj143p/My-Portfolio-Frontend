@@ -2,7 +2,7 @@ import React, { Suspense, lazy, useState, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import './App.css';
 
-// Lazy load components for better performance
+// Lazy load components for better performance 
 const Navbar = lazy(() => import('./Components/subcomponents/Navbar'));
 const Bot = lazy(() => import('./Components/subcomponents/Bot'));
 const Hero = lazy(() => import('./Components/subcomponents/Hero'));
@@ -39,7 +39,8 @@ function App() {
   }, []);
 
   return (
-    <>
+   // Main application layout
+   <>
       <AnimatePresence mode="wait">
         {isLoading && (
           <Suspense fallback={null}>
