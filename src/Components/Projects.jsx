@@ -6,7 +6,7 @@ import { ExternalLink, Github, Code, Eye } from "lucide-react";
 import project1 from "../Projects/marketmart.png";
 import project2 from "../Projects/quiz.avif";
 import project3 from "../Projects/education.png";
-import project4 from "../Projects/weather.png";
+import project4 from "../Projects/railway.png";
 import project5 from "../Projects/chat.png";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -49,11 +49,11 @@ const Projects = () => {
     },
     {
       img: project4,
-      name: "Weather Forecast",
-      description: "Real-time weather application with location-based forecasting, beautiful UI animations, and detailed weather metrics.",
-      technologies: ["React", "Weather API", "CSS3"],
-      github_link: "https://github.com/pankaj143p/Weather-App",
-      live_link: "https://github.com/pankaj143p/Weather-App",
+      name: "I Rail Gateway",
+      description: "Real-time railway information system with live tracking, schedule management, and user notifications.",
+      technologies: ["React", "Railway API", "CSS3"],
+      github_link: "https://github.com/pankaj143p/Railway_Reservation_System/",
+      live_link: "https://irailgateway.vercel.app/",
       category: "API Integration"
     },
     {
