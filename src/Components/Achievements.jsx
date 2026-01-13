@@ -126,6 +126,7 @@ export default function Achievements() {
   };
 
   const AchievementCard = ({ achievement, index }) => {
+    key={index};
     const IconComponent = achievement.icon;
     return (
       <motion.div
