@@ -1,23 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { ExternalLink, Github, Code, Eye } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 import project1 from "../Projects/marketmart.png";
 import project2 from "../Projects/quiz.avif";
 import project3 from "../Projects/education.png";
 import project4 from "../Projects/railway.png";
 import project5 from "../Projects/chat.png";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/effect-coverflow";
-import { Pagination, Autoplay, EffectCoverflow } from "swiper/modules";
 
 const Projects = () => {
-  const [ref, inView] = useInView({
-    threshold: 0.1,
-    triggerOnce: true,
-  });
+  const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
+  const [filter, setFilter] = useState("All");
 
   const projects = [
     {
@@ -25,296 +18,201 @@ const Projects = () => {
       name: "Market Mart",
       description: "Full-stack e-commerce platform with modern UI/UX, shopping cart functionality, and secure payment integration.",
       technologies: ["React", "Node.js", "MongoDB", "Express"],
-      github_link: "https://github.com/pankaj143p/Market-Mart",
-      live_link: "https://market-mart-snkt.vercel.app/",
-      category: "Full Stack"
+      github: "https://github.com/pankaj143p/Market-Mart",
+      live: "https://market-mart-snkt.vercel.app/",
+      category: "Full Stack",
     },
     {
       img: project3,
       name: "Smart TnP Education",
       description: "Educational platform for training and placement with interactive learning modules and progress tracking.",
       technologies: ["React", "Firebase", "Tailwind CSS"],
-      github_link: "https://github.com/pankaj143p/Smart-TNP-education-app",
-      live_link: "https://smart-tnp-education-app-web.vercel.app/",
-      category: "Web App"
+      github: "https://github.com/pankaj143p/Smart-TNP-education-app",
+      live: "https://smart-tnp-education-app-web.vercel.app/",
+      category: "Web App",
     },
     {
       img: project2,
       name: "Interactive Quiz App",
-      description: "Dynamic quiz application with timer functionality, score tracking, and responsive design for better user experience.",
+      description: "Dynamic quiz application with timer functionality, score tracking, and responsive design.",
       technologies: ["React", "JavaScript", "CSS3"],
-      github_link: "https://github.com/pankaj143p/QuizApp",
-      live_link: "https://github.com/pankaj143p/QuizApp",
-      category: "Frontend"
+      github: "https://github.com/pankaj143p/QuizApp",
+      live: "https://github.com/pankaj143p/QuizApp",
+      category: "Frontend",
     },
     {
-          img: project4,
-          name: "I Rail Gateway",
-          description: "Real-time railway information system with live tracking, schedule management, and user notifications.",
-          technologies: ["React", "Railway API", "CSS3"],
-          github_link: "https://github.com/pankaj143p/Railway_Reservation_System/",
-          live_link: "https://irailgateway.vercel.app/",
-          category: "API Integration"
-      },
+      img: project4,
+      name: "I Rail Gateway",
+      description: "Real-time railway information system with live tracking, schedule management, and user notifications.",
+      technologies: ["React", "Railway API", "CSS3"],
+      github: "https://github.com/pankaj143p/Railway_Reservation_System/",
+      live: "https://irailgateway.vercel.app/",
+      category: "API Integration",
+    },
     {
       img: project5,
       name: "Chat With Me",
-      description: "Real-time chat application with message encryption, file sharing, and modern chat interface design.",
+      description: "Real-time chat application with message encryption, file sharing, and modern chat interface.",
       technologies: ["React", "Socket.io", "Node.js", "MongoDB"],
-      github_link: "https://github.com/pankaj143p/Chat-with-me",
-      live_link: "https://chat-with-me-murex.vercel.app/",
-      category: "Real-time App"
+      github: "https://github.com/pankaj143p/Chat-with-me",
+      live: "https://chat-with-me-murex.vercel.app/",
+      category: "Full Stack",
     },
   ];
 
-  const containerVariants = {
+  const categories = ["All", ...new Set(projects.map((p) => p.category))];
+  const filtered = filter === "All" ? projects : projects.filter((p) => p.category === filter);
+
+  const container = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1,
-      },
-    },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
   };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
+  const item = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
   };
-
-  const ProjectCard = ({ project, index }) => (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ delay: index * 0.2 }}
-      className="glass-card group relative overflow-hidden h-full"
-    >
-      {/* Project Image */}
-      <div className="relative overflow-hidden rounded-t-2xl">
-        <img 
-          src={project.img} 
-          alt={project.name}
-          className="w-full h-48 sm:h-56 object-cover transition-transform duration-700 group-hover:scale-110"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        
-        {/* Category Badge */}
-        <div className="absolute top-4 left-4 px-3 py-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-sm font-semibold rounded-full">
-          {project.category}
-        </div>
-
-        {/* Hover Actions */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div className="flex gap-4">
-            <motion.a
-              href={project.github_link}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors"
-            >
-              <Github className="w-5 h-5" />
-            </motion.a>
-            <motion.a
-              href={project.live_link}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors"
-            >
-              <ExternalLink className="w-5 h-5" />
-            </motion.a>
-          </div>
-        </div>
-      </div>
-
-      {/* Project Info */}
-      <div className="p-6 space-y-4">
-        <div>
-          <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
-            {project.name}
-          </h3>
-          <p className="text-gray-400 text-sm mt-2 line-clamp-3">
-            {project.description}
-          </p>
-        </div>
-
-        {/* Technologies */}
-        <div className="flex flex-wrap gap-2">
-          {project.technologies.map((tech, techIndex) => (
-            <span
-              key={techIndex}
-              className="px-3 py-1 bg-slate-700/50 text-cyan-400 text-xs rounded-full border border-cyan-500/20"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-
-        {/* Action Buttons */}
-        <div className="flex gap-3 pt-4">
-          <motion.a
-            href={project.github_link}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="flex items-center gap-2 px-4 py-2 bg-slate-700/50 hover:bg-slate-600/50 text-gray-300 hover:text-white rounded-lg transition-all duration-300 flex-1 justify-center"
-          >
-            <Code className="w-4 h-4" />
-            <span className="text-sm font-medium">Code</span>
-          </motion.a>
-          <motion.a
-            href={project.live_link}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white rounded-lg transition-all duration-300 flex-1 justify-center"
-          >
-            <Eye className="w-4 h-4" />
-            <span className="text-sm font-medium">Live</span>
-          </motion.a>
-        </div>
-      </div>
-    </motion.div>
-  );
 
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+    <section id="projects" className="py-24 px-6 lg:px-8 relative overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-purple-600/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Header */}
         <motion.div
           ref={ref}
-          variants={containerVariants}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
         >
-          <motion.h2
-            variants={itemVariants}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4"
-          >
+          <p className="text-purple-400 font-mono text-sm tracking-widest uppercase mb-3">What I've built</p>
+          <h2 className="text-4xl sm:text-5xl font-bold text-white">
             My <span className="gradient-text">Projects</span>
-          </motion.h2>
-          <motion.div
-            variants={itemVariants}
-            className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 mx-auto rounded-full mb-6"
-          ></motion.div>
-          <motion.p
-            variants={itemVariants}
-            className="text-gray-400 text-lg max-w-2xl mx-auto"
-          >
-            Here are some of my featured projects that showcase my skills and passion for creating amazing digital experiences
-          </motion.p>
+          </h2>
+          <div className="section-line" />
         </motion.div>
 
-        {/* Projects Swiper */}
+        {/* Filter tabs */}
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          className="relative"
+          initial={{ opacity: 0, y: 10 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="flex flex-wrap justify-center gap-2 mb-10"
         >
-          <Swiper
-            effect={'coverflow'}
-            grabCursor={true}
-            centeredSlides={true}
-            slidesPerView={1}
-            spaceBetween={30}
-            coverflowEffect={{
-              rotate: 50,
-              stretch: 0,
-              depth: 100,
-              modifier: 1,
-              slideShadows: true,
-            }}
-            breakpoints={{
-              640: {
-                slidesPerView: 1.5,
-                spaceBetween: 20,
-              },
-              768: {
-                slidesPerView: 2,
-                spaceBetween: 30,
-              },
-              1024: {
-                slidesPerView: 2.5,
-                spaceBetween: 30,
-              },
-            }}
-            loop={true}
-            autoplay={{
-              delay: 4000,
-              disableOnInteraction: false,
-            }}
-            pagination={{
-              clickable: true,
-              dynamicBullets: true,
-            }}
-            modules={[Pagination, Autoplay, EffectCoverflow]}
-            className="projects-swiper pb-16"
-          >
-            {projects.map((project, index) => (
-              <SwiperSlide key={index} className="h-auto">
-                <ProjectCard project={project} index={index} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setFilter(cat)}
+              className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
+                filter === cat
+                  ? "bg-purple-600 text-white shadow-lg shadow-purple-600/25"
+                  : "text-gray-500 hover:text-purple-400 border border-white/5 hover:border-purple-500/20"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
         </motion.div>
 
-        {/* Call to Action */}
+        {/* Grid */}
         <motion.div
-          variants={itemVariants}
+          variants={container}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="text-center mt-16"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          <motion.p
-            variants={itemVariants}
-            className="text-gray-400 mb-6 text-lg"
-          >
-            Want to see more of my work?
-          </motion.p>
-          <motion.a
+          {filtered.map((project, i) => (
+            <motion.div
+              key={i}
+              variants={item}
+              whileHover={{ y: -6 }}
+              className="glass-card overflow-hidden group"
+            >
+              {/* Image */}
+              <div className="relative overflow-hidden h-44">
+                <img
+                  src={project.img}
+                  alt={project.name}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute top-3 left-3">
+                  <span className="tag-pill text-xs">{project.category}</span>
+                </div>
+                {/* Hover links */}
+                <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2.5 bg-white/10 backdrop-blur-sm rounded-full text-white hover:bg-purple-500/40 transition-colors"
+                  >
+                    <Github className="w-5 h-5" />
+                  </a>
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2.5 bg-white/10 backdrop-blur-sm rounded-full text-white hover:bg-purple-500/40 transition-colors"
+                  >
+                    <ExternalLink className="w-5 h-5" />
+                  </a>
+                </div>
+              </div>
+
+              {/* Info */}
+              <div className="p-5 space-y-3">
+                <h3 className="text-white font-semibold text-lg group-hover:text-purple-400 transition-colors">
+                  {project.name}
+                </h3>
+                <p className="text-gray-500 text-sm leading-relaxed line-clamp-2">{project.description}</p>
+                <div className="flex flex-wrap gap-1.5 pt-1">
+                  {project.technologies.map((tech, ti) => (
+                    <span key={ti} className="tag-pill">{tech}</span>
+                  ))}
+                </div>
+                <div className="flex gap-3 pt-2">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-purple-400 transition-colors"
+                  >
+                    <Github className="w-3.5 h-3.5" /> Code
+                  </a>
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-purple-400 transition-colors"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5" /> Live Demo
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ delay: 0.6 }}
+          className="text-center mt-10"
+        >
+          <a
             href="https://github.com/pankaj143p"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="btn-primary inline-flex"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-purple-500/30 text-purple-400 hover:bg-purple-500/8 transition-all text-sm font-medium"
           >
-            <Github className="w-5 h-5" />
-            View All Projects on GitHub
-          </motion.a>
+            <Github className="w-4 h-4" />
+            View All on GitHub
+          </a>
         </motion.div>
       </div>
-
-      <style jsx>{`
-        .projects-swiper .swiper-pagination-bullet {
-          background: rgba(6, 182, 212, 0.5);
-          opacity: 0.5;
-        }
-        .projects-swiper .swiper-pagination-bullet-active {
-          background: rgb(6, 182, 212);
-          opacity: 1;
-        }
-      `}</style>
     </section>
   );
 };
