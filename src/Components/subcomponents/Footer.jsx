@@ -79,12 +79,7 @@ const Footer = () => {
                 pankaj114477pankaj@gmail.com
               </a>
               <p className="text-gray-500 text-sm">India</p>
-              <a
-                href="mailto:pankaj114477pankaj@gmail.com"
-                className="inline-block mt-3 text-sm btn-primary px-4 py-2"
-              >
-                Hire Me
-              </a>
+
             </div>
           </div>
         </div>

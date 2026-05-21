@@ -1,20 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Code2, Briefcase, Terminal, Award, Download, Mail } from "lucide-react";
+import { Download } from "lucide-react";
 import { FaGithub, FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa6";
 import { TypeAnimation } from "react-type-animation";
 import hero from "../../../public/heroimage.jpg";
 
 const About = () => {
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
-
-  const stats = [
-    { icon: Briefcase, count: "1+", label: "Years at Capgemini", color: "#4ade80" },
-    { icon: Code2, count: "10+", label: "Projects Built", color: "#4ade80" },
-    { icon: Terminal, count: "4000+", label: "Problems Solved", color: "#4ade80" },
-    { icon: Award, count: "20+", label: "Certifications", color: "#4ade80" },
-  ];
 
   const socials = [
     { icon: FaGithub, link: "https://github.com/pankaj143p", label: "GitHub" },
@@ -115,31 +108,12 @@ const About = () => {
               </p>
             </div>
 
-            {/* info rows */}
-            <div className="space-y-2 pt-1">
-              {[
-                { label: "Role", value: "Software Engineer @ Capgemini" },
-                { label: "Stack", value: "Java · Spring Boot · React.js · AI" },
-                { label: "Location", value: "India" },
-                { label: "Email", value: "pankaj114477pankaj@gmail.com" },
-              ].map((info, i) => (
-                <div key={i} className="flex gap-3 text-sm">
-                  <span className="text-green-400 font-medium w-20 shrink-0">{info.label}:</span>
-                  <span className="text-gray-300">{info.value}</span>
-                </div>
-              ))}
-            </div>
-
-            {/* buttons */}
-            <div className="flex flex-wrap gap-3 pt-1">
-              <a href="mailto:pankaj114477pankaj@gmail.com" className="btn-primary">
-                <Mail className="w-4 h-4" />
-                Hire Me
-              </a>
+            {/* Download CV only */}
+            <div className="pt-1">
               <a
                 href="/resume.pdf"
                 download
-                className="flex items-center gap-2 px-5 py-2.5 text-sm rounded-xl border border-green-500/25 text-green-400 hover:bg-green-500/8 transition-all font-medium"
+                className="flex items-center gap-2 px-5 py-2.5 text-sm rounded-xl border border-green-500/25 text-green-400 hover:bg-green-500/8 transition-all font-medium w-fit"
               >
                 <Download className="w-4 h-4" />
                 Download CV
@@ -168,29 +142,7 @@ const About = () => {
           </motion.div>
         </motion.div>
 
-        {/* ── Stats row ── */}
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-20"
-        >
-          {stats.map((s, i) => {
-            const Icon = s.icon;
-            return (
-              <motion.div
-                key={i}
-                variants={item}
-                whileHover={{ y: -4 }}
-                className="glass-card p-5 text-center"
-              >
-                <Icon className="w-5 h-5 mx-auto mb-2" style={{ color: s.color }} />
-                <div className="text-2xl font-bold mb-0.5" style={{ color: s.color }}>{s.count}</div>
-                <div className="text-gray-500 text-xs">{s.label}</div>
-              </motion.div>
-            );
-          })}
-        </motion.div>
+
       </div>
     </section>
   );

@@ -47,13 +47,7 @@ const Navbar = () => {
                 {menu.name}
               </motion.a>
             ))}
-            <motion.a
-              href="mailto:pankaj114477pankaj@gmail.com"
-              whileHover={{ scale: 1.03 }}
-              className="ml-4 px-5 py-2 text-sm btn-primary rounded-lg"
-            >
-              Hire Me
-            </motion.a>
+
           </div>
 
           <button
@@ -87,15 +81,7 @@ const Navbar = () => {
                   {menu.name}
                 </motion.a>
               ))}
-              <div className="pt-2">
-                <a
-                  href="mailto:pankaj114477pankaj@gmail.com"
-                  className="block btn-primary text-center"
-                  onClick={() => setOpen(false)}
-                >
-                  Hire Me
-                </a>
-              </div>
+
             </div>
           </motion.div>
         )}
