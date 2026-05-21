@@ -30,7 +30,7 @@ const Skills = () => {
         { name: "Next.js", icon: SiNextdotjs, color: "#ffffff" },
         { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
         { name: "CSS3", icon: SiCss3, color: "#1572B6" },
-        { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
+        { name: "Tailwind", icon: SiTailwindcss, color: "#06B6D4" },
       ],
     },
     {
@@ -74,9 +74,9 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-24 px-6 lg:px-8 relative overflow-hidden">
+    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/3 w-64 h-64 bg-cyan-600/4 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-1/3 w-48 h-48 sm:w-64 sm:h-64 bg-cyan-600/4 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
@@ -85,33 +85,33 @@ const Skills = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <p className="text-cyan-400 font-mono text-sm tracking-widest uppercase mb-3">What I work with</p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white">
+          <p className="text-cyan-400 font-mono text-xs sm:text-sm tracking-widest uppercase mb-3">What I work with</p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
             <span className="gradient-text">Stack</span>
           </h2>
           <div className="section-line" />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {categories.map((cat, ci) => (
             <motion.div
               key={ci}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: ci * 0.08 }}
-              className="glass-card p-6"
+              className="glass-card p-4 sm:p-6"
             >
-              <h3 className="text-base font-semibold text-white mb-5 flex items-center gap-2">
-                <span className="w-1.5 h-5 bg-cyan-500 rounded-full" />
+              <h3 className="text-sm sm:text-base font-semibold text-white mb-4 flex items-center gap-2">
+                <span className="w-1.5 h-4 bg-cyan-500 rounded-full" />
                 {cat.title}
               </h3>
               <motion.div
                 variants={container}
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
-                className="grid grid-cols-5 gap-2"
+                className="grid grid-cols-4 sm:grid-cols-5 gap-2"
               >
                 {cat.skills.map((skill, si) => {
                   const Icon = skill.icon;
@@ -119,14 +119,14 @@ const Skills = () => {
                     <motion.div
                       key={si}
                       variants={item}
-                      whileHover={{ y: -4, scale: 1.08 }}
-                      className="flex flex-col items-center gap-1.5 p-2.5 rounded-xl bg-white/3 hover:bg-cyan-500/6 border border-transparent hover:border-cyan-500/20 transition-all duration-200 cursor-default group"
+                      whileHover={{ y: -3, scale: 1.08 }}
+                      className="flex flex-col items-center gap-1.5 p-2 rounded-xl bg-white/3 hover:bg-cyan-500/6 border border-transparent hover:border-cyan-500/20 transition-all duration-200 cursor-default group"
                     >
                       <Icon
-                        className="w-6 h-6 transition-transform duration-200 group-hover:scale-110"
+                        className="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-200 group-hover:scale-110"
                         style={{ color: skill.color }}
                       />
-                      <span className="text-[10px] text-gray-600 group-hover:text-gray-300 transition-colors text-center leading-tight">
+                      <span className="text-[9px] sm:text-[10px] text-gray-600 group-hover:text-gray-300 transition-colors text-center leading-tight">
                         {skill.name}
                       </span>
                     </motion.div>
@@ -141,9 +141,9 @@ const Skills = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-8 glass-card p-6 text-center"
+          className="mt-6 glass-card p-4 sm:p-6 text-center"
         >
-          <p className="text-cyan-400/60 text-sm mb-4 font-mono">Currently working with →</p>
+          <p className="text-cyan-400/60 text-xs sm:text-sm mb-3 font-mono">Currently working with →</p>
           <div className="flex flex-wrap justify-center gap-2">
             {["AI Integration", "Microservices", "Spring Cloud", "Kafka", "GraphQL", "DevOps", "Cloud Computing"].map((t) => (
               <span key={t} className="tag-pill">{t}</span>

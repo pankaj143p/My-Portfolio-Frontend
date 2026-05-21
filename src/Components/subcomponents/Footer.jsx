@@ -13,27 +13,27 @@ const Footer = () => {
 
   const links = [
     { name: "About", href: "#about" },
+    { name: "Experience", href: "#experience" },
     { name: "GitHub", href: "#github" },
     { name: "Stack", href: "#skills" },
-    { name: "Experience", href: "#experience" },
     { name: "Work", href: "#projects" },
     { name: "Contact", href: "#contact" },
   ];
 
   return (
     <footer className="relative border-t border-white/5">
-      <div className="absolute inset-0 bg-gradient-to-t from-[#060d06] to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#050a0e] to-transparent pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto px-6 lg:px-8 py-12 relative z-10">
-        <div className="grid md:grid-cols-3 gap-10 mb-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-bold font-mono">
+          <div className="space-y-3">
+            <h3 className="text-lg sm:text-xl font-bold font-mono">
               <span className="text-white">&lt;</span>
               <span className="gradient-text">Pankaj</span>
               <span className="text-white"> /&gt;</span>
             </h3>
-            <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
+            <p className="text-gray-500 text-xs sm:text-sm leading-relaxed max-w-xs">
               Software Engineer at Capgemini. Java Full Stack Developer & Competitive Programmer.
             </p>
             <div className="flex gap-2">
@@ -58,11 +58,11 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white text-sm font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
+            <h4 className="text-white text-xs sm:text-sm font-semibold mb-3 sm:mb-4">Quick Links</h4>
+            <ul className="grid grid-cols-2 sm:grid-cols-1 gap-y-2 gap-x-4">
               {links.map((l, i) => (
                 <li key={i}>
-                  <a href={l.href} className="text-gray-500 hover:text-cyan-400 transition-colors text-sm">
+                  <a href={l.href} className="text-gray-500 hover:text-cyan-400 transition-colors text-xs sm:text-sm">
                     {l.name}
                   </a>
                 </li>
@@ -72,22 +72,21 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="text-white text-sm font-semibold mb-4">Get In Touch</h4>
+            <h4 className="text-white text-xs sm:text-sm font-semibold mb-3 sm:mb-4">Get In Touch</h4>
             <div className="space-y-2">
               <a
                 href="mailto:pankaj114477pankaj@gmail.com"
-                className="block text-gray-500 hover:text-cyan-400 transition-colors text-sm break-all"
+                className="block text-gray-500 hover:text-cyan-400 transition-colors text-xs sm:text-sm break-all"
               >
                 pankaj114477pankaj@gmail.com
               </a>
-              <p className="text-gray-500 text-sm">India</p>
-
+              <p className="text-gray-500 text-xs sm:text-sm">India</p>
             </div>
           </div>
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-white/5 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="border-t border-white/5 pt-5 flex flex-col sm:flex-row justify-between items-center gap-3">
           <p className="text-gray-600 text-xs flex items-center gap-1.5">
             © 2024 Pankaj Prajapati. Made with <Heart className="w-3 h-3 text-red-500 fill-current" /> All rights reserved.
           </p>

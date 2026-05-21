@@ -26,11 +26,10 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="min-h-screen flex items-center py-24 px-6 lg:px-8 relative overflow-hidden">
-      {/* bg glow */}
+    <section id="about" className="min-h-screen flex items-center py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-cyan-500/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-cyan-600/4 rounded-full blur-3xl" />
+        <div className="absolute top-1/3 left-1/4 w-48 h-48 sm:w-72 sm:h-72 bg-cyan-500/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/3 right-1/4 w-48 h-48 sm:w-72 sm:h-72 bg-cyan-600/4 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-6xl mx-auto w-full relative z-10">
@@ -39,46 +38,41 @@ const About = () => {
           variants={container}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center"
+          className="flex flex-col lg:grid lg:grid-cols-2 gap-10 lg:gap-20 items-center"
         >
-          {/* ── Left: image ── */}
-          <motion.div variants={item} className="flex justify-center lg:justify-start order-1">
+          {/* Image — on mobile shows first, centered */}
+          <motion.div variants={item} className="flex justify-center order-1">
             <div className="relative">
-              {/* glow */}
               <div className="absolute inset-0 bg-cyan-500/10 rounded-2xl blur-2xl scale-105" />
               <img
                 src={hero}
                 alt="Pankaj Prajapati"
-                className="relative z-10 w-64 h-72 sm:w-72 sm:h-80 lg:w-80 lg:h-96 object-cover rounded-2xl border border-cyan-500/15 shadow-2xl shadow-cyan-900/20"
+                className="relative z-10 w-48 h-56 sm:w-64 sm:h-72 lg:w-80 lg:h-96 object-cover rounded-2xl border border-cyan-500/15 shadow-2xl shadow-cyan-900/20"
               />
-              {/* corner accents */}
-              <div className="absolute -bottom-3 -right-3 w-20 h-20 border-r-2 border-b-2 border-cyan-500/30 rounded-br-2xl" />
-              <div className="absolute -top-3 -left-3 w-20 h-20 border-l-2 border-t-2 border-cyan-500/30 rounded-tl-2xl" />
-              {/* badge */}
+              <div className="absolute -bottom-3 -right-3 w-14 h-14 sm:w-20 sm:h-20 border-r-2 border-b-2 border-cyan-500/30 rounded-br-2xl" />
+              <div className="absolute -top-3 -left-3 w-14 h-14 sm:w-20 sm:h-20 border-l-2 border-t-2 border-cyan-500/30 rounded-tl-2xl" />
+              {/* badge — below image on all screens */}
               <motion.div
                 animate={{ y: [0, -5, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-5 left-1/2 -translate-x-1/2 glass-card px-4 py-2 flex items-center gap-2 whitespace-nowrap z-20"
+                className="absolute -bottom-6 left-1/2 -translate-x-1/2 glass-card px-3 py-1.5 flex items-center gap-2 whitespace-nowrap z-20"
               >
-                <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
+                <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full animate-pulse" />
                 <span className="text-xs text-gray-300 font-medium">Software Engineer @ Capgemini</span>
               </motion.div>
             </div>
           </motion.div>
 
-          {/* ── Right: content ── */}
-          <motion.div variants={item} className="order-2 space-y-6">
-            {/* greeting */}
-            <p className="text-cyan-400 font-mono text-sm tracking-widest uppercase">Hello, I'm</p>
+          {/* Content */}
+          <motion.div variants={item} className="order-2 space-y-5 text-center lg:text-left mt-6 lg:mt-0">
+            <p className="text-cyan-400 font-mono text-xs sm:text-sm tracking-widest uppercase">Hello, I'm</p>
 
-            {/* name */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight">
               <span className="text-white">Pankaj </span>
               <span className="gradient-text">Prajapati</span>
             </h1>
 
-            {/* typewriter */}
-            <div className="text-lg sm:text-xl font-medium text-gray-400">
+            <div className="text-base sm:text-xl font-medium text-gray-400 min-h-[28px]">
               <TypeAnimation
                 sequence={[
                   "Software Engineer @ Capgemini", 2500,
@@ -94,8 +88,7 @@ const About = () => {
               />
             </div>
 
-            {/* bio */}
-            <div className="space-y-3">
+            <div className="space-y-2">
               <p className="text-gray-400 text-sm leading-relaxed">
                 A <span className="text-cyan-400 font-medium">Software Engineer at Capgemini</span> working
                 in the Java Full Stack domain. I build enterprise-grade applications using{" "}
@@ -104,24 +97,21 @@ const About = () => {
               </p>
               <p className="text-gray-400 text-sm leading-relaxed">
                 Passionate competitive programmer with 4000+ problems solved across all major platforms.
-                I love writing clean, scalable software that solves real-world problems.
               </p>
             </div>
 
-            {/* Download CV only */}
-            <div className="pt-1">
+            <div className="flex flex-wrap justify-center lg:justify-start gap-3 pt-1">
               <a
                 href="/resume.pdf"
                 download
-                className="flex items-center gap-2 px-5 py-2.5 text-sm rounded-xl border border-cyan-500/25 text-cyan-400 hover:bg-cyan-500/8 transition-all font-medium w-fit"
+                className="flex items-center gap-2 px-5 py-2.5 text-sm rounded-xl border border-cyan-500/25 text-cyan-400 hover:bg-cyan-500/8 transition-all font-medium"
               >
                 <Download className="w-4 h-4" />
                 Download CV
               </a>
             </div>
 
-            {/* socials */}
-            <div className="flex items-center gap-3 pt-1">
+            <div className="flex items-center justify-center lg:justify-start gap-3 pt-1">
               {socials.map((s, i) => {
                 const Icon = s.icon;
                 return (
@@ -141,8 +131,6 @@ const About = () => {
             </div>
           </motion.div>
         </motion.div>
-
-
       </div>
     </section>
   );

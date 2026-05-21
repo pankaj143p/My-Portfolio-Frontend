@@ -63,39 +63,38 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-24 px-6 lg:px-8 relative overflow-hidden">
+    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-cyan-600/4 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 right-1/4 w-48 h-48 sm:w-64 sm:h-64 bg-cyan-600/4 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        {/* Header */}
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-10"
         >
-          <p className="text-cyan-400 font-mono text-sm tracking-widest uppercase mb-3">What I've built</p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white">
+          <p className="text-cyan-400 font-mono text-xs sm:text-sm tracking-widest uppercase mb-3">What I've built</p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
             <span className="gradient-text">Proof of Work</span>
           </h2>
           <div className="section-line" />
         </motion.div>
 
-        {/* Filter tabs */}
+        {/* Filter tabs — scrollable on mobile */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-2 mb-10"
+          className="flex flex-wrap justify-center gap-2 mb-8"
         >
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setFilter(cat)}
-              className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
+              className={`px-3 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 ${
                 filter === cat
                   ? "bg-cyan-600 text-white shadow-lg shadow-cyan-600/25"
                   : "text-gray-500 hover:text-cyan-400 border border-white/5 hover:border-cyan-500/20"
@@ -106,56 +105,51 @@ const Projects = () => {
           ))}
         </motion.div>
 
-        {/* Cards grid — no images */}
         <motion.div
           variants={container}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-5"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5"
         >
           {filtered.map((project, i) => (
             <motion.div
               key={i}
               variants={item}
-              whileHover={{ y: -5 }}
-              className="glass-card p-6 flex flex-col gap-4 group"
+              whileHover={{ y: -4 }}
+              className="glass-card p-5 sm:p-6 flex flex-col gap-3 group"
             >
-              {/* Top row: name + category */}
               <div className="flex items-start justify-between gap-2">
-                <h3 className="text-white font-semibold text-lg group-hover:text-cyan-400 transition-colors leading-tight">
+                <h3 className="text-white font-semibold text-base sm:text-lg group-hover:text-cyan-400 transition-colors leading-tight">
                   {project.name}
                 </h3>
                 <span className="tag-pill shrink-0 text-xs">{project.category}</span>
               </div>
 
-              {/* Description */}
-              <p className="text-gray-500 text-sm leading-relaxed flex-1">{project.description}</p>
+              <p className="text-gray-500 text-xs sm:text-sm leading-relaxed flex-1">{project.description}</p>
 
-              {/* Tech tags */}
               <div className="flex flex-wrap gap-1.5">
                 {project.technologies.map((tech, ti) => (
                   <span key={ti} className="tag-pill">{tech}</span>
                 ))}
               </div>
 
-              {/* Links */}
               <div className="flex items-center gap-4 pt-2 border-t border-white/5">
                 <a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-sm text-gray-500 hover:text-cyan-400 transition-colors font-medium"
+                  className="flex items-center gap-1.5 text-xs sm:text-sm text-gray-500 hover:text-cyan-400 transition-colors font-medium"
                 >
-                  <Github className="w-4 h-4" />
+                  <Github className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   Code
                 </a>
                 <a
                   href={project.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-sm text-gray-500 hover:text-cyan-400 transition-colors font-medium"
+                  className="flex items-center gap-1.5 text-xs sm:text-sm text-gray-500 hover:text-cyan-400 transition-colors font-medium"
                 >
-                  <ExternalLink className="w-4 h-4" />
+                  <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   Live Demo
                 </a>
               </div>
@@ -167,15 +161,15 @@ const Projects = () => {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.5 }}
-          className="text-center mt-10"
+          className="text-center mt-8"
         >
           <a
             href="https://github.com/pankaj143p"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-cyan-500/25 text-cyan-400 hover:bg-cyan-500/8 transition-all text-sm font-medium"
+            className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl border border-cyan-500/25 text-cyan-400 hover:bg-cyan-500/8 transition-all text-xs sm:text-sm font-medium"
           >
-            <Github className="w-4 h-4" />
+            <Github className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             View All on GitHub
           </a>
         </motion.div>
