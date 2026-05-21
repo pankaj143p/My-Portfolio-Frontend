@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 import { Download } from "lucide-react";
 import { FaGithub, FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa6";
 import { TypeAnimation } from "react-type-animation";
-import hero from "../../../public/heroimage.jpg";
+import hero from "../../../public/image.png";
 
 const About = () => {
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
@@ -43,14 +43,15 @@ const About = () => {
           {/* Image — on mobile shows first, centered */}
           <motion.div variants={item} className="flex justify-center order-1">
             <div className="relative">
-              <div className="absolute inset-0 bg-cyan-500/10 rounded-2xl blur-2xl scale-105" />
+              <div className="absolute inset-0 bg-cyan-500/10 rounded-full blur-2xl scale-105" />
               <img
                 src={hero}
                 alt="Pankaj Prajapati"
-                className="relative z-10 w-48 h-56 sm:w-64 sm:h-72 lg:w-80 lg:h-96 object-cover rounded-2xl border border-cyan-500/15 shadow-2xl shadow-cyan-900/20"
+                className="relative z-10 w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 object-cover rounded-full border-2 border-cyan-500/20 shadow-2xl shadow-cyan-900/20"
               />
-              <div className="absolute -bottom-3 -right-3 w-14 h-14 sm:w-20 sm:h-20 border-r-2 border-b-2 border-cyan-500/30 rounded-br-2xl" />
-              <div className="absolute -top-3 -left-3 w-14 h-14 sm:w-20 sm:h-20 border-l-2 border-t-2 border-cyan-500/30 rounded-tl-2xl" />
+              {/* rotating ring */}
+              <div className="absolute inset-0 rounded-full border-2 border-cyan-500/20 animate-spin" style={{ animationDuration: '12s' }} />
+              <div className="absolute inset-2 rounded-full border border-cyan-400/10 animate-spin" style={{ animationDuration: '8s', animationDirection: 'reverse' }} />
               {/* badge — below image on all screens */}
               <motion.div
                 animate={{ y: [0, -5, 0] }}
