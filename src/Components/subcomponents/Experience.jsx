@@ -11,7 +11,7 @@ const Experience = () => {
       role: "Software Engineer",
       company: "Capgemini",
       location: "India",
-      duration: "2024 – Present",
+      duration: "2025 – Present",
       current: true,
       description:
         "Working as a Software Engineer in the Java Full Stack domain, building and maintaining enterprise-grade web applications using Java, Spring Boot, and React.js. Also contributing to AI-powered features and integrations within client projects.",
