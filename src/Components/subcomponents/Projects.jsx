@@ -65,7 +65,7 @@ const Projects = () => {
   return (
     <section id="projects" className="py-24 px-6 lg:px-8 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-green-600/4 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-cyan-600/4 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
@@ -77,7 +77,7 @@ const Projects = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <p className="text-green-400 font-mono text-sm tracking-widest uppercase mb-3">What I've built</p>
+          <p className="text-cyan-400 font-mono text-sm tracking-widest uppercase mb-3">What I've built</p>
           <h2 className="text-4xl sm:text-5xl font-bold text-white">
             <span className="gradient-text">Proof of Work</span>
           </h2>
@@ -97,8 +97,8 @@ const Projects = () => {
               onClick={() => setFilter(cat)}
               className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
                 filter === cat
-                  ? "bg-green-600 text-white shadow-lg shadow-green-600/25"
-                  : "text-gray-500 hover:text-green-400 border border-white/5 hover:border-green-500/20"
+                  ? "bg-cyan-600 text-white shadow-lg shadow-cyan-600/25"
+                  : "text-gray-500 hover:text-cyan-400 border border-white/5 hover:border-cyan-500/20"
               }`}
             >
               {cat}
@@ -122,7 +122,7 @@ const Projects = () => {
             >
               {/* Top row: name + category */}
               <div className="flex items-start justify-between gap-2">
-                <h3 className="text-white font-semibold text-lg group-hover:text-green-400 transition-colors leading-tight">
+                <h3 className="text-white font-semibold text-lg group-hover:text-cyan-400 transition-colors leading-tight">
                   {project.name}
                 </h3>
                 <span className="tag-pill shrink-0 text-xs">{project.category}</span>
@@ -144,7 +144,7 @@ const Projects = () => {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-sm text-gray-500 hover:text-green-400 transition-colors font-medium"
+                  className="flex items-center gap-1.5 text-sm text-gray-500 hover:text-cyan-400 transition-colors font-medium"
                 >
                   <Github className="w-4 h-4" />
                   Code
@@ -153,7 +153,7 @@ const Projects = () => {
                   href={project.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-sm text-gray-500 hover:text-green-400 transition-colors font-medium"
+                  className="flex items-center gap-1.5 text-sm text-gray-500 hover:text-cyan-400 transition-colors font-medium"
                 >
                   <ExternalLink className="w-4 h-4" />
                   Live Demo
@@ -173,7 +173,7 @@ const Projects = () => {
             href="https://github.com/pankaj143p"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-green-500/25 text-green-400 hover:bg-green-500/8 transition-all text-sm font-medium"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-cyan-500/25 text-cyan-400 hover:bg-cyan-500/8 transition-all text-sm font-medium"
           >
             <Github className="w-4 h-4" />
             View All on GitHub

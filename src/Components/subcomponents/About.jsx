@@ -29,8 +29,8 @@ const About = () => {
     <section id="about" className="min-h-screen flex items-center py-24 px-6 lg:px-8 relative overflow-hidden">
       {/* bg glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-green-500/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-green-600/4 rounded-full blur-3xl" />
+        <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-cyan-500/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-cyan-600/4 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-6xl mx-auto w-full relative z-10">
@@ -45,22 +45,22 @@ const About = () => {
           <motion.div variants={item} className="flex justify-center lg:justify-start order-1">
             <div className="relative">
               {/* glow */}
-              <div className="absolute inset-0 bg-green-500/10 rounded-2xl blur-2xl scale-105" />
+              <div className="absolute inset-0 bg-cyan-500/10 rounded-2xl blur-2xl scale-105" />
               <img
                 src={hero}
                 alt="Pankaj Prajapati"
-                className="relative z-10 w-64 h-72 sm:w-72 sm:h-80 lg:w-80 lg:h-96 object-cover rounded-2xl border border-green-500/15 shadow-2xl shadow-green-900/20"
+                className="relative z-10 w-64 h-72 sm:w-72 sm:h-80 lg:w-80 lg:h-96 object-cover rounded-2xl border border-cyan-500/15 shadow-2xl shadow-cyan-900/20"
               />
               {/* corner accents */}
-              <div className="absolute -bottom-3 -right-3 w-20 h-20 border-r-2 border-b-2 border-green-500/30 rounded-br-2xl" />
-              <div className="absolute -top-3 -left-3 w-20 h-20 border-l-2 border-t-2 border-green-500/30 rounded-tl-2xl" />
+              <div className="absolute -bottom-3 -right-3 w-20 h-20 border-r-2 border-b-2 border-cyan-500/30 rounded-br-2xl" />
+              <div className="absolute -top-3 -left-3 w-20 h-20 border-l-2 border-t-2 border-cyan-500/30 rounded-tl-2xl" />
               {/* badge */}
               <motion.div
                 animate={{ y: [0, -5, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute -bottom-5 left-1/2 -translate-x-1/2 glass-card px-4 py-2 flex items-center gap-2 whitespace-nowrap z-20"
               >
-                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
                 <span className="text-xs text-gray-300 font-medium">Software Engineer @ Capgemini</span>
               </motion.div>
             </div>
@@ -69,7 +69,7 @@ const About = () => {
           {/* ── Right: content ── */}
           <motion.div variants={item} className="order-2 space-y-6">
             {/* greeting */}
-            <p className="text-green-400 font-mono text-sm tracking-widest uppercase">Hello, I'm</p>
+            <p className="text-cyan-400 font-mono text-sm tracking-widest uppercase">Hello, I'm</p>
 
             {/* name */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
@@ -90,16 +90,16 @@ const About = () => {
                 wrapper="span"
                 speed={50}
                 repeat={Infinity}
-                className="text-green-400"
+                className="text-cyan-400"
               />
             </div>
 
             {/* bio */}
             <div className="space-y-3">
               <p className="text-gray-400 text-sm leading-relaxed">
-                A <span className="text-green-400 font-medium">Software Engineer at Capgemini</span> working
+                A <span className="text-cyan-400 font-medium">Software Engineer at Capgemini</span> working
                 in the Java Full Stack domain. I build enterprise-grade applications using{" "}
-                <span className="text-green-300 font-medium">Java, Spring Boot, and React.js</span>, and
+                <span className="text-cyan-300 font-medium">Java, Spring Boot, and React.js</span>, and
                 contribute to AI-powered features within client projects.
               </p>
               <p className="text-gray-400 text-sm leading-relaxed">
@@ -113,7 +113,7 @@ const About = () => {
               <a
                 href="/resume.pdf"
                 download
-                className="flex items-center gap-2 px-5 py-2.5 text-sm rounded-xl border border-green-500/25 text-green-400 hover:bg-green-500/8 transition-all font-medium w-fit"
+                className="flex items-center gap-2 px-5 py-2.5 text-sm rounded-xl border border-cyan-500/25 text-cyan-400 hover:bg-cyan-500/8 transition-all font-medium w-fit"
               >
                 <Download className="w-4 h-4" />
                 Download CV
@@ -131,7 +131,7 @@ const About = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ y: -3 }}
-                    className="p-2 rounded-lg text-gray-500 hover:text-green-400 hover:bg-green-500/8 transition-all"
+                    className="p-2 rounded-lg text-gray-500 hover:text-cyan-400 hover:bg-cyan-500/8 transition-all"
                     title={s.label}
                   >
                     <Icon className="w-5 h-5" />

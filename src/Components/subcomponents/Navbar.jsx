@@ -8,9 +8,9 @@ const Navbar = () => {
 
   const menuLinks = [
     { name: "About", link: "#about" },
+    { name: "Experience", link: "#experience" },
     { name: "GitHub", link: "#github" },
     { name: "Stack", link: "#skills" },
-    { name: "Experience", link: "#experience" },
     { name: "Work", link: "#projects" },
     { name: "Contact", link: "#contact" },
   ];
@@ -27,7 +27,7 @@ const Navbar = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed w-full top-0 z-[999] transition-all duration-400 ${
-        sticky ? "bg-[#0a0f0a]/90 backdrop-blur-md border-b border-green-500/10 shadow-lg shadow-green-900/10" : "bg-transparent"
+        sticky ? "bg-[#0a0f0a]/90 backdrop-blur-md border-b border-cyan-500/10 shadow-lg shadow-cyan-900/10" : "bg-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
@@ -44,7 +44,7 @@ const Navbar = () => {
                 key={i}
                 href={menu.link}
                 whileHover={{ y: -1 }}
-                className="px-4 py-2 text-sm text-gray-400 hover:text-green-400 transition-colors duration-200 rounded-lg hover:bg-green-500/5 font-medium"
+                className="px-4 py-2 text-sm text-gray-400 hover:text-cyan-400 transition-colors duration-200 rounded-lg hover:bg-cyan-500/5 font-medium"
               >
                 {menu.name}
               </motion.a>
@@ -67,7 +67,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[#0a0f0a]/95 backdrop-blur-md border-t border-green-500/10"
+            className="md:hidden bg-[#0a0f0a]/95 backdrop-blur-md border-t border-cyan-500/10"
           >
             <div className="px-6 py-4 space-y-1">
               {menuLinks.map((menu, i) => (
@@ -78,7 +78,7 @@ const Navbar = () => {
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
-                  className="block px-4 py-2.5 text-gray-400 hover:text-green-400 hover:bg-green-500/5 rounded-lg transition-all text-sm font-medium"
+                  className="block px-4 py-2.5 text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/5 rounded-lg transition-all text-sm font-medium"
                 >
                   {menu.name}
                 </motion.a>

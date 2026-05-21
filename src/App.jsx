@@ -31,23 +31,23 @@ const LoadingScreen = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center" style={{ backgroundColor: '#0a0f0a' }}>
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center" style={{ backgroundColor: '#080c10' }}>
       <div className="font-mono text-sm space-y-2 w-72">
         {lines.map((line, i) => (
           <div
             key={i}
             className="transition-opacity duration-300"
-            style={{ opacity: visible.includes(i) ? 1 : 0, color: i === lines.length - 1 ? '#4ade80' : '#6b7280' }}
+            style={{ opacity: visible.includes(i) ? 1 : 0, color: i === lines.length - 1 ? '#22d3ee' : '#6b7280' }}
           >
             {line}
             {visible.includes(i) && i === visible.length - 1 && i < lines.length - 1 && (
-              <span className="inline-block w-2 h-4 bg-green-400 ml-1 animate-pulse align-middle" />
+              <span className="inline-block w-2 h-4 bg-cyan-400 ml-1 animate-pulse align-middle" />
             )}
           </div>
         ))}
         {visible.length === lines.length && (
-          <div className="mt-4 h-0.5 bg-green-500/20 rounded-full overflow-hidden">
-            <div className="h-full bg-green-400 rounded-full animate-[loading_0.6s_ease-out_forwards]" style={{ animation: 'expand 0.6s ease-out forwards' }} />
+          <div className="mt-4 h-0.5 bg-cyan-500/20 rounded-full overflow-hidden">
+            <div className="h-full bg-cyan-400 rounded-full" style={{ animation: 'expand 0.6s ease-out forwards' }} />
           </div>
         )}
       </div>
@@ -77,9 +77,9 @@ function App() {
           <Navbar />
           <Bot />
           <About />
+          <Experience />
           <GitHub />
           <Stack />
-          <Experience />
           <ProofOfWork />
           <Contact />
           <Footer />

@@ -46,7 +46,7 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ y: -3 }}
-                    className="p-2 rounded-lg text-gray-600 hover:text-green-400 hover:bg-green-500/8 transition-all"
+                    className="p-2 rounded-lg text-gray-600 hover:text-cyan-400 hover:bg-cyan-500/8 transition-all"
                     title={s.label}
                   >
                     <Icon className="w-4 h-4" />
@@ -62,7 +62,7 @@ const Footer = () => {
             <ul className="space-y-2">
               {links.map((l, i) => (
                 <li key={i}>
-                  <a href={l.href} className="text-gray-500 hover:text-green-400 transition-colors text-sm">
+                  <a href={l.href} className="text-gray-500 hover:text-cyan-400 transition-colors text-sm">
                     {l.name}
                   </a>
                 </li>
@@ -76,7 +76,7 @@ const Footer = () => {
             <div className="space-y-2">
               <a
                 href="mailto:pankaj114477pankaj@gmail.com"
-                className="block text-gray-500 hover:text-green-400 transition-colors text-sm break-all"
+                className="block text-gray-500 hover:text-cyan-400 transition-colors text-sm break-all"
               >
                 pankaj114477pankaj@gmail.com
               </a>
@@ -94,14 +94,14 @@ const Footer = () => {
           <motion.button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             whileHover={{ y: -2 }}
-            className="p-2 rounded-lg bg-green-500/10 text-green-400 hover:bg-green-500/20 transition-all"
+            className="p-2 rounded-lg bg-cyan-500/10 text-cyan-400 hover:bg-cyan-500/20 transition-all"
           >
             <ArrowUp className="w-4 h-4" />
           </motion.button>
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-green-500/30 to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" />
     </footer>
   );
 };

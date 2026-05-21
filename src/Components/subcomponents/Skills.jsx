@@ -76,7 +76,7 @@ const Skills = () => {
   return (
     <section id="skills" className="py-24 px-6 lg:px-8 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/3 w-64 h-64 bg-green-600/4 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-1/3 w-64 h-64 bg-cyan-600/4 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
@@ -87,7 +87,7 @@ const Skills = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="text-green-400 font-mono text-sm tracking-widest uppercase mb-3">What I work with</p>
+          <p className="text-cyan-400 font-mono text-sm tracking-widest uppercase mb-3">What I work with</p>
           <h2 className="text-4xl sm:text-5xl font-bold text-white">
             <span className="gradient-text">Stack</span>
           </h2>
@@ -104,7 +104,7 @@ const Skills = () => {
               className="glass-card p-6"
             >
               <h3 className="text-base font-semibold text-white mb-5 flex items-center gap-2">
-                <span className="w-1.5 h-5 bg-green-500 rounded-full" />
+                <span className="w-1.5 h-5 bg-cyan-500 rounded-full" />
                 {cat.title}
               </h3>
               <motion.div
@@ -120,7 +120,7 @@ const Skills = () => {
                       key={si}
                       variants={item}
                       whileHover={{ y: -4, scale: 1.08 }}
-                      className="flex flex-col items-center gap-1.5 p-2.5 rounded-xl bg-white/3 hover:bg-green-500/6 border border-transparent hover:border-green-500/20 transition-all duration-200 cursor-default group"
+                      className="flex flex-col items-center gap-1.5 p-2.5 rounded-xl bg-white/3 hover:bg-cyan-500/6 border border-transparent hover:border-cyan-500/20 transition-all duration-200 cursor-default group"
                     >
                       <Icon
                         className="w-6 h-6 transition-transform duration-200 group-hover:scale-110"
@@ -143,7 +143,7 @@ const Skills = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mt-8 glass-card p-6 text-center"
         >
-          <p className="text-green-400/60 text-sm mb-4 font-mono">Currently working with →</p>
+          <p className="text-cyan-400/60 text-sm mb-4 font-mono">Currently working with →</p>
           <div className="flex flex-wrap justify-center gap-2">
             {["AI Integration", "Microservices", "Spring Cloud", "Kafka", "GraphQL", "DevOps", "Cloud Computing"].map((t) => (
               <span key={t} className="tag-pill">{t}</span>

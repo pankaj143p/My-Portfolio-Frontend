@@ -1,16 +1,12 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageCircle, X, Send } from "lucide-react";
+import { MessageCircle, X, Mail, ExternalLink } from "lucide-react";
 
 const Bot = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleBot = () => {
-    setIsOpen(!isOpen);
-  };
-
   const scrollToContact = () => {
-    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
     setIsOpen(false);
   };
 
@@ -19,63 +15,72 @@ const Bot = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            initial={{ opacity: 0, scale: 0.85, y: 16 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.8, y: 20 }}
-            transition={{ duration: 0.3 }}
-            className="absolute bottom-20 right-0 w-80 sm:w-96"
+            exit={{ opacity: 0, scale: 0.85, y: 16 }}
+            transition={{ duration: 0.25 }}
+            className="absolute bottom-20 right-0 w-72 sm:w-80"
           >
-            <div className="glass-card p-6 m-4 shadow-2xl">
+            <div className="glass-card p-5 shadow-2xl shadow-cyan-900/20 border border-cyan-500/15">
+              {/* Header */}
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-white font-semibold">Hi there! 👋</h3>
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
+                  <h3 className="text-white font-semibold text-sm">Pankaj Prajapati</h3>
+                </div>
                 <button
-                  onClick={toggleBot}
-                  className="text-gray-400 hover:text-white transition-colors"
+                  onClick={() => setIsOpen(false)}
+                  className="text-gray-500 hover:text-white transition-colors"
                 >
-                  <X className="w-5 h-5" />
+                  <X className="w-4 h-4" />
                 </button>
               </div>
-              
-              <p className="text-gray-300 text-sm mb-4 leading-relaxed">
-                I'm Pankaj, a MERN Stack Developer. Thanks for visiting my portfolio! 
-                Have a project in mind? Let's discuss it!
+
+              {/* Message */}
+              <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                Hey! 👋 I'm a <span className="text-cyan-400 font-medium">Software Engineer at Capgemini</span> — Java Full Stack + React.js + AI. Open to collaborations and freelance work.
               </p>
-              
-              <div className="space-y-3">
+
+              {/* Stack tags */}
+              <div className="flex flex-wrap gap-1.5 mb-4">
+                {["Java", "Spring Boot", "React.js", "AI"].map((t) => (
+                  <span key={t} className="tag-pill text-xs">{t}</span>
+                ))}
+              </div>
+
+              {/* Actions */}
+              <div className="space-y-2">
                 <motion.button
                   onClick={scrollToContact}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full btn-primary text-sm py-3"
+                  className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white text-sm font-medium transition-colors"
                 >
-                  <Send className="w-4 h-4" />
-                  Get In Touch
+                  <Mail className="w-4 h-4" />
+                  Reach Out
                 </motion.button>
-                
-                <div className="flex gap-2 text-xs">
-                  <span className="px-3 py-1 bg-cyan-500/10 text-cyan-400 rounded-full border border-cyan-500/20">
-                    React
-                  </span>
-                  <span className="px-3 py-1 bg-green-500/10 text-green-400 rounded-full border border-green-500/20">
-                    Node.js
-                  </span>
-                  <span className="px-3 py-1 bg-blue-500/10 text-blue-400 rounded-full border border-blue-500/20">
-                    MongoDB
-                  </span>
-                </div>
+                <motion.a
+                  href="https://github.com/pankaj143p"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.02 }}
+                  className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl border border-cyan-500/20 text-cyan-400 text-sm font-medium hover:bg-cyan-500/8 transition-colors"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  View GitHub
+                </motion.a>
               </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Chat Button */}
+      {/* Toggle button */}
       <motion.button
-        onClick={toggleBot}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        animate={isOpen ? { rotate: 0 } : { rotate: 0 }}
-        className="relative w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 flex items-center justify-center group"
+        onClick={() => setIsOpen(!isOpen)}
+        whileHover={{ scale: 1.08 }}
+        whileTap={{ scale: 0.92 }}
+        className="relative w-13 h-13 w-14 h-14 bg-cyan-600 hover:bg-cyan-500 text-white rounded-full shadow-lg shadow-cyan-900/30 transition-colors flex items-center justify-center"
       >
         <AnimatePresence mode="wait">
           {isOpen ? (
@@ -86,45 +91,28 @@ const Bot = () => {
               exit={{ rotate: 90, opacity: 0 }}
               transition={{ duration: 0.2 }}
             >
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5" />
             </motion.div>
           ) : (
             <motion.div
-              key="message"
+              key="open"
               initial={{ rotate: 90, opacity: 0 }}
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: -90, opacity: 0 }}
               transition={{ duration: 0.2 }}
               className="relative"
             >
-              <MessageCircle className="w-6 h-6" />
-              
-              {/* Notification dot */}
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full"
-              ></motion.div>
+              <MessageCircle className="w-5 h-5" />
+              <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-red-500 rounded-full" />
             </motion.div>
           )}
         </AnimatePresence>
 
-        {/* Ripple effect */}
-        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 opacity-30 animate-ping group-hover:animate-pulse"></div>
+        {/* ping ring */}
+        {!isOpen && (
+          <span className="absolute inset-0 rounded-full bg-cyan-500/30 animate-ping" />
+        )}
       </motion.button>
-
-      {/* Tooltip */}
-      {!isOpen && (
-        <motion.div
-          initial={{ opacity: 0, x: 10 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="absolute right-full top-1/2 transform -translate-y-1/2 mr-3 px-3 py-2 bg-slate-800 text-white text-sm rounded-lg shadow-lg whitespace-nowrap"
-        >
-          Let's chat!
-          <div className="absolute top-1/2 left-full transform -translate-y-1/2 w-0 h-0 border-l-4 border-l-slate-800 border-t-4 border-t-transparent border-b-4 border-b-transparent"></div>
-        </motion.div>
-      )}
     </div>
   );
 };

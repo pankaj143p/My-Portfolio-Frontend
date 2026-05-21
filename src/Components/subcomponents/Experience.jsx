@@ -23,7 +23,7 @@ const Experience = () => {
         "Code reviews, unit testing, and CI/CD pipeline management",
       ],
       tech: ["Java", "Spring Boot", "React.js", "Hibernate", "Oracle DB", "REST APIs", "AI Integration", "Git", "Agile"],
-      color: "from-green-600 to-emerald-600",
+      color: "from-cyan-600 to-emerald-600",
     },
   ];
 
@@ -39,8 +39,8 @@ const Experience = () => {
   return (
     <section id="experience" className="py-24 px-6 lg:px-8 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-green-600/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-green-500/4 rounded-full blur-3xl" />
+        <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-cyan-600/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-cyan-500/4 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
@@ -51,7 +51,7 @@ const Experience = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="text-green-400 font-mono text-sm tracking-widest uppercase mb-3">Where I've worked</p>
+          <p className="text-cyan-400 font-mono text-sm tracking-widest uppercase mb-3">Where I've worked</p>
           <h2 className="text-4xl sm:text-5xl font-bold text-white">
             Work <span className="gradient-text">Experience</span>
           </h2>
@@ -65,14 +65,14 @@ const Experience = () => {
           className="relative"
         >
           {/* Timeline line */}
-          <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-green-500/40 via-green-500/10 to-transparent hidden md:block" />
+          <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-cyan-500/40 via-cyan-500/10 to-transparent hidden md:block" />
 
           {experiences.map((exp, i) => (
             <motion.div key={i} variants={item} className="relative md:pl-24 mb-8">
               {/* Timeline dot */}
               <div className="absolute left-8 top-8 -translate-x-1/2 hidden md:flex items-center justify-center">
-                <div className="w-4 h-4 rounded-full bg-green-500 shadow-lg shadow-green-500/30" />
-                <div className="absolute w-8 h-8 rounded-full border border-green-500/20 animate-ping opacity-30" />
+                <div className="w-4 h-4 rounded-full bg-cyan-500 shadow-lg shadow-cyan-500/30" />
+                <div className="absolute w-8 h-8 rounded-full border border-cyan-500/20 animate-ping opacity-30" />
               </div>
 
               <div className="glass-card p-7 group">
@@ -83,17 +83,17 @@ const Experience = () => {
                       <Briefcase className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-white font-bold text-xl group-hover:text-green-400 transition-colors">
+                      <h3 className="text-white font-bold text-xl group-hover:text-cyan-400 transition-colors">
                         {exp.role}
                       </h3>
-                      <p className="text-green-400 font-semibold text-base mt-0.5">{exp.company}</p>
+                      <p className="text-cyan-400 font-semibold text-base mt-0.5">{exp.company}</p>
                     </div>
                   </div>
 
                   <div className="flex flex-col items-start sm:items-end gap-1.5 shrink-0">
                     {exp.current && (
-                      <span className="flex items-center gap-1.5 px-3 py-1 bg-green-500/10 border border-green-500/20 rounded-full text-green-400 text-xs font-medium">
-                        <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
+                      <span className="flex items-center gap-1.5 px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-cyan-400 text-xs font-medium">
+                        <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full animate-pulse" />
                         Current
                       </span>
                     )}
@@ -113,7 +113,7 @@ const Experience = () => {
                 <ul className="space-y-2 mb-5">
                   {exp.responsibilities.map((r, ri) => (
                     <li key={ri} className="flex items-start gap-2.5 text-sm text-gray-400">
-                      <span className="w-1.5 h-1.5 bg-green-500 rounded-full mt-1.5 shrink-0" />
+                      <span className="w-1.5 h-1.5 bg-cyan-500 rounded-full mt-1.5 shrink-0" />
                       {r}
                     </li>
                   ))}
