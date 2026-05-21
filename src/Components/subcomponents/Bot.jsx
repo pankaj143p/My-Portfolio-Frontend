@@ -38,7 +38,7 @@ const Bot = () => {
 
               {/* Message */}
               <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                Hey! 👋 I'm a <span className="text-cyan-400 font-medium">Software Engineer at Capgemini</span> — Java Full Stack + React.js + AI. Open to collaborations and freelance work.
+                Hey! 👋 I'm a <span className="text-cyan-400 font-medium">Software Engineer at Capgemini</span> — Java Full Stack + React.js + AI.
               </p>
 
               {/* Stack tags */}
