@@ -1,17 +1,17 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Code2, Briefcase, Award, GraduationCap } from "lucide-react";
+import { Code2, Briefcase, Award, Terminal } from "lucide-react";
 import hero from "../../../public/heroimage.jpg";
 
 const About = () => {
   const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true });
 
   const stats = [
-    { icon: Code2, count: "10+", label: "Projects", color: "text-purple-400" },
-    { icon: Briefcase, count: "02", label: "Internships", color: "text-indigo-400" },
-    { icon: Award, count: "20+", label: "Certifications", color: "text-violet-400" },
-    { icon: GraduationCap, count: "4000+", label: "Problems Solved", color: "text-fuchsia-400" },
+    { icon: Briefcase, count: "1+", label: "Years at Capgemini", color: "text-purple-400" },
+    { icon: Code2, count: "10+", label: "Projects Built", color: "text-indigo-400" },
+    { icon: Terminal, count: "4000+", label: "Problems Solved", color: "text-violet-400" },
+    { icon: Award, count: "20+", label: "Certifications", color: "text-fuchsia-400" },
   ];
 
   const container = {
@@ -30,7 +30,6 @@ const About = () => {
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        {/* Header */}
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
@@ -60,7 +59,6 @@ const About = () => {
                 alt="Pankaj Prajapati"
                 className="relative z-10 w-72 h-80 sm:w-80 sm:h-96 object-cover rounded-2xl border border-purple-500/20 shadow-2xl shadow-purple-900/20"
               />
-              {/* Decorative corner */}
               <div className="absolute -bottom-3 -right-3 w-24 h-24 border-r-2 border-b-2 border-purple-500/40 rounded-br-2xl" />
               <div className="absolute -top-3 -left-3 w-24 h-24 border-l-2 border-t-2 border-indigo-500/40 rounded-tl-2xl" />
             </div>
@@ -73,25 +71,25 @@ const About = () => {
                 Hi, I'm <span className="gradient-text">Pankaj Prajapati</span>
               </h3>
               <p className="text-gray-400 leading-relaxed">
-                A passionate <span className="text-purple-400 font-medium">MERN Stack Developer</span> and
-                dedicated student pursuing a Bachelor's degree in Computer Science with a focus on{" "}
-                <span className="text-indigo-400 font-medium">Artificial Intelligence and Machine Learning</span> at
-                Technocrats Institute of Technology, Bhopal.
+                A <span className="text-purple-400 font-medium">Software Engineer at Capgemini</span>, working
+                in the Java Full Stack domain. I build enterprise-grade web applications using{" "}
+                <span className="text-indigo-400 font-medium">Java, Spring Boot, and React.js</span>, and
+                actively contribute to AI-powered features within client projects.
               </p>
               <p className="text-gray-400 leading-relaxed">
-                I have a strong foundation in multiple programming languages and technologies, allowing me to
-                create robust, efficient, and innovative solutions. I'm passionate about competitive programming
-                with 4000+ problems solved across all major platforms.
+                Beyond my professional work, I'm a passionate competitive programmer with 4000+ problems
+                solved across all major platforms. I love building clean, performant, and scalable software
+                that solves real-world problems.
               </p>
             </div>
 
-            {/* Info list */}
             <div className="space-y-3 pt-2">
               {[
                 { label: "Name", value: "Pankaj Prajapati" },
-                { label: "Location", value: "Bhopal, India" },
+                { label: "Role", value: "Software Engineer @ Capgemini" },
+                { label: "Stack", value: "Java Full Stack + React.js + AI" },
+                { label: "Location", value: "India" },
                 { label: "Email", value: "pankaj114477pankaj@gmail.com" },
-                { label: "Degree", value: "B.Tech CSE (AI/ML)" },
               ].map((info, i) => (
                 <div key={i} className="flex gap-3 text-sm">
                   <span className="text-purple-400 font-medium w-20 shrink-0">{info.label}:</span>
@@ -125,12 +123,7 @@ const About = () => {
           {stats.map((s, i) => {
             const Icon = s.icon;
             return (
-              <motion.div
-                key={i}
-                variants={item}
-                whileHover={{ y: -4 }}
-                className="glass-card p-6 text-center"
-              >
+              <motion.div key={i} variants={item} whileHover={{ y: -4 }} className="glass-card p-6 text-center">
                 <Icon className={`w-6 h-6 ${s.color} mx-auto mb-3`} />
                 <div className={`text-3xl font-bold ${s.color} mb-1`}>{s.count}</div>
                 <div className="text-gray-500 text-sm">{s.label}</div>

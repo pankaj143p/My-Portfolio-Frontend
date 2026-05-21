@@ -9,9 +9,9 @@ const Navbar = () => {
   const menuLinks = [
     { name: "Home", link: "#home" },
     { name: "About", link: "#about" },
+    { name: "Experience", link: "#experience" },
     { name: "Skills", link: "#skills" },
     { name: "Projects", link: "#projects" },
-    { name: "Achievements", link: "#achievements" },
     { name: "Contact", link: "#contact" },
   ];
 
@@ -31,15 +31,13 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-18">
-          {/* Logo */}
+        <div className="flex items-center justify-between h-16">
           <motion.a href="#home" whileHover={{ scale: 1.03 }} className="text-xl md:text-2xl font-bold font-mono">
             <span className="text-white">&lt;</span>
             <span className="gradient-text">Pankaj</span>
             <span className="text-white"> /&gt;</span>
           </motion.a>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-1">
             {menuLinks.map((menu, i) => (
               <motion.a
@@ -52,7 +50,7 @@ const Navbar = () => {
               </motion.a>
             ))}
             <motion.a
-              href="mailto:pankaj114477pankaj@gmail.com"
+              href="#contact"
               whileHover={{ scale: 1.03 }}
               className="ml-4 px-5 py-2 text-sm btn-primary rounded-lg"
             >
@@ -60,7 +58,6 @@ const Navbar = () => {
             </motion.a>
           </div>
 
-          {/* Mobile Button */}
           <button
             onClick={() => setOpen(!open)}
             className="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-all"
@@ -70,7 +67,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {open && (
           <motion.div

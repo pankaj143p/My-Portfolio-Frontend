@@ -27,7 +27,6 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center px-6 lg:px-8 pt-20 relative overflow-hidden">
-      {/* Background glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/3 left-1/4 w-80 h-80 bg-purple-600/8 rounded-full blur-3xl" />
         <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-indigo-600/8 rounded-full blur-3xl" />
@@ -55,9 +54,10 @@ const Hero = () => {
             <motion.div variants={item} className="text-xl sm:text-2xl text-gray-400 font-medium">
               <TypeAnimation
                 sequence={[
-                  "Full Stack Developer", 2000,
-                  "MERN Stack Developer", 2000,
-                  "Java Developer", 2000,
+                  "Software Engineer @ Capgemini", 2500,
+                  "Java Full Stack Developer", 2000,
+                  "React.js Developer", 2000,
+                  "AI Enthusiast", 2000,
                   "Competitive Programmer", 2000,
                 ]}
                 wrapper="span"
@@ -68,11 +68,11 @@ const Hero = () => {
             </motion.div>
 
             <motion.p variants={item} className="text-gray-400 text-base leading-relaxed max-w-lg">
-              Passionate about building modern web experiences. CSE student specializing in AI/ML at
-              Technocrats Institute of Technology, Bhopal. 4000+ problems solved across coding platforms.
+              Software Engineer at <span className="text-purple-400 font-medium">Capgemini</span>, building
+              enterprise-grade applications with Java, Spring Boot & React.js. Passionate about AI integration
+              and solving complex problems — 4000+ problems solved across coding platforms.
             </motion.p>
 
-            {/* Buttons */}
             <motion.div variants={item} className="flex flex-wrap gap-4 pt-2">
               <a href="#contact" className="btn-primary">
                 <Mail className="w-4 h-4" />
@@ -90,7 +90,6 @@ const Hero = () => {
               </motion.a>
             </motion.div>
 
-            {/* Socials */}
             <motion.div variants={item} className="flex items-center gap-4 pt-2">
               {socials.map((s, i) => (
                 <motion.a
@@ -109,19 +108,14 @@ const Hero = () => {
           </motion.div>
 
           {/* Right — Image */}
-          <motion.div
-            variants={item}
-            className="order-1 lg:order-2 flex justify-center lg:justify-end"
-          >
+          <motion.div variants={item} className="order-1 lg:order-2 flex justify-center lg:justify-end">
             <div className="relative">
-              {/* Glow ring */}
               <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-indigo-600/20 rounded-full blur-3xl scale-110" />
               <motion.div
                 animate={{ y: [0, -12, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
                 className="relative z-10"
               >
-                {/* Rotating border */}
                 <div className="w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 relative">
                   <div className="absolute inset-0 rounded-full border-2 border-purple-500/20 animate-spin" style={{ animationDuration: "12s" }} />
                   <div className="absolute inset-2 rounded-full border border-indigo-500/15 animate-spin" style={{ animationDuration: "8s", animationDirection: "reverse" }} />
@@ -133,14 +127,13 @@ const Hero = () => {
                 </div>
               </motion.div>
 
-              {/* Floating badge */}
               <motion.div
                 animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                 className="absolute -bottom-4 -left-4 glass-card px-4 py-2 flex items-center gap-2 z-20"
               >
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                <span className="text-xs text-gray-300 font-medium">Available for work</span>
+                <span className="text-xs text-gray-300 font-medium">Software Engineer @ Capgemini</span>
               </motion.div>
 
               <motion.div
@@ -154,7 +147,6 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

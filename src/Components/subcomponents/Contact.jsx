@@ -44,8 +44,8 @@ const Contact = () => {
 
   const contactInfo = [
     { icon: Mail, label: "Email", value: "pankaj114477pankaj@gmail.com", link: "mailto:pankaj114477pankaj@gmail.com" },
-    { icon: Phone, label: "Phone", value: "+91 9179*****3", link: "tel:+919179xxxxx3" },
-    { icon: MapPin, label: "Location", value: "Bhopal, India", link: "#" },
+    { icon: Phone, label: "Phone", value: "+91 9179*****3", link: "#" },
+    { icon: MapPin, label: "Location", value: "India", link: "#" },
   ];
 
   const socials = [
@@ -55,10 +55,9 @@ const Contact = () => {
     { icon: FaTwitter, name: "Twitter", link: "https://twitter.com/Pankaj07__" },
   ];
 
-  const container = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
-  };
+  const inputClass =
+    "w-full px-4 py-3 rounded-xl text-white text-sm placeholder-gray-500 outline-none transition-all duration-200 border focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20";
+
   const item = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -68,6 +67,7 @@ const Contact = () => {
     <section id="contact" className="py-24 px-6 lg:px-8 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-purple-600/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-indigo-600/5 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
@@ -84,77 +84,144 @@ const Contact = () => {
             Get In <span className="gradient-text">Touch</span>
           </h2>
           <div className="section-line" />
-          <p className="text-gray-500 mt-6 max-w-xl mx-auto text-sm">
-            Have a project in mind? Let's discuss how we can work together to bring your ideas to life.
+          <p className="text-gray-500 mt-5 max-w-xl mx-auto text-sm leading-relaxed">
+            Have a project in mind or want to collaborate? I'd love to hear from you.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-5 gap-10">
-          {/* Form */}
+        <div className="grid lg:grid-cols-5 gap-8">
+          {/* ── Form ── */}
           <motion.div
-            variants={container}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
+            initial={{ opacity: 0, x: -20 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.1 }}
             className="lg:col-span-3"
           >
-            <motion.div variants={item} className="glass-card p-8">
+            <div className="glass-card p-8">
               <h3 className="text-white font-semibold text-lg mb-6 flex items-center gap-2">
                 <Send className="w-5 h-5 text-purple-400" />
                 Send a Message
               </h3>
-              <form onSubmit={handleSubmit} className="space-y-5">
+
+              <form onSubmit={handleSubmit} className="space-y-4">
+                {/* Name + Email */}
                 <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-gray-400 text-sm mb-1.5">Your Name</label>
-                    <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="John Doe" required />
+                  <div className="space-y-1.5">
+                    <label className="block text-gray-300 text-sm font-medium">Your Name</label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="Pankaj Prajapati"
+                      required
+                      className={inputClass}
+                      style={{ backgroundColor: "#16161f", borderColor: "#2d2d3d" }}
+                    />
                   </div>
-                  <div>
-                    <label className="block text-gray-400 text-sm mb-1.5">Your Email</label>
-                    <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="john@example.com" required />
+                  <div className="space-y-1.5">
+                    <label className="block text-gray-300 text-sm font-medium">Your Email</label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="you@example.com"
+                      required
+                      className={inputClass}
+                      style={{ backgroundColor: "#16161f", borderColor: "#2d2d3d" }}
+                    />
                   </div>
-                </div>
-                <div>
-                  <label className="block text-gray-400 text-sm mb-1.5">Subject</label>
-                  <input type="text" name="subject" value={formData.subject} onChange={handleChange} placeholder="Project Discussion" required />
-                </div>
-                <div>
-                  <label className="block text-gray-400 text-sm mb-1.5">Message</label>
-                  <textarea name="message" value={formData.message} onChange={handleChange} placeholder="Tell me about your project..." rows={5} required className="resize-none" />
                 </div>
 
+                {/* Subject */}
+                <div className="space-y-1.5">
+                  <label className="block text-gray-300 text-sm font-medium">Subject</label>
+                  <input
+                    type="text"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    placeholder="Project Discussion"
+                    required
+                    className={inputClass}
+                    style={{ backgroundColor: "#16161f", borderColor: "#2d2d3d" }}
+                  />
+                </div>
+
+                {/* Message */}
+                <div className="space-y-1.5">
+                  <label className="block text-gray-300 text-sm font-medium">Message</label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Tell me about your project or idea..."
+                    rows={5}
+                    required
+                    className={`${inputClass} resize-none`}
+                    style={{ backgroundColor: "#16161f", borderColor: "#2d2d3d" }}
+                  />
+                </div>
+
+                {/* Submit */}
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="btn-primary w-full py-3.5 disabled:opacity-50 disabled:cursor-not-allowed mt-2"
                 >
                   {status === "sending" ? (
-                    <><div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Sending...</>
+                    <>
+                      <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      Sending...
+                    </>
                   ) : status === "sent" ? (
-                    <><CheckCircle className="w-4 h-4" /> Message Sent!</>
+                    <>
+                      <CheckCircle className="w-4 h-4" />
+                      Message Sent!
+                    </>
                   ) : (
-                    <><Send className="w-4 h-4" /> Send Message</>
+                    <>
+                      <Send className="w-4 h-4" />
+                      Send Message
+                    </>
                   )}
                 </button>
 
+                {/* Status messages */}
+                {status === "sent" && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="flex items-center gap-2 text-green-400 text-sm p-3 bg-green-500/10 rounded-xl border border-green-500/20"
+                  >
+                    <CheckCircle className="w-4 h-4 shrink-0" />
+                    Message sent successfully! I'll get back to you soon.
+                  </motion.div>
+                )}
                 {status === "error" && (
-                  <div className="flex items-center gap-2 text-red-400 text-sm p-3 bg-red-500/8 rounded-xl border border-red-500/15">
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="flex items-center gap-2 text-red-400 text-sm p-3 bg-red-500/10 rounded-xl border border-red-500/20"
+                  >
                     <AlertCircle className="w-4 h-4 shrink-0" />
-                    Failed to send. Please email me directly.
-                  </div>
+                    Failed to send. Please email me directly at pankaj114477pankaj@gmail.com
+                  </motion.div>
                 )}
               </form>
-            </motion.div>
+            </div>
           </motion.div>
 
-          {/* Info */}
+          {/* ── Info sidebar ── */}
           <motion.div
-            variants={container}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-            className="lg:col-span-2 space-y-5"
+            initial={{ opacity: 0, x: 20 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:col-span-2 flex flex-col gap-5"
           >
             {/* Contact info */}
-            <motion.div variants={item} className="glass-card p-6">
+            <div className="glass-card p-6">
               <h3 className="text-white font-semibold mb-5">Contact Info</h3>
               <div className="space-y-4">
                 {contactInfo.map((info, i) => {
@@ -166,16 +233,18 @@ const Contact = () => {
                       </div>
                       <div>
                         <p className="text-gray-600 text-xs">{info.label}</p>
-                        <p className="text-gray-300 text-sm font-medium group-hover:text-purple-400 transition-colors">{info.value}</p>
+                        <p className="text-gray-300 text-sm font-medium group-hover:text-purple-400 transition-colors break-all">
+                          {info.value}
+                        </p>
                       </div>
                     </a>
                   );
                 })}
               </div>
-            </motion.div>
+            </div>
 
             {/* Socials */}
-            <motion.div variants={item} className="glass-card p-6">
+            <div className="glass-card p-6">
               <h3 className="text-white font-semibold mb-5">Follow Me</h3>
               <div className="grid grid-cols-2 gap-3">
                 {socials.map((s, i) => {
@@ -186,7 +255,7 @@ const Contact = () => {
                       href={s.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2.5 p-3 rounded-xl bg-white/3 hover:bg-purple-500/8 text-gray-500 hover:text-purple-400 transition-all border border-transparent hover:border-purple-500/15 text-sm"
+                      className="flex items-center gap-2.5 p-3 rounded-xl text-gray-400 hover:text-purple-400 transition-all text-sm font-medium border border-white/5 hover:border-purple-500/20 hover:bg-purple-500/5"
                     >
                       <Icon className="w-4 h-4 shrink-0" />
                       {s.name}
@@ -194,13 +263,15 @@ const Contact = () => {
                   );
                 })}
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div variants={item} className="glass-card p-6 text-center">
+            {/* CTA note */}
+            <div className="glass-card p-5 text-center">
               <p className="text-gray-500 text-sm leading-relaxed">
-                I'm always excited to work on new projects and collaborate with fellow developers. Let's build something amazing!
+                Available for freelance projects, collaborations, and consulting work.
               </p>
-            </motion.div>
+              <p className="text-purple-400 text-sm font-medium mt-2">Response within 24 hours ⚡</p>
+            </div>
           </motion.div>
         </div>
       </div>

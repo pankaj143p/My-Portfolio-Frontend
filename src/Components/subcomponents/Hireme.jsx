@@ -1,16 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Mail, ArrowRight, Code, Laptop, MessageCircle, Sparkles } from "lucide-react";
+import { Mail, ArrowRight, Code, Cpu, Globe, Sparkles } from "lucide-react";
 
 const Hireme = () => {
   const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true });
 
   const offerings = [
-    { icon: Code, label: "Full Stack Dev", color: "text-purple-400" },
-    { icon: Laptop, label: "AI/ML Projects", color: "text-indigo-400" },
-    { icon: MessageCircle, label: "Problem Solver", color: "text-violet-400" },
-    { icon: Sparkles, label: "Creative Solutions", color: "text-fuchsia-400" },
+    { icon: Code, label: "Java Full Stack", color: "text-purple-400" },
+    { icon: Globe, label: "React.js Apps", color: "text-indigo-400" },
+    { icon: Cpu, label: "AI Integration", color: "text-violet-400" },
+    { icon: Sparkles, label: "Enterprise Solutions", color: "text-fuchsia-400" },
   ];
 
   return (
@@ -27,7 +27,6 @@ const Hireme = () => {
           transition={{ duration: 0.7 }}
           className="glass-card p-10 lg:p-16 text-center relative overflow-hidden"
         >
-          {/* Decorative border glow */}
           <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-600/5 to-indigo-600/5" />
 
           <motion.p
@@ -36,7 +35,7 @@ const Hireme = () => {
             transition={{ delay: 0.2 }}
             className="text-purple-400 font-mono text-sm tracking-widest uppercase mb-4"
           >
-            Open to opportunities
+            Open to freelance & collaborations
           </motion.p>
 
           <motion.h2
@@ -54,11 +53,10 @@ const Hireme = () => {
             transition={{ delay: 0.4 }}
             className="text-gray-400 text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            I'm a passionate developer ready to bring your ideas to life. Whether it's a web app,
-            API, or full-stack project — let's build something amazing together!
+            Software Engineer at Capgemini with hands-on experience in Java Full Stack and AI integration.
+            Available for freelance projects, open-source collaborations, and consulting work.
           </motion.p>
 
-          {/* Offerings */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -76,7 +74,6 @@ const Hireme = () => {
             })}
           </motion.div>
 
-          {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -98,7 +95,6 @@ const Hireme = () => {
             </a>
           </motion.div>
 
-          {/* Stats row */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
@@ -106,9 +102,9 @@ const Hireme = () => {
             className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-14 pt-10 border-t border-white/5"
           >
             {[
-              { value: "10+", label: "Projects Completed", color: "text-purple-400" },
-              { value: "20+", label: "Technologies", color: "text-indigo-400" },
-              { value: "100%", label: "Client Satisfaction", color: "text-violet-400" },
+              { value: "1+", label: "Years at Capgemini", color: "text-purple-400" },
+              { value: "10+", label: "Projects Built", color: "text-indigo-400" },
+              { value: "4000+", label: "Problems Solved", color: "text-violet-400" },
               { value: "< 24h", label: "Response Time", color: "text-fuchsia-400" },
             ].map((s, i) => (
               <div key={i} className="text-center">

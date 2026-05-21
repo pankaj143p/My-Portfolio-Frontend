@@ -25,7 +25,7 @@ const Achievements = () => {
       title: "Coding Ninjas AIR 16th",
       description: "Secured AIR 16th position in Coding Ninjas World Cup event with 2000+ problems solved.",
       stats: [{ label: "AIR", value: "16th" }, { label: "Problems", value: "2000+" }],
-      color: "from-blue-500 to-cyan-500",
+      color: "from-blue-500 to-indigo-500",
     },
     {
       icon: Medal,
@@ -36,20 +36,20 @@ const Achievements = () => {
     },
     {
       icon: Star,
-      title: "GeeksforGeeks 4-Star",
-      description: "Earned 4-Star coder status with rating 1856, college rank 2, and 1200+ questions solved.",
-      stats: [{ label: "Stars", value: "4★" }, { label: "Rating", value: "1856" }, { label: "College Rank", value: "2nd" }],
+      title: "GeeksforGeeks 4-Star Coder",
+      description: "Earned 4-Star coder status with rating 1856 and solved 1200+ questions on the platform.",
+      stats: [{ label: "Stars", value: "4★" }, { label: "Rating", value: "1856" }, { label: "Problems", value: "1200+" }],
       color: "from-purple-500 to-pink-500",
     },
   ];
 
   const profiles = [
-    { img: codechef, platform: "CodeChef", username: "pankajp07", link: "https://www.codechef.com/users/pankajp07", stat: "1911 Rating", color: "#FF6B35" },
-    { img: leetcode, platform: "LeetCode", username: "pankaj077", link: "https://leetcode.com/pankaj077", stat: "Knight · 1927", color: "#FFA116" },
-    { img: geeksforgeeks, platform: "GeeksforGeeks", username: "pankaj07", link: "https://auth.geeksforgeeks.org/user/pankaj07", stat: "4-Star · 1856", color: "#2F8D46" },
-    { img: codingninjas, platform: "Coding Ninjas", username: "pankaj07", link: "https://www.codingninjas.com/studio/profile/pankaj07", stat: "2000+ Problems", color: "#F5A623" },
-    { img: hackerearth, platform: "HackerEarth", username: "pankaj07", link: "https://www.hackerearth.com/@pankaj07/", stat: "Active Coder", color: "#323754" },
-    { img: hackerrank, platform: "HackerRank", username: "i_am_pankaj", link: "https://www.hackerrank.com/profile/i_am_pankaj", stat: "Problem Solver", color: "#00EA64" },
+    { img: codechef, platform: "CodeChef", username: "pankajp07", link: "https://www.codechef.com/users/pankajp07", stat: "1911 Rating" },
+    { img: leetcode, platform: "LeetCode", username: "pankaj077", link: "https://leetcode.com/pankaj077", stat: "Knight · 1927" },
+    { img: geeksforgeeks, platform: "GeeksforGeeks", username: "pankaj07", link: "https://auth.geeksforgeeks.org/user/pankaj07", stat: "4-Star · 1856" },
+    { img: codingninjas, platform: "Coding Ninjas", username: "pankaj07", link: "https://www.codingninjas.com/studio/profile/pankaj07", stat: "2000+ Problems" },
+    { img: hackerearth, platform: "HackerEarth", username: "pankaj07", link: "https://www.hackerearth.com/@pankaj07/", stat: "Active Coder" },
+    { img: hackerrank, platform: "HackerRank", username: "i_am_pankaj", link: "https://www.hackerrank.com/profile/i_am_pankaj", stat: "Problem Solver" },
   ];
 
   const summaryStats = [
@@ -76,7 +76,6 @@ const Achievements = () => {
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        {/* Header */}
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
@@ -172,7 +171,7 @@ const Achievements = () => {
                 rel="noopener noreferrer"
                 variants={item}
                 whileHover={{ y: -6, scale: 1.03 }}
-                className="glass-card p-4 text-center group cursor-pointer"
+                className="glass-card p-4 text-center group"
               >
                 <div className="w-12 h-12 mx-auto mb-3 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-white/8 transition-colors">
                   <img src={p.img} alt={p.platform} className="w-8 h-8 object-contain" />
