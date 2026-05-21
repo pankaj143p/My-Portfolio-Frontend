@@ -8,9 +8,11 @@ const Navbar = () => {
 
   const menuLinks = [
     { name: "About", link: "#about" },
+    { name: "GitHub", link: "#github" },
+    { name: "Stack", link: "#skills" },
     { name: "Experience", link: "#experience" },
-    { name: "Skills", link: "#skills" },
-    { name: "Projects", link: "#projects" },
+    { name: "Work", link: "#projects" },
+    { name: "Contact", link: "#contact" },
   ];
 
   useEffect(() => {

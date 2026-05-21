@@ -79,7 +79,7 @@ const Projects = () => {
         >
           <p className="text-green-400 font-mono text-sm tracking-widest uppercase mb-3">What I've built</p>
           <h2 className="text-4xl sm:text-5xl font-bold text-white">
-            My <span className="gradient-text">Projects</span>
+            <span className="gradient-text">Proof of Work</span>
           </h2>
           <div className="section-line" />
         </motion.div>

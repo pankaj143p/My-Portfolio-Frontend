@@ -89,7 +89,7 @@ const Skills = () => {
         >
           <p className="text-green-400 font-mono text-sm tracking-widest uppercase mb-3">What I work with</p>
           <h2 className="text-4xl sm:text-5xl font-bold text-white">
-            My <span className="gradient-text">Skills</span>
+            <span className="gradient-text">Stack</span>
           </h2>
           <div className="section-line" />
         </motion.div>
