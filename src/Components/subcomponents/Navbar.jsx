@@ -7,12 +7,10 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   const menuLinks = [
-    { name: "Home", link: "#home" },
     { name: "About", link: "#about" },
     { name: "Experience", link: "#experience" },
     { name: "Skills", link: "#skills" },
     { name: "Projects", link: "#projects" },
-    { name: "Contact", link: "#contact" },
   ];
 
   useEffect(() => {
@@ -25,14 +23,14 @@ const Navbar = () => {
     <motion.nav
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      className={`fixed w-full top-0 z-[999] transition-all duration-500 ${
-        sticky ? "bg-[#0a0a0f]/90 backdrop-blur-md border-b border-purple-500/10 shadow-lg shadow-purple-900/10" : "bg-transparent"
+      transition={{ duration: 0.5 }}
+      className={`fixed w-full top-0 z-[999] transition-all duration-400 ${
+        sticky ? "bg-[#0a0f0a]/90 backdrop-blur-md border-b border-green-500/10 shadow-lg shadow-green-900/10" : "bg-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <motion.a href="#home" whileHover={{ scale: 1.03 }} className="text-xl md:text-2xl font-bold font-mono">
+          <motion.a href="#about" whileHover={{ scale: 1.03 }} className="text-xl md:text-2xl font-bold font-mono">
             <span className="text-white">&lt;</span>
             <span className="gradient-text">Pankaj</span>
             <span className="text-white"> /&gt;</span>
@@ -44,13 +42,13 @@ const Navbar = () => {
                 key={i}
                 href={menu.link}
                 whileHover={{ y: -1 }}
-                className="px-4 py-2 text-sm text-gray-400 hover:text-purple-400 transition-colors duration-200 rounded-lg hover:bg-purple-500/5 font-medium"
+                className="px-4 py-2 text-sm text-gray-400 hover:text-green-400 transition-colors duration-200 rounded-lg hover:bg-green-500/5 font-medium"
               >
                 {menu.name}
               </motion.a>
             ))}
             <motion.a
-              href="#contact"
+              href="mailto:pankaj114477pankaj@gmail.com"
               whileHover={{ scale: 1.03 }}
               className="ml-4 px-5 py-2 text-sm btn-primary rounded-lg"
             >
@@ -73,7 +71,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[#0a0a0f]/95 backdrop-blur-md border-t border-purple-500/10"
+            className="md:hidden bg-[#0a0f0a]/95 backdrop-blur-md border-t border-green-500/10"
           >
             <div className="px-6 py-4 space-y-1">
               {menuLinks.map((menu, i) => (
@@ -84,11 +82,20 @@ const Navbar = () => {
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
-                  className="block px-4 py-2.5 text-gray-400 hover:text-purple-400 hover:bg-purple-500/5 rounded-lg transition-all text-sm font-medium"
+                  className="block px-4 py-2.5 text-gray-400 hover:text-green-400 hover:bg-green-500/5 rounded-lg transition-all text-sm font-medium"
                 >
                   {menu.name}
                 </motion.a>
               ))}
+              <div className="pt-2">
+                <a
+                  href="mailto:pankaj114477pankaj@gmail.com"
+                  className="block btn-primary text-center"
+                  onClick={() => setOpen(false)}
+                >
+                  Hire Me
+                </a>
+              </div>
             </div>
           </motion.div>
         )}
